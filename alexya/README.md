@@ -1,2 +1,0 @@
-# Alexya
-Alexya's core
