@@ -17,6 +17,6 @@ class Map extends Controller
      */
     public function index() : string
     {
-        return $this->_triad->View->render();
+        return $this->_triad->Presenter->render();
     }
 }

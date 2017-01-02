@@ -31,6 +31,7 @@ class SmartyParser extends Parser
         }
 
         $smarty = new \Smarty();
+        $smarty->escape_html = true;
 
         foreach($this->_data->getAll() as $key => $value) {
             $smarty->assign($key, $value);

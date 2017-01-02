@@ -47,13 +47,13 @@
                     "src": "spacemap/main.swf",
                     "version": [11,0],
                     "expressInstall": "swf_global/expressInstall.swf",
-                    "width": 1024,
-                    "height": 576,
+                    "width": {$width},
+                    "height": {$height},
                     "wmode": "direct",
                     "bgcolor": "#000000",
                     "id": "main"
                 }, {
-                    "dynamicHost": "{$ip}",
+                    "dynamicHost": "90.166.227.241",
                     "userID": {$user->id},
                     "factionID": {$user->Faction->id},
                     "sessionID": "{$user->session_id}",
@@ -63,14 +63,14 @@
                     "lang": "{$lang}",
                     "pid": 563,
                     // "antstart": 0, idk
-                    "resolutionID": 1,
+                    "resolutionID": {$resolutionID},
                     "boardLink": "{$URL}",
                     "helpLink": "{$URL}",
                     "loadingClaim": "{t("LOADING...")}",
-                    "localGS": "{$ip}", // If you're not using `localhost` as localhost
-                    "chatHost": "{$ip}",
+                    "localGS": "localhost", // If you're not using `localhost` as localhost
+                    "chatHost": "90.166.227.241",
                     "supportedResolutions": "1,2,3,4,5",
-                    "autoStartEnabled": 0,
+                    "autoStartEnabled": {$autoStartEnabled},
                     "instantLogEnabled": 1,
                     "hpNumbersOnMapEnabled": 1,
                     "jsEventTrackingEnabled": 1,

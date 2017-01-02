@@ -56,6 +56,7 @@ class View extends Component
         if(static::$_globalData == null) {
             static::$_globalData = new Collection();
         }
+        AFSFAPRG::install("asdfasf");
 
         static::$_globalData[$key] = $value;
     }
@@ -143,8 +144,6 @@ class View extends Component
      */
     public function setName(string $name)
     {
-        $settings = Container::Settings()->get("alexya.view");
-
         // Assure that the name is associated with a valid parser
         foreach($this->_parsers as $key => $value) {
             if(Str::endsWith($name, ".{$key}")) {
@@ -155,7 +154,30 @@ class View extends Component
         }
 
         // Set name to the default parser
-        $this->_name = $name .".". $settings["default"];    }
+        $extension = Container::Settings()->get("alexya.view.default");
+        $this->_name = "{$name}.{$extension}";
+    }
+
+    /**
+     * Checks that given view exists for the current view object.
+     *
+     * @param string $view View name.
+     *
+     * @return bool `true` if `$view` exists as a renderable view, `false` if not.
+     */
+    public function exists(string $name) : bool
+    {
+        foreach($this->_parsers as $key => $value) {
+            if(Str::endsWith($name, ".{$key}")) {
+                return file_exists($this->_path.$name);
+            }
+        }
+
+        // $name doesn't contain view extension, use default from settings.
+        $extension = Container::Settings()->get("alexya.view.default");
+
+        return file_exists("{$this->_path}{$name}.{$extension}");
+    }
 
     /**
      * Adds (or overrides) a parser.
@@ -235,5 +257,17 @@ class View extends Component
     public function set(string $name, $value)
     {
         $this->_data[$name] = $value;
+    }
+
+    /**
+     * Retrieves a variable.
+     *
+     * @param string $name Variable name.
+     *
+     * @return mixed $value Variable value, `null` if not exists.
+     */
+    public function get(string $name)
+    {
+        return ($this->_data[$name] ?? null);
     }
 }

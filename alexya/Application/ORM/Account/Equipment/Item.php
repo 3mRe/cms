@@ -15,7 +15,7 @@ class Item extends Model
      *
      * @var string
      */
-    protected static $_table = "accounts_equipment_items";
+    protected $_table = "accounts_equipment_items";
 
     /**
      * Relations.

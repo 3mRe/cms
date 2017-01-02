@@ -286,7 +286,7 @@
         </div>
         <div class="page-content">
             <div class="container">
-                {$module}
+                {$module nofilter}
             </div>
         </div>
     </div>

@@ -2,7 +2,10 @@
 namespace Application\Page\Controller;
 
 use \Alexya\Container;
-use \Alexya\Database\QueryBuilder;
+use \Alexya\Database\{
+    QueryBuilder,
+    ORM\Model
+};
 use \Alexya\Foundation\Controller;
 use \Alexya\Http\Response;
 use \Alexya\Tools\{
@@ -10,6 +13,8 @@ use \Alexya\Tools\{
     Str
 };
 use \Alexya\Validator\Validator;
+
+use \Application\ORM\Account;
 
 /**
  * External page controller.
@@ -133,21 +138,17 @@ class External extends Controller
             return $this->Login();
         }
 
-        // $username = Security::cleanXSS($username);
-        // $password = Security::hash($password);
+        //$username = Security::cleanXSS($username);
+        $password = md5($password); //Security::hash($password);
 
-        $query = new QueryBuilder($Database);
-        $query->select()
-              ->from("users")
-              ->where([
-                  "AND" => [
-                      "name"     => $username,
-                      "password" => $password
-                  ]
-              ]);
+        $exists = Model::find([
+            "AND" => [
+                "name"     => $username,
+                "password" => $password
+            ]
+        ], -1, "users", false);
 
-        $id = $Database->execute($query, false);
-        if(!is_numeric($id["id"])) {
+        if(!is_numeric($exists->id)) {
             Results::addFlash("invalid_username_password", [
                 "result"  => "danger",
                 "message" => t("Username/password does not exists")
@@ -156,16 +157,9 @@ class External extends Controller
             return $this->Login();
         }
 
-        $query->clear();
-
-        $query->update("accounts")
-              ->set([
-                    "session_id" => $session_id
-                ])
-              ->where([
-                    "id" => $id["last_login_accounts_id"]
-                ]);
-        $Database->execute($query);
+        $account = Account::find($exists->last_login_accounts_id);
+        $account->session_id = $session_id;
+        $account->save();
 
         $Session->id = $session_id;
 
@@ -189,25 +183,20 @@ class External extends Controller
 
         $session_id = Str::random(32, "0123456789abcdef");
 
-
         if(!$this->_checkInfo($username, $password, $email, $tac)) {
             return $this->Register();
         }
 
-        // $username = Security::cleanXSS($username);
-        // $password = Security::hash($password);
-        // $email    = Security::cleanXSS($email);
+        //$username = Security::cleanXSS($username);
+        $password = md5($password); //Security::hash($password);
+        //$email    = Security::cleanXSS($email);
 
         //Check username and email is unique in db
-        $query = new QueryBuilder($Database);
-        $query->select("id")
-              ->from("users")
-              ->where([
-                  "email" => $email
-              ]);
+        $email_exists = Model::find([
+            "email" => $email
+        ], -1, "users", false);
 
-        $email_exists = $Database->execute($query, false);
-        if(!empty($email_exists)) {
+        if(!empty($_email_exists->id)) {
             Results::flash("email_already_exists", [
                 "result"  => "danger",
                 "message" => t("Given email already exists, please, login or try with another email")
@@ -216,7 +205,10 @@ class External extends Controller
             return $this->Register();
         }
 
-        $username_exists = $Database->execute("SELECT * FROM `users` LEFT JOIN `accounts` USING(`id`) WHERE `users`.`name`='{$username}' OR `accounts`.`name`='{$username}';", false);
+        $query = new QueryBuilder($Database);
+        $sanitized = $query->sanitize($username);
+
+        $username_exists = $Database->execute("SELECT * FROM `users` LEFT JOIN `accounts` USING(`id`) WHERE `users`.`name`='{$sanitized}' OR `accounts`.`name`='{$sanitized}';", false);
         if(!empty($username_exists)) {
             Results::flash("username_already_exists", [
                 "result"  => "danger",
@@ -310,225 +302,180 @@ class External extends Controller
         $Settings = Container::Settings();
         $query    = new QueryBuilder($Database);
 
-        //First insert `users` row
-        $query->insert("users")
-              ->values([
-                    "register_ip"   => IP,
-                    "last_login_ip" => IP,
-                    "session_id"    => Str::random(32, "0123456789abcdef"),
-                    "name"          => $username,
-                    "password"      => $password,
-                    "email"         => $email
-                ]);
-        $insert_users = $Database->insert($query);
+        // First insert `users` row
+        $user = Model::create("users");
+        $user->register_ip   = IP;
+        $user->last_login_ip = IP;
+        $user->session_id    = Str::random(32, "0123456789abcdef");
+        $user->name          = $username;
+        $user->password      = $password;
+        $user->email         = $email;
+        $user->save();
 
-        if(empty($insert_users)) {
+        if(!is_numeric($user->id)) {
             $Logger->debug("Couldn't insert `users`: ". $Database->getError());
             $Logger->debug("Query executed: ". $Database->lastQuery);
 
             return false;
         }
 
-        $query->clear();
+        // Now insert `accounts` row
+        $account = Model::create("accounts");
+        $account->users_id          = $user->id;
+        $account->register_ip       = IP;
+        $account->register_users_id = $user->id;
+        $account->session_id        = $session_id;
+        $account->name              = $username;
+        $account->uridium           = $Settings->get("application.register.uridium");
+        $account->credits           = $Settings->get("application.register.credits");
+        $account->experience        = $Settings->get("application.register.experience");
+        $account->levels_id         = $Settings->get("application.register.level");
+        $account->honor             = $Settings->get("application.register.honor");
+        $account->jackpot           = $Settings->get("application.register.jackpot");
+        $account->ranks_id          = $Settings->get("application.register.rank");
+        $account->is_premium        = $Settings->get("application.register.premium");
+        $account->save();
 
-        //Now insert `accounts` row
-        $query->insert("accounts")
-              ->values([
-                    "users_id"          => $insert_users,
-                    "register_ip"       => IP,
-                    "register_users_id" => $insert_users,
-                    "session_id"        => $session_id,
-                    "name"              => $username,
-                    "uridium"           => $Settings->get("application.register.uridium"),
-                    "credits"           => $Settings->get("application.register.credits"),
-                    "experience"        => $Settings->get("application.register.experience"),
-                    "levels_id"         => $Settings->get("application.register.level"),
-                    "honor"             => $Settings->get("application.register.honor"),
-                    "jackpot"           => $Settings->get("application.register.jackpot"),
-                    "ranks_id"          => $Settings->get("application.register.rank"),
-                    "is_premium"        => $Settings->get("application.register.premium"),
-                ]);
-        $insert_accounts = $Database->insert($query);
-
-        if(empty($insert_accounts)) {
+        if(!is_numeric($account->id)) {
             $Logger->debug("Couldn't insert `accounts`: ". $Database->getError());
             $Logger->debug("Query executed: ". $Database->lastQuery);
 
             return false;
         }
 
-        $query->clear();
+        // Update `users` row and set account's ID
+        $user->register_accounts_id   = $account->id;
+        $user->last_login_accounts_id = $account->id;
+        $user->save();
 
-        //Update `users` row and set account's ID
-        $query->update("users")
-              ->set([
-                    "register_accounts_id"   => $insert_accounts,
-                    "last_login_accounts_id" => $insert_accounts
-                ])
-              ->where([
-                    "id" => $insert_users
-                ]);
-        $update_users = $Database->execute($query);
+        // Turn for Equipment
+        // First thing is the hangar
+        // Once hangar is done we will give the user a ship
+        // Next thing are items
+        // Finally the configurations
 
-        $query->clear();
+        $hangar = Model::create("accounts_equipment_hangars");
+        $hangar->accounts_id = $account->id;
+        $hangar->resources   = json_encode($Settings->get("application.register.resources"));
+        $hangar->save();
 
-        //Turn for Equipment
-        //First thing is the hangar
-        //Once hangar is done we will give the user a ship
-        //Next thing are items
-        //Finally the configurations
-        $query->insert("accounts_equipment_hangars")
-              ->values([
-                  "accounts_id"       => $insert_accounts,
-                  "(JSON)resources"   => $Settings->get("application.register.resources")
-              ]);
-
-        $insert_accounts_equipment_hangars = $Database->insert($query);
-
-        if(empty($insert_accounts_equipment_hangars)) {
+        if(!is_numeric($hangar->id)) {
             $Logger->debug("Couldn't insert `accounts_equipment_hangars`: ". $Database->getError());
             $Logger->debug("Query executed: ". $Database->lastQuery);
 
             return false;
         }
 
-        $query->clear();
+        $ship = Model::create("accounts_equipment_ships");
+        $ship->accounts_id      = $account->id;
+        $ship->ships_id         = $Settings->get("application.register.ship.id");
+        $ship->ships_designs_id = $Settings->get("application.register.ship.designs_id");
+        $ship->gfx              = $Settings->get("application.register.ship.gfx");
+        $ship->maps_id          = $Settings->get("application.register.ship.maps_id");
+        $ship->position         = json_encode($Settings->get("application.register.ship.position"));
+        $ship->health           = $Settings->get("application.register.ship.health");
+        $ship->nanohull         = $Settings->get("application.register.ship.nanohull");
+        $ship->shield           = $Settings->get("application.register.ship.shield");
+        $ship->save();
 
-        $query->insert("accounts_equipment_ships")
-              ->values([
-                  "accounts_id"                   => $insert_accounts,
-                  "ships_id"                      => $Settings->get("application.register.ship.id"),
-                  "ships_designs_id"              => $Settings->get("application.register.ship.designs_id"),
-                  "gfx"                           => $Settings->get("application.register.ship.gfx"),
-                  "maps_id"                       => $Settings->get("application.register.ship.maps_id"),
-                  "(JSON)position"                => $Settings->get("application.register.ship.position"),
-                  "health"                        => $Settings->get("application.register.ship.health"),
-                  "nanohull"                      => $Settings->get("application.register.ship.nanohull"),
-                  "shield"                        => $Settings->get("application.register.ship.shield"),
-              ]);
-
-        $insert_accounts_equipment_ships = $Database->insert($query);
-
-        if(empty($insert_accounts_equipment_ships)) {
+        if(!is_numeric($ship->id)) {
             $Logger->debug("Couldn't insert `accounts_equipment_ships`: ". $Database->getError());
             $Logger->debug("Query executed: ". $Database->lastQuery);
 
             return false;
         }
 
-        $query->clear();
+        // Update `accounts` row and set hangar's ID
+        $account->accounts_equipment_hangars_id = $hangar->id;
+        $account->save();
 
-        //Update `accounts` row and set hangar's ID
-        $query->update("accounts")
-              ->set([
-                    "accounts_equipment_hangars_id" => $insert_accounts_equipment_hangars
-                ])
-              ->where([
-                    "id" => $insert_accounts
-                ]);
-        $update_accounts = $Database->execute($query);
-
-        $query->clear();
-
-        //Update `accounts_equipment_hangars` row and set ship's ID
-        $query->update("accounts_equipment_hangars")
-              ->set([
-                  "accounts_equipment_ships_id" => $insert_accounts_equipment_ships
-              ])
-              ->where([
-                  "id" => $insert_accounts_equipment_hangars
-              ]);
-
-        $update_aaccounts_equipment_hangars = $Database->execute($query);
-
-        $query->clear();
+        // Update `accounts_equipment_hangars` row and set ship's ID
+        $hangar->accounts_equipment_ships_id = $ship->id;
+        $hangar->save();
 
         $insert_items = [];
-        for($i = 0; $i < count($Settings->get("application.register.items")); $i++) {
-            $item = $Settings->get("application.register.items")[$i];
+        foreach($Settings->get("application.register.items") as $key => $item) {
+            if(!is_array($item)) {
+                $key  = $item;
+                $item = [];
+            }
+            $item["items_id"]  = ($item["items_id"] ?? $key);
+            $item["levels_id"] = ($item["levels_id"] ?? 1);
+            $item["amount"]    = ($item["amount"] ?? 0);
 
-            $query->insert("accounts_equipment_items")
-                  ->values([
-                      "items_id"  => $item["id"],
-                      "levels_id" => $item["levels_id"],
-                      "amount"    => $item["amount"]
-                  ]);
+            $i = Model::create("accounts_equipment_items");
+            $i->items_id  = $item["items_id"];
+            $i->levels_id = $item["levels_id"];
+            $i->amount    = $item["amount"];
+            $i->save();
 
-            $insert_items[] = $Database->insert($query);
-
-            if(empty($insert_items[$i])) {
+            if(!is_numeric($i->id)) {
                 $Logger->debug("Couldn't insert `accounts_equipment_items`: ". $Database->getError());
                 $Logger->debug("Query executed: ". $Database->lastQuery);
-                //There's no need to make registration unsuccessfull just because we couldn't add 1 item
+                // There's no need to make registration unsuccessfull just because we couldn't add 1 item
             }
 
-            $query->clear();
+            $insert_items[] = $i->id;
         }
 
-        //Lets move the configuration queries to the configuration file so it's easier to edit in the future
-        $Settings->get("application.register.configurations")($insert_items, $insert_accounts_equipment_ships);
+        // Lets move the configuration queries to the configuration file so it's easier to edit in the future
+        $Settings->get("application.register.configurations")($insert_items, $ship->id);
 
-        //Turn for the galaxy gates
+        // Turn for the galaxy gates
         for($i = 0; $i < count($Settings->get("application.register.galaxygates")); $i++) {
             $gg = $Settings->get("application.register.galaxygates")[$i];
 
-            $query->insert("accounts_galaxygates")
-                  ->values([
-                      "galaxygates_id" => $gg["id"],
-                      "accounts_id"    => $insert_accounts,
-                      "parts"          => $gg["parts"],
-                      "lives"          => $gg["lives"],
-                      "amount"         => $gg["amount"]
-                  ]);
+            $gate = Model::create("accounts_galaxygates");
+            $gate->galaxygates_id = $gg["id"];
+            $gate->accounts_id    = $account->id;
+            $gate->parts          = $gg["parts"];
+            $gate->lives          = $gg["lives"];
+            $gate->amount         = $gg["amount"];
+            $gate->save();
 
-            $insert_gg = $Database->insert($query);
-
-            if(empty($insert_gg)) {
+            if(!is_numeric($gate->id)) {
                 $Logger->debug("Couldn't insert `accounts_galaxygate`: ". $Database->getError());
                 $Logger->debug("Query executed: ". $Database->lastQuery);
-                //There's no need to make registration unsuccessfull just because we couldn't add 1 galaxygate
+                // There's no need to make registration unsuccessfull just because we couldn't add 1 galaxygate
             }
-
-            $query->clear();
         }
 
-        //Now time for the less important things: The profile and the welcome message
+        // Settings
+        $settings = Model::create("accounts_settings");
+        $settings->accounts_id = $account->id;
+        $settings->save();
 
-        $query->insert("accounts_profiles")
-              ->values([
-                  "accounts_id" => $insert_accounts,
-                  "avatar"      => $Settings->get("application.register.avatar"),
-                  "status"      => $Settings->get("application.register.status")
-              ]);
+        if(!is_numeric($settings->id)) {
+            $Logger->debug("Couldn't insert `accounts_settings`: ". $Database->getError());
+            $Logger->debug("Query executed: ". $Database->lastQuery);
+        }
 
-        $insert_profile = $Database->insert($query);
+        // Now time for the less important things: The profile and the welcome message
+        $profile = Model::create("accounts_profiles");
+        $profile->accounts_id = $account->id;
+        $profile->avatar      = $Settings->get("application.register.avatar");
+        $profile->status      = $Settings->get("application.register.status");
+        $profile->save();
 
-        if(empty($insert_profile)) {
+        if(!is_numeric($profile->id)) {
             $Logger->debug("Couldn't insert `accounts_profiles`: ". $Database->getError());
             $Logger->debug("Query executed: ". $Database->lastQuery);
         }
 
-        $query->clear();
+        foreach($Settings->get("application.register.messages") as $m) {
+            $message = Model::create("accounts_messages");
+            $message->from_accounts_id = $m["author_id"];
+            $message->from_status      = $m["author_status"];
+            $message->to_accounts_id   = $account->id;
+            $message->to_status        = $m["status"];
+            $message->title            = $m["title"];
+            $message->text             = $m["text"];
+            $message->save();
 
-        foreach($Settings->get("application.register.messages") as $message) {
-            $query->insert("accounts_messages")
-                  ->values([
-                      "from_accounts_id" => $message["author_id"],
-                      "from_status"      => $message["author_status"],
-                      "to_accounts_id"   => $insert_accounts,
-                      "to_status"        => $message["status"],
-                      "title"            => $message["title"],
-                      "text"             => $message["text"]
-                  ]);
-
-            $insert_message = $Database->insert($query);
-
-            if(empty($insert_message)) {
-                $Logger->debug("Couldn't insert `accounts_messages`: ". $Ddatabase->getError());
+            if(!is_numeric($message->id)) {
+                $Logger->debug("Couldn't insert `accounts_messages`: ". $Database->getError());
                 $Logger->debug("Query executed: ". $Database->lastQuery);
             }
-
-            $query->clear();
         }
 
         return true;

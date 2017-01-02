@@ -117,29 +117,24 @@ class Controller extends Component
         $response = "";
         $URI = $this->_request->uri();
 
+        $action = ($this->_request->post["action"] ?? ($URI[1] ?? ""));
+        $params = [];
+
+        unset($this->_request->post["action"]);
+        $params = $this->_request->post;
+
         if(
-            !empty($URI[1]) &&
-            $this->isRouteable($URI[1])
+            !empty($action) &&
+            $this->isRouteable($action)
         ) {
-            $params = [];
-            if(isset($URI[2])) {
+            if(
+                empty($params) &&
+                count($URI) >= 2
+            ) {
                 $params = array_slice($URI, 2);
-            } else if(count($this->request->post->getAll()) > 0) {
-                $params = $this->request->post->getAll();
             }
 
-            $response = $this->{$URI[1]}(... $params);
-        }
-
-        if(!empty($this->request->post->action)) {
-            $params = [];
-            if(isset($URI[2])) {
-                $params = array_slice($URI, 2);
-            } else if(count($this->request->post->getAll()) > 0) {
-                $params = $this->request->post->getAll();
-            }
-
-            $response = $this->{$URI[1]}(... $params);
+            $response = $this->{$action}(... array_values($params));
         }
 
         if(empty($response)) {
