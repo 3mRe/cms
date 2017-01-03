@@ -22,7 +22,8 @@
         "alexya-framework/router": ">=3",
         "alexya-framework/tools": ">=3",
         "smarty/smarty": "^3.1",
-        "alexya-framework/localization": "^3.0"
+        "alexya-framework/localization": "^3.0",
+        "nategood/httpful": "^0.2.20"
     },
     "suggest": {
         "alexya-framework/database": "Required to use the Database components such a QueryBuilder and ORM",
