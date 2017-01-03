@@ -41,4 +41,18 @@ if(!require_once("vendor/autoload.php")) {
     return new \Application\API($Settings->get("application.api_host"), $template);
 });
 
+\Alexya\Container::registerSingleton("Server", function() {
+    /**
+     * Settings object.
+     *
+     * @var \Alexya\Settings $Settings
+     */
+    $Settigns = \Alexya\Container::Settings();
+
+    return new \Alexya\Tools\Collection($Settings->get("application.server"));
+});
+
+\Alexya\Foundation\View::global("server", \Alexya\Container::Server());
+\Alexya\Foundation\View::global("locale", \Alexya\Container::Translator()->locale);
+
 \Alexya\Container::Router()->route();
