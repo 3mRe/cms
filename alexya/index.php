@@ -23,4 +23,22 @@ if(!require_once("vendor/autoload.php")) {
     die("Please, execute `composer update` in order to install dependencies");
 }
 
+\Alexya\Container::Logger()->info("Request URI: ". \Alexya\Container::Settings()->get("alexya.router.uri"));
+
+\Alexya\Container::registerSingleton("API", function() {
+    /**
+     * Settings object.
+     *
+     * @var \Alexya\Settings $Settings
+     */
+    $Settings = \Alexya\Container::Settings();
+
+    $template = \Httpful\Request::init()
+                                ->method(\Httpful\Http::POST)
+                                ->expects(\Httpful\Mime::JSON)
+                                ->withStrictSSL();
+
+    return new \Application\API($Settings->get("application.api_host"), $template);
+});
+
 \Alexya\Container::Router()->route();
