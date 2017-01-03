@@ -36,7 +36,7 @@ if(!require_once("vendor/autoload.php")) {
     $template = \Httpful\Request::init()
                                 ->method(\Httpful\Http::POST)
                                 ->expects(\Httpful\Mime::JSON)
-                                ->withStrictSSL();
+                                ->sendsType(\Httpful\Mime::FORM);
 
     return new \Application\API($Settings->get("application.api_host"), $template);
 });
