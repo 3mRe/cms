@@ -1,0 +1,529 @@
+.bgc_fbConnect_container_link {
+    position: relative;
+    top: 30px;
+    left: 162px;
+    height: 0;
+}
+
+#bgc_signup_container p, .bgc .bgc_signup_form_legal, .bgc .bgc_doi_hint {
+    color: #CCCCCC;
+}
+#bgc_signup_container a {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+#bgc_signup_container {
+    position: relative;
+    border: none;
+    font-family:    Verdana, Arial, sans-serif;
+    padding: 5px;
+    color: #CCCCCC;
+}
+
+.bgcdw_login_container {
+    padding: 0;
+}
+
+.bgc_fbConnect_button {
+}
+
+.bgc_signup_container_description {
+    display: none;
+}
+
+.bgcdw_date_fields select {
+    border: none;
+}
+
+
+.bgcdw_login_form {
+    height: 0;
+}
+
+.bgc fieldset div {
+    height: 24px;
+}
+
+.bgc .bgcdw_date_fields {
+    height: 22px;
+}
+
+.bgc .bgcdw_login_form_login div label {
+    display: none;
+}
+
+.bgc .bgcdw_login_form .bgcdw_login_form_login {
+    float: left;
+}
+
+.bgc .bgcdw_login_container_remindpassword {
+    position:       relative;
+    top:            55px;
+    left:           -155px;
+    margin:         0;
+    padding:        0;
+    text-align:     left;
+}
+
+.bgc .bgcdw_login_container_remindpassword a{
+    color:          #8CBCC6;
+    font-size:      10px;
+    font-family:    Verdana,serif;
+    width:          156px;
+    text-decoration: underline;
+}
+
+.bgc .bgcdw_login_form_login #bgcdw_login_form_username,.bgc .bgcdw_login_form_login #bgcdw_login_form_password {
+    background:      url(/do_img/global/externalDefault/input_login.png?__cv=15e31e7322a8e84a16a1c4f6a76e5600) center center no-repeat;
+    border:         none;
+    width:          144px;
+    height:         22px;
+    text-align:     center;
+    color:          #BDBEC0;
+    font-size:      10px;
+    font-family:    Verdana;
+    padding-left:   6px;
+    padding-right:  6px;
+    outline: 0 none;
+}
+.bgcdw_login_form_buttons {
+    margin: 0;
+    padding: 0;
+}
+
+.bgc .bgcdw_login_container_form .bgcdw_login_form_buttons .bgcdw_login_form_login {
+    height:         21px;
+    font-size:      0;
+    color:          transparent;
+    border:         none;
+    border-radius:  0;
+    margin:         0 0 0 5px;
+    padding:        0;
+}
+
+.bgcdw_login_form_buttons .bgcdw_login_form_login {
+    background:  url(/do_img/de/externalDefault/button_login.png?__cv=cd725a3216183f70732bdf116cf41100) center center no-repeat;
+    width: 120px;
+}
+
+.bgc .bgcdw_login_form_buttons {
+    padding: 0;
+    margin-top: -8px;
+}
+
+.bgc .bgcdw_login_container_form .bgcdw_login_form_register {
+    display: none;
+}
+
+.bgc_signup_form_signup div label,
+.bgc_signup_form_bonusCode label,
+.bgcdw_captcha_response_container label {
+    width: 160px;
+    padding: 0;
+    font-weight: bold;
+    font-size: 11px;
+    color: #d9e0ee;
+    line-height: 23px;
+}
+
+.bgc_doi_hint {
+    display: block;
+    margin-top: 5px !important;
+    font-size: 11px !important;
+    width: 340px;
+}
+
+.bgc input[type="text"].bgcdw_errors, .bgc input[type="password"].bgcdw_errors, .bgc input[type="email"].bgcdw_errors{
+    background-color: inherit;
+    border: none;
+    box-shadow: none;
+    color: #FFFFFF;
+
+}
+
+.bgc .bgcdw_date_fields div {
+    border: none;
+    padding: 0;
+    width: 60px;
+}
+.bgc .bgcdw_captcha, .bgc_signup_gamblinghint {
+    width: 310px;
+    font-size: 11px;
+    color: #ffffff;
+}
+
+#recaptcha_image {
+    margin-top: 0px;
+}
+
+.bgc_signup_form .bgc_input_text,
+.bgc_signup_form .bgc_input_password,
+.bgc_signup_form .bgc_input_email,
+.bgc_signup_form .bgcdw_captcha_response_container {
+    background:      url(/do_img/global/externalDefault/input_form.png?__cv=4ee0eb53e8a6a926b2f781e6482df600);
+    background-repeat:  no-repeat;
+    background-position: 150px 0 !important;
+    margin-top: 8px !important;
+}
+
+#bgc_signup_form_username, #bgc_signup_form_password, #bgc_signup_form_passwordTwo, #bgc_signup_form_email, #recaptcha_response_field {
+    background: none;
+}
+#recaptcha_response_field {
+    margin-left: 3px;
+}
+.bgc_signup_container_form input {
+    font-family:    Verdana,Arial,Helvetica,sans-serif;
+    font-size:      11px;
+    height:         16px;
+    color:          #D9E0EE;
+    padding:        4px 2px 4px 2px !important;
+    border:         none !important;
+    width:          140px !important;
+    margin:         1px 0 0 3px;
+    background:     none;
+}
+/* Hack for IE9 and IE10 */
+@media screen and (min-width:0\0) {
+    .bgc_signup_container_form input {
+        margin:         3px 0 0 3px;
+    }
+}
+
+.bgc_signup_container_form input.bgc_signup_form_register {
+    position: relative;
+    left: 6px;
+    width: 292px !important;
+    height: 134px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: transparent;
+    font-size: 0 !important;
+    z-index: 1000;
+}
+
+.bgc_signup_container_form input.bgc_signup_form_register:hover {
+    background-position: 0px -134px;
+}
+
+.bgc_signup_container_form .bgcdw_date_fields select {
+    font-family:    Verdana, Arial, Helvetica, sans-serif;
+    height:         23px;
+    font-size:      9px;
+    color:          white;
+    border:         1px solid #596D7A;
+    background-color: #13232E !important;
+    margin:         0;
+}
+
+.bgc .bgcdw_date_fields .bgcdw_month_list {
+    padding: 0;
+    width: 50px;
+}
+
+.bgc_signup_container_form #bgc_signup_form_termsAndConditions,
+.bgc_signup_container_form #bgc_signup_form_newsletter,
+.bgc_signup_container_form #bgc_signup_form_newsletterPartner {
+    width: 13px !important;
+}
+/* Hack for IE9 and IE10 */
+@media screen and (min-width:0\0) {
+    .bgc_signup_container_form #bgc_signup_form_termsAndConditions,
+    .bgc_signup_container_form #bgc_signup_form_newsletter,
+    .bgc_signup_container_form #bgc_signup_form_newsletterPartner {
+        width: 16px !important;
+    }
+}
+
+.bgc .bgc_signup_form_legal label {
+    width: 300px;
+    line-height: 13px;
+}
+
+.bgc .bgc_signup_form_legal input {
+    height: auto;
+}
+
+.bgc .bgc_input_checkbox {
+    height: 34px;
+}
+
+.bgc .bgc_input_checkbox input {
+    background: inherit;
+}
+
+.bgcdw_capcha_reload, .bgc .bgc_signup_form_legal a {
+    color: #FFFFFF !important;
+    text-decoration: underline !important;
+}
+
+.bgc .bgc_signup_form_register {
+    float: none;
+}
+
+
+.bgcdw_errors_flash {
+    display: none;
+}
+
+
+.bgc div.bgcdw_errors,
+.bgc div.bgcdw_errors_flash
+.bgc_passwordReminder_container .bgcdw_errors_flash ul {
+    display: none;
+    right: 70px;
+}
+
+.bgcdw_login_container div.bgcdw_errors {
+    left: -18px;
+    z-index: 500;
+}
+
+.bgcdw_errors_all_wrapper {
+    display: block;
+    color: #000000;
+    z-index: 500;
+}
+
+.bgcdw_errors_all {
+    color: #ffffff;
+    font-size: 11px;
+    background:  url(/do_img/global/externalDefault/colorbox-bg_color.jpg?__cv=aa581ab66e5e2e81c5fb636c1c601400) transparent;
+    border-radius: 0;
+    border: 4px solid #ffffff;
+}
+
+.bgcdw_errors_all_close {
+    position:absolute;
+    top:-31px;
+    right:-34px;
+    background: url(/do_img/global/externalDefault/colorbox-button.png?__cv=5498afb6a3c2e9f7581ce890ee4db000) no-repeat -111px -50px;
+    width:40px;
+    height:40px;
+}
+
+.bgcdw_errors_all li {
+    margin-bottom: 12px;
+}
+
+
+
+/** facebook layer **/
+
+#facebookOverlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    filter:alpha(opacity=80);
+    opacity: 0.8;
+    z-index: 10;
+
+}
+
+.facebookConnectLayer {
+    color: #000000;
+    width: 380px;
+    height: 472px;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 100px;
+    z-index: 10;
+    background-color: #F0F0F0;
+    border-width: 10px;
+    /* IE 8 */
+    border-color: rgb(127, 127, 127);
+
+    border-color: rgba(127, 127, 127, .7);
+    border-style: solid;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.facebookConnectLayer .bgc {
+    font-family: Verdana;
+}
+
+.facebookConnectHeader {
+    width: 100%;
+    height: 70px;
+}
+
+#facebookLogo {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    left: 25px;
+    top: -18px;
+    background-image:  url(/do_img/global/facebookLayer/fb_logo.png?__cv=1ee2f9daf29299333d34ae2d4be57000);
+}
+
+#gameBrandingLogo {
+    width: 149px;
+    height: 53px;
+    position: relative;
+    top: 8px;
+    margin: auto;
+    background-image:  url(/do_img/global/facebookLayer/do_logo.png?__cv=2bab9ca6fe17b48720dbd431f52f0c00);
+}
+
+#facebookConnectClose {
+    width: 18px;
+    height: 19px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background:  url(/do_img/global/facebookLayer/close_button.png?__cv=db42f02bf1925a7940783440d0afcb00) no-repeat;
+    cursor: pointer;
+}
+
+#facebookConnectClose:hover {
+    background-position: 0px -19px;
+}
+
+#facebookConnectClose:active {
+    background-position: 0px -38px;
+}
+
+.facebookConnectContent {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.facebookConnectLayer fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.facebookConnectContent .bgc_fbConnect_form_cancel, .facebookConnectContent .bgc_fbSignup_form_cancel {
+    display: none;
+}
+
+.facebookConnectSpacer {
+    position: relative;
+    width: 320px;
+    height: 1px;
+    margin: -5px auto 15px auto;
+    background-color: #cccccc;
+}
+
+
+.bgc_fbconnect_link {
+    margin-bottom: 20px;
+}
+
+/*
+.bgc .bgc_fbConnect_form_connect .bgc_input_text label, .bgc .bgc_fbConnect_form_connect .bgc_input_password label, .bgc .bgc_fbSignup_form_signup .bgc_input_text label {
+    display: none;
+}
+
+.bgc_fbconnect_link.bgc h1, .bgc_fbconnect_signup.bgc h1 {
+    color: #333333;
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.bgc_fbconnect_link.bgc p, .bgc_fbconnect_signup.bgc p {
+    color: #666666;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.bgc .bgc_fbConnect_form_username, .bgc .bgc_fbConnect_form_password, .bgc .bgc_fbSignup_form_username {
+    position: relative;
+    margin-bottom: 40px;
+}
+#bgc_fbconnect_wrapper .bgc_button.bgc_fbConnect_form_connect, #bgc_fbconnect_wrapper .bgc_button.bgc_fbSignup_form_signup {
+    margin-top: 30px;
+}
+
+#bgc_fbconnect_wrapper input.bgc_fbSignup_form_signup[type="submit"] {
+    margin-top: 92px;
+}
+
+.bgc #bgc_fbConnect_form_username, .bgc #bgc_fbConnect_form_password, .bgc #bgc_fbSignup_form_username {
+    background: none;
+    background-color: #ffffff;
+    font-family: Verdana;
+    position: relative;
+    padding: 0;
+    padding-left: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+
+    width: 316px;
+    height: 22px;
+    color: #666666;
+    font-size: 12px;
+    border: 1px solid #cccccc;
+    line-height: 22px;
+    z-index: 1;
+    font-style: italic;
+}
+
+
+.bgc #bgc_fbConnect_form_password.empty {
+    background: transparent;
+}
+
+.bgc #bgc_fbConnect_form_password.filled {
+    background-color: #ffffff;
+}
+
+.facebookConnectContent .passwordString {
+    padding-left: 4px;
+    width: 316px;
+    height: 22px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    color: #666666;
+    font-size: 12px;
+    line-height: 22px;
+    font-style: italic;
+}
+
+
+
+input.bgc_fbConnect_form_connect, input.bgc_fbSignup_form_signup {
+    display: block;
+    position: relative;
+    width: 256px;
+    height: 35px;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #627AAC;
+    border: 1px solid #334770;
+    margin: auto;
+}
+
+input.bgc_fbConnect_form_connect:hover, input.bgc_fbSignup_form_signup:hover {
+    background-color: #738dc4;
+}
+
+input.bgc_fbConnect_form_connect:active, input.bgc_fbSignup_form_signup:active {
+    background-color: #738dc4;
+    border-color: #ffffff;
+}
+
+*/
+
+.bgcdw_birthdatedate {
+    margin-top: 5px !important;
+}
+.bgc_signup_container {
+    border: none;
+}

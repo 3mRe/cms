@@ -1,0 +1,246 @@
+
+body {
+    background-color: #000;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    min-width: 1200px;
+}
+
+#eh_head_wrapper {
+    position: absolute;
+    width: 500px;
+    z-index: 5;
+    left: 50%;
+    height: 0;
+}
+#eh_head_info {
+    background:  url(/do_img/global/externalHome/assets/header.png?__cv=61ba4ded8cefa8c53f22d09bf0d4a500) no-repeat left top;
+    margin: 0;
+    width: 424px;
+    height: 39px;
+    padding-left: 93px;
+    position: relative;
+    left: -656px;
+}
+#eh_lang_selection_wrapper, #eh_reg_display {
+    float: left;
+}
+#eh_lang_selection_wrapper {
+    width: 150px;
+    margin-right: 25px;
+    padding-top: 13px;
+}
+#eh_reg_display {
+    width: 175px;
+    padding-top: 15px;
+}
+.do_social_features {
+    width: 269px;
+    position: absolute;
+    left: 220px;
+    top: 105px;
+    height: 20px;
+}
+.do_social_features .socialBox {
+    float: left !important;
+    margin-right: 5px;
+}
+
+#do_cobrand_container {
+    position: absolute;
+    left: 220px;
+    top: 155px;
+}
+
+#selectedLanguageBox {
+    cursor: pointer;
+}
+#selectedLanguageBox #currentLanguageFlag {
+    float: left;
+    width: 16px;
+    margin-right: 5px;
+}
+#selectedLanguageBox #currentLanguageText {
+    float: left;
+    width: 114px;
+    padding-top: 2px;
+}
+#selectedLanguageBox #languageArrow {
+    float: right;
+    width: 13px;
+    height: 10px;
+    background:  url(/do_img/global/externalDefault/arrow_lanugage.png?__cv=64b23adccedb1812b0848996520ff800) no-repeat;
+}
+#languageBox {
+    width: 155px;
+    border: 1px solid #294153;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 10px;
+    margin-top: 20px;
+}
+#languageBox .languageList {
+    height: 16px;
+    position: relative;
+    left: 18px;
+    cursor: pointer;
+}
+#languageBox .languageList .languageFlag {
+    width: 16px;
+    height: 11px;
+    float: left;
+    margin-right: 5px;
+}
+#languageBox .languageList .languageName {
+    text-align: left;
+    font-size: 10px;
+    font-family: Verdana;
+    line-height: 10px;
+    letter-spacing: 0;
+    overflow: hidden;
+    width: 109px;
+    height: 12px;
+    color: #FFF;
+}
+
+.fontStyle {
+    font-family: Verdana,serif;
+    font-size: 10px;
+    letter-spacing: 0;
+    line-height: 6px;
+    color: #777;
+}
+
+#eh_main_wrapper {
+    width: 100%;
+    background:  url(/do_img/global/externalHome/assets/bg_main.jpg?__cv=d1613ed7597e66908d558aa0546e8800) no-repeat center top;
+    min-height: 1030px;
+    min-width: 1200px;
+    position: absolute;
+}
+#eh_top_overlay {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    min-height: 910px;
+    min-width: 1200px;
+    background:  url(/do_img/global/externalHome/assets/overlay_main.png?__cv=476ecf844472e61d88bb99a17c335200) no-repeat center top;
+}
+#eh_login_container {
+    float: right;
+    width: 275px;
+    margin-top: 5px;
+}
+#eh_top_wrapper {
+    clear: both;
+    width: 988px;
+    margin: 0 auto 0;
+    position: relative;
+}
+
+#eh_reg_container {
+    margin: 0 auto;
+    width: 335px;
+    min-height: 600px;
+}
+
+#do_registration_container_titel {
+    margin: 120px auto 0;
+    display: block;
+}
+
+#eh_bg_v1 {
+    background-image:  url(/do_img/global/externalHome/assets/background01.jpg?__cv=397704c29a84c67f3f4995196f1e8500);
+}
+#eh_bg_v2 {
+    background-image:  url(/do_img/global/externalHome/assets/background02.jpg?__cv=0f952c6a9b05e5ce6cd802f56aa0d700);
+}
+#eh_bg_v3 {
+    background-image:  url(/do_img/global/externalHome/assets/background03.jpg?__cv=29ecf25481191d9435057f469c755400);
+}
+.eh_company_bg {
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 467px;
+    position: absolute;
+    top: 104px;
+    left: 0;
+}
+
+#footerContainer {
+    position: relative;
+}
+
+#eh_description_txt {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #515252;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#eh_description_txt h1 {
+    font-size: 14px;
+}
+#eh_description_txt h2 {
+    font-size: 12px;
+}
+#eh_description_txt h3 {
+    font-size: 10px;
+}
+
+#eh_footer {
+    width: 1000px;
+    margin: 20px auto 0;
+}
+#eh_footer, #eh_footer a {
+    text-align: center;
+    color: #515252;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+#eh_trailer_container {
+    width: 475px;
+    margin: 0 auto;
+}
+#eh_screenshot_container_left, #eh_screenshot_container_right {
+    width: 218px;
+    height: 294px;
+    position: absolute;
+    top: 590px;
+}
+#eh_screenshot_container_left {
+    float: left;
+    background:  url(/do_img/global/externalHome/assets/screenshots_left.png?__cv=452046c6e4402205a10818f3a03bd300) no-repeat top center;
+    left: 50px;
+}
+#eh_screenshot_container_right {
+    float: right;
+    background:  url(/do_img/global/externalHome/assets/screenshots_right.png?__cv=f90da0e9b95b577d6b74d39a1980ec00) no-repeat top center;
+    right: 43px;
+}
+
+#eh_screenshot_container_left a, #eh_screenshot_container_left a:active {
+    text-decoration: none;
+    border: 0 none;
+}
+
+.eh_screen_trigger {
+    display: block;
+    height: 130px;
+    margin-left: 20px;
+    width: 180px;
+}
+
+#cboxPrevious, #cboxNext, #cboxCurrent {
+    display: none !important;
+}
+
+#loginErrorWrapper {
+    display: none;
+}
+.loginErrorMessage {
+    color: #FFFFFF;
+}

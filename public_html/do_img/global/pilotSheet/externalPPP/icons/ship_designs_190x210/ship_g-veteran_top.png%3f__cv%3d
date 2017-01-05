@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+            <title>DarkOrbit Reloaded | MMO & space shooter</title>
+
+            <meta http-equiv="X-UA-Compatible" content="IE=9" />
+
+    <meta name="keywords" content="Browser games, DarkOrbit, Space shooter games, Games, Free, Online games, Action game, Shooter" />
+<meta name="robots" content="">
+
+    <meta http-equiv="Content-Language" content="at, de, ch">
+    <meta name="language" content="deutsch, de, at, ch">
+<meta name="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="author" content="Bigpoint GmbH">
+<meta name="publisher" content="Bigpoint GmbH">
+<meta name="revisit-after" content="10 days">
+<meta name="page-topic" content="Leisure, Entertainment">
+<meta name="reply-to" content="webmaster@darkorbit.com">
+<meta name="distribution" content="global">
+<meta name="company" content="Bigpoint GmbH">
+<meta name="msvalidate.01" content="4B36CDBD86CDB13998A5A737B1D54310" /><link rel="canonical" href="http://www.darkorbit.co.uk/" />
+
+<meta property="og:title" content="DarkOrbit" />
+<meta property="og:type" content="game" />
+<meta property="og:url" content="http://darkorbit.bigpoint.com?aid=2640" />
+<meta property="og:image" content="http://darkorbit-22.ah.bpcdn.net/do_img/global/fb_icon.jpg?__cv=3474204cf94bfb7665556ed92f602200" />
+<meta property="og:site_name" content="DarkOrbit" />
+<meta property="fb:admins" content="100002458879178" />
+<meta property="fb:app_id" content="364160817714" />
+<meta property="og:description" content="DarkOrbit is the ultimate space shooter. Explore the endless expanses of universe in one of the best and most exciting online browser games ever produced. Brave all dangers and go where nobody's ever gone before - either alone or with others. Set a course for undiscovered galaxies and seek out new lifeforms!" />
+<meta property="og:locale" content="en" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="en_GB" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="nn_NO" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="sk_SK" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="bg_BG" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="ja_JP" />
+
+
+
+        <link rel="SHORTCUT ICON" href="http://darkorbit-22.ah.bpcdn.net/favicon.ico"  type="image/x-icon">
+
+        <link href="http://sharedservices.bpcdn.net/bgc/css/bgc-0.10.10.min.css?0001" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="http://sharedservices.bpcdn.net/bgc/js/bgc-0.10.10.min.js?0001" charset="UTF-8"></script>
+<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js" charset="UTF-8"></script>
+
+
+        <link rel="stylesheet" media="all" href="http://darkorbit-22.ah.bpcdn.net/css/cdn/bgc.css?__cv=6ba623bcc61496dd6d9eddb4c8a09700" />
+        <link rel="stylesheet" media="all" href="http://darkorbit-22.ah.bpcdn.net/css/cdn/externalHomeNew.css?__cv=d0a553dcc78d83c093fcd815577d1300" />
+        <link rel="stylesheet" media="all" href="http://darkorbit-22.ah.bpcdn.net/css/cdn/jQuery/colorbox-1.3.15.css?__cv=da644e3772f52496bf8edc1724b08c00" />
+        <script type="text/javascript" src="http://darkorbit-22.ah.bpcdn.net/js/jQuery/jquery-1.4.4.min.js?__cv=73a9c334c5ca71d70d092b42064f6400"></script>
+        <script type="text/javascript" src="http://darkorbit-22.ah.bpcdn.net/js/jQuery/colorbox-1.3.15.js?__cv=a194fc92be610b91fcfb885968691800"></script>
+        <script type="text/javascript" src="http://darkorbit-22.ah.bpcdn.net/sharedpages/static/plugin/social/slayer/js/v1/slayer-min.js"></script>
+        <script language="javascript">
+var CDN = "http://darkorbit-22.ah.bpcdn.net/";
+</script>
+
+
+<script type="text/javascript" src="http://darkorbit-22.ah.bpcdn.net/js/externalHomeNew.js?__cv=270288210fead54b7f01782a22c39d00"></script>
+
+
+
+
+
+        <!-- affiliateHeadTag -->
+<link rel="meta" href="http://int1.darkorbit.bigpoint.com/sharedpages/icra/labels.php" type="application/rdf+xml" title="ICRA labels" />
+<meta http-equiv="pics-Label" content='(pics-1.1 "http://www.icra.org/pics/vocabularyv03/" l gen true for "http://int1.darkorbit.bigpoint.com" r (n 0 s 0 v 0 l 1 oa 0 ob 0 oc 0 od 1 oe 0 of 0 og 0 oh 0 c 1))' />
+        <script type="text/javascript" src="/sharedpages/static/plugin/social/slayer/js/v1/en/slayer-min.js?__cv=8e1465729ed7ddf86572d16ff1fb4400"></script>
+
+
+        <style>
+            
+            .bgc_signup_container_form input.bgc_signup_form_register {
+            background: url("http://darkorbit-22.ah.bpcdn.net/do_img/en/externalDefault/cta.png?__cv=a3c9d3aefa9c69f9a8a99e587b8c7800") no-repeat;
+            }
+            
+        </style>
+    </head>
+    <body>
+    
+    <script>
+	function checkMyCookies() {
+
+	    var cookieLeMess = 'Please activate cookies for your browser.';
+
+		var cookieEnabled=(navigator.cookieEnabled)? '' : cookieLeMess
+
+		//if not IE4+ nor NS6+
+		if (typeof navigator.cookieEnabled =="undefined" && !cookieEnabled){
+
+			cookieEnabled=(document.cookie.indexOf("testcookie")!=-1)? '' : cookieLeMess
+		}
+
+		return cookieEnabled;
+	}
+</script>
+    <noscript><div id="noScript">Please activate Java Script for your browser.</div></noscript>
+    
+    <script type="text/javascript">
+        
+        var cookieMessage = checkMyCookies()
+        if("" != cookieMessage) {
+            document.write('<div id="noCookie">' + cookieMessage + '</div>');
+        }
+        
+    </script>
+        <div id="busy_layer"></div>
+    
+    <!-- EventStream ServerAdapter getJavascriptPageTag --><script language="javascript">window.BpEventStream=window.BpEventStream||{"time":new Date().getTime(),"context":{"pid":22,"uid":167770024,"tid":"deb539c1358e703826b9b02ceae8835c","iid":"01542612eaafaa72256d2d02b857c5f7","sid":"93b8d5187785db1d8efe66b95f6beb05","ctime":1483436801035}};</script><script language="javascript" src="//assets.bpsecure.com/eventstream/eventstream.js?ts=4944789"></script>
+
+    <!-- affiliateStartTag -->
+
+
+    <script type="text/javascript">
+        
+
+        jQuery(document).ready(function(){
+            /* slayer   */
+        var initParameter = {
+            jQueryLibrary   : jQuery, // Pass the jQuery object, the way you named it
+            google          : { language : 'en-GB'},
+            facebook        : { language : 'en_GB'},
+            gameId        	: 22,
+            gameTitle     	: 'Darkorbit'
+        }
+
+            // Initialize SLAYER
+            SLAYER.init(initParameter);
+
+            var plusoneParameter = {
+                renderPlaceholder  : false,                     // Render placeholder according to german law. Default 'false'
+                container          : 'DOGooglePlus',                // Div tag where the button should be rendered
+                annotation         : 'bubble',                     // Rendering of the count. Options: none, bubble, inline
+                href               : 'http://darkorbit.bigpoint.com',  // The link you want to plus one
+                size               : 'medium',                 // Size of the button. Can be: small, medium, standard, tall
+                onstartinteraction : function(json) {},          // This function gets called if the user hovers the +1 button
+                onendinteraction   : function(json) {},          // This function gets called if the user unhovers the +1 button
+                expandto           : 'top, right, bottom, left' // The preferred positions in which to display hover and confirmation bubbles, relative to the button.
+            }
+            SLAYER.renderPlusOne(plusoneParameter);
+
+            var facebooklikeParameter = {
+                container   : 'DOFacebookLike',            			// Div container where the button will be rendered
+                href        : 'http://darkorbit.bigpoint.com',    	// Default is current URL
+                send        : false,                     			// Show the send button. Default false
+                layout      : 'button_count',                		// You can use 'standard', 'button_count' or 'box_count'
+                show_faces  : false,                      			// Show profile pictures of people who liked. Only works with standard layout.
+                width       : 100,                     				// Width of the button.
+                action      : 'like',                   			// What to display on the button. Default 'like'. Options: 'like', 'recommend'
+                font        : 'arial',                   			// The font on the button. Available fonts: 'arial', 'lucida grande', 'segoe ui', 'tahoma', 'trebuchet ms', 'verdana'
+                colorscheme : 'light'                  				// Colors for the button. Default 'like'. Options: 'light', 'dark'
+            }
+            SLAYER.renderLike(facebooklikeParameter);
+        });
+
+        /* open ID */
+
+        function showOpenId(){
+            jQuery('#loginForm_openId_container').show();
+        }
+        function hideOpenId(){
+            jQuery('#loginForm_openId_container').hide();
+        }
+        
+    </script>
+
+
+<style>
+        /* smarty fix for lang placeholder */
+    
+    .signup_submit {
+    background: url("http://darkorbit-22.ah.bpcdn.net/do_img/en/externalDefault/cta.png?__cv=a3c9d3aefa9c69f9a8a99e587b8c7800") center center no-repeat;
+    }
+    .bgcdw_login_form_buttons .bgcdw_login_form_login{
+    background: url("http://darkorbit-22.ah.bpcdn.net/do_img/en/externalDefault/button_login.png?__cv=cd725a3216183f70732bdf116cf41100") center center no-repeat;
+    }
+    #loginForm_openId_container #loginForm_openId_loginButton{
+    background: url("http://darkorbit-22.ah.bpcdn.net/do_img/en/externalDefault/button_login.png?__cv=cd725a3216183f70732bdf116cf41100") no-repeat scroll center center transparent;
+    }
+    
+</style>
+
+<form id="bgc_sasform_config"><input type="hidden" name="reloadToken" value="dcfa1b0eb8968dbb52203b7671034be3">
+    <input type="hidden" name="placeholder" value="login">
+</form>
+
+<input type="hidden" id="tucReplacementTxt" value="The game is subject to the following:" />
+
+<div id="eh_main_wrapper">
+
+    
+    <div id="eh_head_wrapper">
+        <div id="eh_head_info">
+            <div id="eh_lang_selection_wrapper" class="fontStyle">
+                <div id="selectedLanguageBox" onclick="jQuery('#languageBox').slideToggle(300);">
+                    <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/en.png?__cv=4780233e416a7a10e2f24245f9d4ed00" alt="English UK" id="currentLanguageFlag" />
+                    <div id="currentLanguageText">English UK</div>
+                    <div id="languageArrow"></div>
+                </div>
+
+                <div id="languageBox" style="display: none">
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=de';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/de.png?__cv=0d24c6cc314545488440dd6ad9827200);"></div>
+                        <div class="languageName">Deutsch</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=en';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/en.png?__cv=4780233e416a7a10e2f24245f9d4ed00);"></div>
+                        <div class="languageName">English UK</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=fr';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/fr.png?__cv=40f86c9d2d364ab79ad841b84a103000);"></div>
+                        <div class="languageName">Français</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=us';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/us.png?__cv=4e0a76533cc5a5a0aab42d43ab1a0f00);"></div>
+                        <div class="languageName">English US</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=es';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/es.png?__cv=05d92c877921ed463291023818faed00);"></div>
+                        <div class="languageName">Español</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=sv';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/sv.png?__cv=014f2e55f8dbeba40c7bb5d5bb1cfc00);"></div>
+                        <div class="languageName">Svenska</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=ru';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/ru.png?__cv=7d3638482ca0dd6f44a9524647b98700);"></div>
+                        <div class="languageName">Pyccĸий</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=it';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/it.png?__cv=de010805893259e0532d9685585aa500);"></div>
+                        <div class="languageName">Italiano</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=tr';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/tr.png?__cv=95b9afb0918caf747aa565da8e04f800);"></div>
+                        <div class="languageName">Tϋrkçe</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=fi';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/fi.png?__cv=f0cec5e7c0be4f2324e784574c5fb300);"></div>
+                        <div class="languageName">Suomi</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=pl';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/pl.png?__cv=f258bd02b53305188cf170dead593f00);"></div>
+                        <div class="languageName">Polski</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=da';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/da.png?__cv=ef7df6e9cccf21be1af070ffdf95be00);"></div>
+                        <div class="languageName">Dansk</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=pt';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/pt.png?__cv=842367c73880953df40ef972cc2a0200);"></div>
+                        <div class="languageName">Português</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=nl';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/nl.png?__cv=1342edbbf4f75a44bb906c19ce99c800);"></div>
+                        <div class="languageName">Nederlands</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=no';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/no.png?__cv=a2b90aaa8629340810aaf37af929fd00);"></div>
+                        <div class="languageName">Norsk</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=cs';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/cs.png?__cv=b60080f2f8ae73df8d66e60ae12bf600);"></div>
+                        <div class="languageName">Čeština</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=sk';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/sk.png?__cv=c37310037495f7c73cec93b958396b00);"></div>
+                        <div class="languageName">Slovenčina</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=pt_BR';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/pt_BR.png?__cv=573df60602af4a6824d68ae946971e00);"></div>
+                        <div class="languageName">Português BR</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=ro';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/ro.png?__cv=09157076a68899af0af66412cfd98e00);"></div>
+                        <div class="languageName">Română</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=el';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/el.png?__cv=d4001a73f840a216417f512a538ec000);"></div>
+                        <div class="languageName">Ελληνικά</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=bg';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/bg.png?__cv=fbc457b23d0a43c97be406c9705a3f00);"></div>
+                        <div class="languageName">Български</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=hu';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/hu.png?__cv=7b1ae9b429bc379064d0995cf2abfb00);"></div>
+                        <div class="languageName">Magyar</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=es_CO';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/es_CO.png?__cv=c1e4ae7a9e95cce975e946498380c900);"></div>
+                        <div class="languageName">Colombia</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=es_VE';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/es_VE.png?__cv=f18fab91cb99d465b9b91214f9846400);"></div>
+                        <div class="languageName">Venezuela</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=es_CL';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/es_CL.png?__cv=1961fb3070a46d739a7c022dc0296800);"></div>
+                        <div class="languageName">Chile</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=es_AR';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/es_AR.png?__cv=49a3f87889dff19c1a631e5db25ece00);"></div>
+                        <div class="languageName">Argentina</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=es_PE';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/es_PE.png?__cv=6cb8717eecb63b8f25733f00c092cf00);"></div>
+                        <div class="languageName">Perú</div>
+                    </div>
+                                    <div class="languageList" onclick="location.href = 'index.es?lang=ja';">
+                        <div class="languageFlag" style="background-image: url(http://darkorbit-22.ah.bpcdn.net/do_img/global/flaggen/plain/ja.png?__cv=7d27b75ffd52df2a4614733626482d00);"></div>
+                        <div class="languageName">日本語</div>
+                    </div>
+                
+                </div>
+            </div>
+            <div id="eh_reg_display" class="fontStyle">
+            Registered: 8447353
+            </div>
+        </div>
+
+                    <div class="do_social_features">
+                <div id="DOGooglePlus" class="socialBox "></div>                <div id="DOFacebookLike" class="socialBox "></div>            </div>
+            <div style="clear: both;"></div>
+        
+                    <div id="do_cobrand_container">
+                <img id="PartnerCobrandLogo" src="http://pit-835.a.bpcdn.net/published/cobrands/0_22_3.png" />
+            </div>
+            </div>
+
+    <div id="eh_top_overlay">
+        <div id="eh_top_wrapper">
+            <div id="eh_login_container">
+                <input type="hidden" id="autoFocus" value="loginForm" />
+                
+                <div class="bgc_fbConnect_container_link bgc">
+    <a class="bgc_fbConnect layout2" href="http://www.facebook.com/dialog/oauth?client_id=364160817714&amp;redirect_uri=http%3A%2F%2Fint1.darkorbit.bigpoint.com%2FProjectApi%2FFacebookConnect%3FauthUser%3D22%26token%3D6ZMaDHc0JwxoSRq4ek-xt_Wr15UQYdEwEXyYuM76u4_Vh8GJ4KpSvCRv6BBu8bO6EJET91BklOdGcg5W2QwrDBT7kYiKhbRRZexTzK8em8yiwyJWZAqgcYwG8U6gjWzoWofsUotjjWqyVgmPM___oftAsjglEsJqIB4KI7JCWMJZ8alr2cvv6VcwsfNopOlasS9iWxmkhZJ2rxhb6dy-hJMQ0vs690dptvdLQiI4kqsf3_gUJVTNEU5QNkavbkQVLIidHfaiMfB4btzrbVODUwtbKbQyo_t3deX2geyIAYxj75nFn1gfYAyLsFuas7pX2FB79z6pM7y16O2c9novdnEd_OPibBl_ny-_-hXJzDwLuLmJzclc82SXPv9Fr8PIUcqea5xJ444-OLrB0jOsiTfr3cvkrX4LhT3o-fRp0xhABTAWosqmMvbE4Ln4Z-Q1yWDnJX9pPbQT4k02lZMDQ5JTY0GXHtEhd6MlYfSKBObBg3hKfwRgV7GjSHzTlPF0gPxNWdoI5jZ90tAyobehC_RpTvJ_yph-vnGkrUmbM8YD4c88Syvd1ZM5qMGQd7i8E7waf6hvxUN2oot8irhjUoQ1Xxo8Phbel5QG3yhLmGS1AzdqHO2VCLdz-9NJPkRbLdk48Kw8oQ2yqZVK91yuqwnY6Vkl2HKDDcyFTYP1-g0&amp;scope=email%2Cuser_birthday">
+        <div class="bgc_fbConnect_button bgc_facebookIcon"></div>
+    </a>
+</div>
+
+                    <!-- contains login -->
+                <div class="bgcdw_login_container bgc">
+
+    <div class="bgcdw_login_container_form">
+        <form name="bgcdw_login_form" method="post" class="bgcdw_login_form" action="https://auth3.bpsecure.com/Sas/Authentication/Bigpoint?authUser=22&amp;token=JmQt0ktuw5cP2cGxn88I3W_RmZRGlEi10rbLEZZvK7oWpKJv72cnfzXoHuGWT-UbShbJZTW5xKeh2x07XJtazf8L1TobZXjLXcmYafAA5nnVisQTrDkDcoMiwHabErU08UGUF4FLVTS_zMbnOH1DtagvZQl516YLCuXF18YT5u7pJnBOVugP7lnY9ybEQcF5qmn4vaYOSjCWqPBqqpJjPgNUbvi2gkOFdODJn5IawQhc0pB6iYhOyVF6lZrtEy2bab1mHiqC8on62DBRr3MeNR8LeczbrGnPpvnJMaRYh2YUtX4hmnUMscmj7IB21JodNwBNgxazsi2G-DllY4JghPjDpsDpjgLJCjEuGvy8got7MyOL4jo3Nc1eF6qymIb1NVMm3jcq7v-2agfC4GIQCH-TfBcqPr5GW9PrO6dEsphJvOdmbQZKkl7Y0FA">
+            <div class="bgc_error_translations" style="display:none">
+                <div data-error-key="gl.error.username_1">This username is too short. Please choose a new username which has between 4 and 20 characters.</div>
+                <div data-error-key="gl.error.username_2">This username is too long. Please choose a new username which has between 4 and 20 characters.</div>
+                <div data-error-key="gl.error.username_6">Please enter your username.</div>
+                <div data-error-key="gl.error.password_1">The password is too short. Please choose a new password which has between 4 and 45 characters.</div>
+                <div data-error-key="gl.error.password_2">The password is too long. Please choose a new password which has between 4 and 45 characters.</div>
+                <div data-error-key="gl.error.password_8">Please enter your password.</div>
+                <div data-error-key="gl.error.email_1">Your e-mail address doesn't seem to be correct. Please enter a valid e-mail address.</div>
+                <div data-error-key="gl.error.checkbox_tick">Please tick the checkbox.</div>
+            </div>
+            <fieldset class="bgcdw_login_form_login">
+<div class="bgcdw_input_text bgcdw_login_form_username">
+                    <label for="bgcdw_login_form_username">Username</label>
+                    <input id="bgcdw_login_form_username" name="username" type="text" maxlength="20">
+</div>
+                <div class="bgcdw_input_password bgcdw_login_form_password">
+                    <label for="bgcdw_login_form_password">Password</label>
+                    <input id="bgcdw_login_form_password" name="password" type="password" maxlength="45">
+</div>
+            </fieldset>
+<div class="bgcdw_login_container_remindpassword">
+                <a class="bgcdw_remindpassword" target="_self" href="https://account.bpsecure.com/PasswordReminder?pid=22&amp;lang=en">Forgot your password?</a>
+            </div>
+            <fieldset class="bgcdw_login_form_buttons">
+<input class="bgcdw_button bgcdw_login_form_login" type="submit" value="Login"><input class="bgcdw_button bgcdw_login_form_register" type="button" onclick="window.location='/';return false;" value="Register">
+</fieldset>
+</form>
+    </div>
+</div>
+
+
+                            </div>
+
+            <div id="eh_reg_container">
+                <br />
+                <img id="do_registration_container_titel" src="http://darkorbit-22.ah.bpcdn.net/do_img/en/externalDefault/txt_form.png?__cv=56c5145beab0acfad9af863327653300" alt="Regform title" />
+                <img id="do_registration_container_splitter" src="http://darkorbit-22.ah.bpcdn.net/do_img/global/externalHome/assets/blue_splitter.png?__cv=c93b27f6423b60b4d94bc1cc3331b500" />
+
+                <div id="bgc_signup_short_container" class="bgc_signup_container bgc">
+    <div class="bgc_signup_container_form">
+        <form method="post" name="bgc_signup_form" class="bgc_signup_form" autocomplete="off" action="https://auth3.bpsecure.com/Sas/User/ShortReg?authUser=22&amp;token=gX-ddAhAyRLRsRZ8v2CviybxizFGQ-tfX8c1f_NkskHPAD6XBhjhz6NEqLtnw2iaXqbed7xDrzbszN4QySYouQFgFLJjiO8A7T_V8eppLl9jg2f7Sc2FH0d6yG_mdU6idipa7Syk1RhIwcmvq-NyQBArXF-cnAG0V9atybq0Kd4MHR1DmR5Seb5GLRHWMhMA_utz2Mye3ued86c7SQEf5gDilnCb_PWd3S5Qkq-WReRm3XZ5JQKtKNJH64D7RlHHb9iLsDyvucAdMKK3_nWqqXJ5Jwk16LeePNTr2ysZWP_XPWRlLHNv9q80FBMQlJPwSJYnGfKWLfuHFEsrgKJ2TxBwUQAqKV3x6_posJD_blLSTxyvqwx66ll7HNNb8ekmB_8VyqchSOYUv-OYCcyWOZ4JtKjnEsb8uYyQ44FUU7S1ZYGN4WzuXONPCMojRrMFSwW6l1t9ie3gKWOKxTvwFE6k-JA-w4XPs0wJxpDG-MQyrvwdqDrW4HkOS65r0J5MP8xm8yQ4YhEz36RiXphbWEP8HrB_G6vFQJ3o9cpyY-NZ11-IgAbH4nR62_haQpZph-0UJQ2ctDfYG5BaZnGz_AYWy9q6tCZWDAiSmPVKm-95Sq4eFqJaA99y_K0S-zF_P61j_G9JAA">
+        <div class="bgc_error_translations" style="display:none">
+            <div data-error-key="gl.error.username_1">This username is too short. Please choose a new username which has between 4 and 20 characters.</div>
+            <div data-error-key="gl.error.username_2">This username is too long. Please choose a new username which has between 4 and 20 characters.</div>
+            <div data-error-key="gl.error.username_3">This username contains invalid characters. Please do not use any spaces or special characters, for example, @.</div>
+            <div data-error-key="gl.error.password_1">The password is too short. Please choose a new password which has between 4 and 45 characters.</div>
+            <div data-error-key="gl.error.password_2">The password is too long. Please choose a new password which has between 4 and 45 characters.</div>
+            <div data-error-key="gl.error.password_3">The password you entered contains invalid characters.</div>
+            <div data-error-key="gl.error.password_6">The passwords you entered do not match.</div>
+            <div data-error-key="gl.error.password_7">Your password must be different than your username.</div>
+            <div data-error-key="gl.error.login_1">No account with this combination of username and password was found.</div>
+            <div data-error-key="gl.error.email_1">Your e-mail address doesn't seem to be correct. Please enter a valid e-mail address.</div>
+            <div data-error-key="gl.error.captcha_1">That didn't work. Please enter the characters from the image.</div>
+        </div>
+            <fieldset class="bgc_signup_form_signup">
+<div class="bgc_input_text bgc_signup_form_username">
+                    <label for="bgc_signup_form_username">Username</label>
+                    <input maxlength="20" minlength="4" id="bgc_signup_form_username" name="username" type="text">
+</div>
+                <div class="bgc_input_password bgc_signup_form_password">
+                    <label for="bgc_signup_form_password">Password</label>
+                    <input maxlength="45" minlength="4" id="bgc_signup_form_password" name="password" type="password">
+</div>
+                <div class="bgc_input_email bgc_signup_form_email">
+                    <label for="bgc_signup_form_email">E-mail</label>
+                    <input maxlength="260" id="bgc_signup_form_email" name="email" type="email">
+</div>
+                
+            </fieldset>
+<div class="bgcdw_captcha" id="id531DEECE_0">
+<p bgc_translate_param="">To complete your changes successfully, please enter the security code which is shown.<br /><br /></p>
+<div id="recaptcha_image" style="width:300px;height:57px;"></div>
+<a class="bgcdw_captcha_reload" onclick="Recaptcha.reload();return false;">Generate a new code</a><div class="bgcdw_captcha_response_container">
+<label for="recaptcha_response_field">Enter code</label><input type="text" name="recaptcha_response_field" id="recaptcha_response_field">
+</div>
+<script type="text/javascript">var RecaptchaOptions = {'theme': 'custom', 'custom_theme_widget':'id531DEECE_0'};Recaptcha.create('6Ldud8cSAAAAAM5W4-JHqa2vEQuqEX19LN8HLQIl', 'id531DEECE_0', RecaptchaOptions);</script>
+</div>
+            
+            <fieldset class="bgc_signup_form_legal">
+                <div class="bgc_signup_form_policies">
+                     <span>The game is subject to the following:</span><br><a class="link_tac" target="_blank" href="https://legal.bigpoint.com/ES/terms-and-conditions/en">Terms & Conditions</a>
+                     <a class="link_dataPrivacy" target="_blank" href="https://legal.bigpoint.com/ES/privacy-policy/en">Data Privacy Policy</a>
+                     
+                 </div>
+            </fieldset>
+<fieldset class="bgc_signup_form_buttons">
+<input class="bgc_button bgc_signup_form_back" type="button" onclick="window.location='/';return false;" value="Back"><input class="bgc_button bgc_signup_form_register" type="submit" value="Register">
+</fieldset>
+</form>
+    </div>
+</div>
+<script language="javascript">if(window.BpEventStream && window.jQuery) (function() {window.jQuery(".bgcdw_remindpassword").click(function() { window.BpEventStream.track("account.forgotpassword.click"); });window.jQuery(".bgc_signup_form_register").click(function() { var e=[]; window.jQuery("div.bgcdw_errors ul").each(function(_,i){e.push(window.jQuery(i).attr("data-error"));}); if (!e || e.join("")=="") return; window.BpEventStream.track("account.signup.error", {"error":e.join(",")}); });function isVisible(elm) { if (!elm.is(":visible")) return false; var w=window.jQuery(window); if (elm.offset().top < w.scrollTop()) return false; if (elm.offset().top > w.scrollTop()+w.height()) return false; return true; }window.setTimeout(function() { if (isVisible(window.jQuery(".bgcdw_login_container"))) { window.BpEventStream.track("account.login.visible"); } else { window.setTimeout(arguments.callee, 500); } }, 100);window.setTimeout(function() { if (isVisible(window.jQuery(".bgc_signup_container"))) { window.BpEventStream.track("account.signup.visible"); } else { window.setTimeout(arguments.callee, 500); } }, 100);})()</script>
+            </div>
+
+            <div id="eh_trailer_container">
+                <div id="eh_trailer">
+                    <object width="475" height="297" id="_5634699166" name="_5634699166" data="http://darkorbit-22.ah.bpcdn.net/do_img/global/externalHome/assets/trailer.swf?__cv=43d60381e5bee20298440a5be7cf7900" type="application/x-shockwave-flash" style="display: block; margin: 0 auto;">
+                        <param name="allowfullscreen" value="true">
+                        <param name="allowscriptaccess" value="always">
+                        <param name="quality" value="high">
+                        <param name="wmode" value="transparent">
+                        <param name="flashVars" value="ordner=http://darkorbit-22.ah.bpcdn.net/do_img/global/externalHome/assets/trailer_do_3d.flv?__cv=0f57cf144f577d839ab9722e5e649a00">
+                    </object>
+                </div>
+            </div>
+
+            <div id="eh_screenshot_container_left">
+                <a class="eh_screen_trigger" href="http://darkorbit-22.ah.bpcdn.net/do_img/global/externalHome/assets/screenshots/screen_1.jpg?__cv=694f6e52f1f5f1f7fc2c60d46027b700" rel="screenshots"></a>
+                <a class="eh_screen_trigger" href="http://darkorbit-22.ah.bpcdn.net/do_img/global/externalHome/assets/screenshots/screen_2.jpg?__cv=380c34478a8b2c870eaa1c01dc869d00" rel="screenshots"></a>
+            </div>
+            <div id="eh_screenshot_container_right">
+                <a class="eh_screen_trigger" href="http://darkorbit-22.ah.bpcdn.net/do_img/global/externalHome/assets/screenshots/screen_3.jpg?__cv=eaa0f8265ceb8b3656609515577a3a00" rel="screenshots"></a>
+                <a class="eh_screen_trigger" href="http://darkorbit-22.ah.bpcdn.net/do_img/global/externalHome/assets/screenshots/screen_4.jpg?__cv=f14a9db15f7b19f266322c4aa190bf00" rel="screenshots"></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="eh_bg_v3" class="eh_company_bg"></div>
+
+    <div id="footerContainer">
+
+        <div id="eh_description_txt">
+        <h1>DarkOrbit – Join the intergalactic struggle for control of the galaxy<h1>
+<h2>Engage the thrusters and prepare for battle in the free space MMO. Team up with millions of space pilots for a bitter fight to the end<h2>Listen up space pilot! The vast expanse of DarkOrbit awaits! Choose your spacecraft and make for your battle station poste-haste to lend a fighting hand to the efforts of mankind and vanquish the alien vermin threatening the existence of man. Take up the fight as you range the galaxy at the helm of your very own space ship. Sign up today in DarkOrbit, become a space pilot, place your allegiances in one of three factions, while joining forces with fellow pilots or forming clans in an effort to round up valuable resources and lead your faction to victory, while dispatching scores of galactic garbage in the free-to-play space game for your computer’s browser!
+
+<h3>Whatever the Company you keep, it’s yours in the Galaxy<h3>
+However, evil aliens are not the only danger lurking about in Bigpoint’s action-packed space MMO! Begin your journey through space in DarkOrbit by selecting one of three rival factions - each replete with their own philosophy of achieving victory in this interstellar fight. Use force, might and aggression in the Mars Mining Organization to emerge victorious, achieve your goals with monetary might in the Earth Industries Corporation or wield cunning and grace to defeat your enemies in the Venus Resources Unlimited. No matter your decision, your mission remains the same: compile valuable resources and turn the tide of the galactic struggle to claim victory in this shooter full of fulminant space action.
+
+<h3>Command the Ship of your Choice<h3>
+Faction affiliations notwithstanding, Bigpoint’s smash space browser game gives you a plethora of unique options of putting your own personal touch on your individual struggle throughout space. DarkOrbit puts you in command – find your spacecraft from a host of specialized ships: from ships specialized in laying quick waste to enemy hordes and swift space ships fleet of foot designed to gather invaluable intel to bulky contraptions of high-tech brawn that lay down vital cover to your allies, while meting out heavy damage to targets.
+
+<h3>Join the Epitome of an Online Community<h3>
+What truly makes DarkOrbit unique, setting it apart from the competition is one thing: You! While other browser games claim to be multiplayer, they simply cannot hold a flame to DarkOrbit’s massive community: over 80 million active players blast off each and every day. Thanks to You and yours, DarkOrbit is the premiere cult online space games. Join the skirmish today alongside millions of space pilots or stand against floes of imposing enemies determined to see out your destruction. Arm your weapons and remain ready – with danger lurking at every turn, a moment’s hesitation can be the difference between success or failure.
+
+<h3>Fight with Friends, or Against<h3>
+Roam the myriad of galaxies of one of the all-time favorite space shooters. Fraught with danger at seemingly every turn, players must be on their guard and remain alert while scouring for resources, discovering new maps or completing a host of new missions. Form a clan with your friends and respected fellow pilots to boost your chances of victory and survival against hordes of imposing intergalactic beasts, or take on the most intimidating missions as you and your crew attempt to level up at the speed of light.
+        </div>
+
+        <div id="eh_footer">
+
+        <!--gl footer-->
+<div id="gl_footer">
+
+
+	<span id="gl_footer_element_copyright" class="gl_footer_element">&copy; Bigpoint</span>
+
+	<span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+	<span id="gl_footer_element_allrights" class="gl_footer_element">All rights reserved</span>
+
+	<span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+	<span id="gl_footer_element_terms" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_terms" href="https://legal.bigpoint.com/ES/terms-and-conditions/en" target="_blank">Terms & Conditions</a></span>
+
+	<span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+	<span id="gl_footer_element_logo" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_logo" href="http://en.bigpoint.com/" target="_blank"><img class="gl_footer_element_image" id="gl_footer_element_image_logo" src="http://sharedservices-437.ah.bpcdn.net/shared/img/footer/bigpoint_logo_h_web_rgb_neg_com_full.MINI.png" alt=""/></a></span>
+
+	<span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+	<span id="gl_footer_element_privacy" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_privacy" href="https://legal.bigpoint.com/ES/privacy-policy/en" target="_blank">Data Privacy Policy</a></span>
+
+	<span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+	<span id="gl_footer_element_imprint" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_imprint" href="https://legal.bigpoint.com/ES/imprint/en" target="_blank">Legal information</a></span>
+
+	<span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+	<span id="gl_footer_element_support" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_support" href="index.es?action=support" target="_blank">Support</a></span>
+
+	<span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+	<span id="gl_footer_element_forum" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_forum" href="/GameAPI.php?action=portal.redirectToBoard" target="_blank">Forum</a></span></div>
+
+
+            <div id="affiliateEndTag">
+            <!-- affiliateEndTag -->
+<!-- BPID --><script language="javascript">window.bpid=window.bpid||{};window.bpid.callbacks=window.bpid.callbacks||[];window.bpid.callbacks.push(function(bpid) {document.cookie="__bpid="+bpid+";path=/;expires=Fri, 03 Jun 2022 13:59:24 GMT;";if (bpid != "57df9160p91e5Ys6LP4Sy0mqEVeVIZDB") {try {var xhr = new XMLHttpRequest();xhr.open("GET", "\/GameAPI.php?action=core.bpid&bpid="+bpid, true);xhr.send(null);} catch(e) {}}});</script><script language="javascript" src="//assets.bpsecure.com/bpid/bpid.js?ts=412065" defer="defer"></script><!-- /BPID --><script type='text/javascript' language='javascript'>
+            var SemTmLocale   = 'ES';
+            var SemTmAid      = '0';
+            var SemTmAip      = '';
+            var SemTmPpid     = '22';
+            var SemTmCtype    = '0';
+            var SemTmMid      = '328020966';
+            var SemTmCountry  = 'ES';
+            var SemTmPid      = '22';
+            var SemTmUid      = '167770024';
+            var SemTmAit      = '';
+            var gtmLang       = 'en';
+            var gtmRealPayUser = 0;
+            var gtmSSO        = 0;
+            var gtmExternalProvider = '';
+            var gtmCNAME      = 0;
+var lplocaleMEB   = 'ES';
+                var SemTmAreaID   = 'external.home';
+                var gtmLoginCount = '57';
+                var gtmLayerIds   = [];
+                var gtmRn         = 0;
+                var gtmEv         = 1;
+</script>
+        <!-- Google Tag Manager -->
+        <noscript>
+            <iframe src='//www.googletagmanager.com/ns.html?id=GTM-PVBMJ2' height='0' width='0' style='display:none;visibility:hidden'></iframe>
+        </noscript>
+        <script>
+        var cb   = new Date().getTime();
+        var file = 'gtm'+'.js'; // quick fix for handling file name locally.
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:file});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                '//www.googletagmanager.com/' + file + '?cb='+cb+'&id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PVBMJ2');
+        </script>
+        <!-- End Google Tag Manager -->
+            </div>
+
+                </div>
+
+    
+    </div>
+</div>
+
+        <script>
+        </script>
+
+    </body>
+</html>
+
