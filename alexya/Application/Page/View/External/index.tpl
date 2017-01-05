@@ -30,7 +30,7 @@
     <meta property="og:description" content="{t($server->description)}" />
     <meta property="og:locale" content="{$locale->code}" />
     {foreach from=$server->locales item=$l}
-    <meta property="og:locale:alternate" content="{$l["code"]}" />
+    <meta property="og:locale:alternate" content="{$l->code}" />
     {/foreach}
 
     <link rel="SHORTCUT ICON" href="{$URL}favicon.ico" type="image/x-icon">
@@ -52,7 +52,8 @@
 
     <script type="text/javascript" src="{$URL}js/externalHomeNew.js"></script>
     <style>
-        .bgc_signup_container_form input.bgc_signup_form_register {
+        .bgc_signup_container_form input.bgc_signup_form_register
+        {
             background: url("{$URL}do_img/{$locale->code}/externalDefault/cta.png") no-repeat;
         }
     </style>
@@ -76,8 +77,7 @@
     <noscript><div id="noScript">{t("Please activate Java Script for your browser.")}</div></noscript>
     <script type="text/javascript">
         var cookieMessage = checkMyCookies();
-        if("" != cookieMessage)
-        {
+        if("" != cookieMessage) {
             document.write('<div id="noCookie">' + cookieMessage + '</div>');
         }
     </script>
