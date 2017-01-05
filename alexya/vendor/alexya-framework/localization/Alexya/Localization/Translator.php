@@ -1,18 +1,19 @@
 <?php
 namespace Alexya\Localization;
+use Traversable;
+use InvalidArgumentException;
 
 /**
  * Text translator class.
  *
  * The constructor accepts as parameter an associative array
  * containing the language code and the translations.
- * Optionally you can send a second parameter being the default language where
- * the texts will be translated.
+ * The second parameter is the default locale where text are going to be translated.
  *
  * Example:
  *
  *     $translator = new \Alexya\Localization\Translator([
- *         "en" => [
+ *         \Alexya\Localization\Locale::ENGLISH => [
  *             "monday"    => "monday",
  *             "thursday"  => "thursday",
  *             "wednesday" => "wednesday",
@@ -21,7 +22,7 @@ namespace Alexya\Localization;
  *             "saturday"  => "saturday",
  *             "sunday"    => "sunday"
  *         ],
- *         "es" => [
+ *         \Alexya\Localization\Locale::SPANISH => [
  *             "monday"    => "lunes",
  *             "thursday"  => "martes",
  *             "wednesday" => "miercoles",
@@ -30,7 +31,7 @@ namespace Alexya\Localization;
  *             "saturday"  => "sabado",
  *             "sunday"    => "domingo"
  *         ]
- *     ], "en");
+ *     ], \Alexya\Localization\Locale::en());
  *
  * Once the object has been instantiated you can use the method `translate` to
  * translate a text. It accepts as parameter a string being the text to translate.
@@ -44,8 +45,9 @@ namespace Alexya\Localization;
  *
  * Example:
  *
+ *     $locale = \Alexya\Localization\Locale::en();
  *     $translator = new \Alexya\Localization\Translator([
- *         "en" => [
+ *         \Alexya\Localization\Locale::ENGLISH => [
  *             "monday"    => "monday",
  *             "thursday"  => "thursday",
  *             "wednesday" => "wednesday",
@@ -56,7 +58,7 @@ namespace Alexya\Localization;
  *
  *             "Today is {day}" => "Today is {day}"
  *         ],
- *         "es" => [
+ *         \Alexya\Localization\Locale::SPANISH => [
  *             "monday"    => "lunes",
  *             "thursday"  => "martes",
  *             "wednesday" => "miercoles",
@@ -67,7 +69,7 @@ namespace Alexya\Localization;
  *
  *             "Today is {day}" => "Hoy es {day}"
  *         ]
- *     ]);
+ *     ], $locale);
  *
  *     // Quick translation
  *     $translator->translate("Today is {day}");
@@ -80,26 +82,26 @@ namespace Alexya\Localization;
  *     // Today is monday
  *
  *     // Translation in a specific language
- *     $translator->translate("Today is {day}", "es");
+ *     $translator->translate("Today is {day}", \Alexya\Localization\Locale::SPANISH);
  *     // Hoy es {day}
  *
  *     // Translation in a specific language with context
  *     $translator->translate("Today is {day}", [
- *         "day" => $translator->translate("monday", "es")
- *     ], "es");
+ *         "day" => $translator->translate("monday", \Alexya\Localization\Locale::SPANISH)
+ *     ], \Alexya\Localization\Locale::SPANISH);
  *     // Hoy es lunes
  *
  *     // Text that can't be translated
  *     $translator->translate("some_text");
  *     // some_text
  *
- * If the language isn't specified it will be translated to the language sent to
- * the method `setDefaultLanguage`.
+ * If the locale isn't specified it will be translated to the locale sent to
+ * the method `setDefaultLocale`.
  *
  * For translating texts of a sub-array use a dot (`.`) to link the texts to translate:
  *
  *     $translator = new \Alexya\Localization\Translator([
- *         "en" => [
+ *         \Alexya\Localization\Locale::ENGLISH => [
  *             "days" => [
  *                 "monday"    => "monday",
  *                 "thursday"  => "thursday",
@@ -125,6 +127,8 @@ namespace Alexya\Localization;
  * It accepts as parameter the language code and an array containing the translations to add.
  * If the language code doesn't exist, it will create it.
  *
+ * @see \Alexya\Localization\Locale For a list of available locales.
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 class Translator
@@ -137,32 +141,72 @@ class Translator
     private $_translations = [];
 
     /**
-     * Default language.
+     * Default locale.
      *
-     * @var string
+     * @var Locale
      */
-    private $_defaultLanguage = "";
+    public $locale;
+
+    /**
+     * Available locales to translate.
+     *
+     * @var array
+     */
+    public $availableLocales = [];
 
     /**
      * Constructor.
      *
-     * @param array  $translations    Translations array.
-     * @param string $defaultLanguage Default language where the texts will be translated (default is `en`).
+     * @param array  $translations Translations array.
+     * @param Locale $locale       Default locale where the texts will be translated (default = `Locale::en()`).
      */
-    public function __construct(array $translations = [], string $defaultLanguage = "en")
+    public function __construct(array $translations = [], Locale $locale = null)
     {
-        $this->_translations    = $translations;
-        $this->_defaultLanguage = $defaultLanguage;
+        $this->_translations = $translations;
+        $this->locale        = $locale;
+
+        if($this->locale == null) {
+            $this->locale = Locale::en();
+        }
+
+        $this->_setAvailableLocales();
     }
 
     /**
-     * Sets default language.
-     *
-     * @param string $language Default language.
+     * Sets available locales.
      */
-    public function setDefaultLanguage(string $language)
+    private function _setAvailableLocales()
     {
-        $this->_defaultLanguage = $language;
+        $defaultLocaleExists = false;
+        foreach($this->_translations as $key => $val) {
+            try {
+                $locale = Locale::{$key}();
+
+                if($locale->code == $this->locale->code) {
+                    $defaultLocaleExists = true;
+                }
+
+                $this->availableLocales[] = $locale;
+            } catch(InvalidArgumentException $e) {
+                // Ignore
+            }
+        }
+
+        if($defaultLocaleExists) {
+            return;
+        }
+
+        $this->locale = ($this->availableLocales[0] ?? Locale::en());
+    }
+
+    /**
+     * Sets default locale.
+     *
+     * @param Locale $locale Default language.
+     */
+    public function setDefaultLocale(Locale $locale)
+    {
+        $this->locale = $locale;
     }
 
     /**
@@ -225,7 +269,7 @@ class Translator
     {
         $t = $text;
         $c = [];
-        $l = $this->_defaultLanguage;
+        $l = $this->locale->code;
 
         if(is_string($context)) {
             $l = $context;
