@@ -17,7 +17,7 @@ return [
      *
      * @see \Alexya\Localization\Transaltor For a full list of locale.
      */
-    "locale"  => "en_US",
+    "locale"  => "en",
 
     /**
      * View settings.

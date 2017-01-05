@@ -119,13 +119,13 @@
             <div id="eh_head_info">
                 <div id="eh_lang_selection_wrapper" class="fontStyle">
                     <div id="selectedLanguageBox" onclick="jQuery('#languageBox').slideToggle(300);">
-                        <img src="{$URL}do_img/global/flaggen/plain/{$locale->lang}.png" alt="{$locale->name}" id="currentLanguageFlag" />
+                        <img src="{$URL}do_img/global/flaggen/plain/{$locale->code}.png" alt="{$locale->name}" id="currentLanguageFlag" />
                         <div id="currentLanguageText">{$locale->name}</div>
                         <div id="languageArrow"></div>
                     </div>
 
                     <div id="languageBox" style="display: none">
-                        {foreach from=$locale->available() item=$l}
+                        {foreach from=$server->locales item=$l}
                         <div class="languageList" onclick="location.href = '{$URL}External/lang/{$l->code}';">
                             <div class="languageFlag" style="background-image: url({$URL}do_img/global/flaggen/plain/{$l->code}.png);"></div>
                             <div class="languageName">{$l->name}</div>
@@ -136,7 +136,7 @@
                 <div id="eh_reg_display" class="fontStyle">
                     {$vars = []}
                     {$vars["REGISTERED"] = $server->registeredUsers}
-                    {t("Registered: %REGISTERED%")}
+                    {t("Registered: %REGISTERED%", $vars)}
                 </div>
             </div>
             <div style="clear: both;"></div>
@@ -270,16 +270,16 @@
                 {t("<h1>DarkOrbit – Join the intergalactic struggle for control of the galaxy<h1>
                 <h2>Engage the thrusters and prepare for battle in the free space MMO. Team up with millions of space pilots for a bitter fight to the end<h2>Listen up space pilot! The vast expanse of DarkOrbit awaits! Choose your spacecraft and make for your battle station poste-haste to lend a fighting hand to the efforts of mankind and vanquish the alien vermin threatening the existence of man. Take up the fight as you range the galaxy at the helm of your very own space ship. Sign up today in DarkOrbit, become a space pilot, place your allegiances in one of three factions, while joining forces with fellow pilots or forming clans in an effort to round up valuable resources and lead your faction to victory, while dispatching scores of galactic garbage in the free-to-play space game for your computer’s browser!
 
-            <h3>Whatever the Company you keep, it’s yours in the Galaxy<h3>
+                <h3>Whatever the Company you keep, it’s yours in the Galaxy<h3>
 However, evil aliens are not the only danger lurking about in Bigpoint’s action-packed space MMO! Begin your journey through space in DarkOrbit by selecting one of three rival factions - each replete with their own philosophy of achieving victory in this interstellar fight. Use force, might and aggression in the Mars Mining Organization to emerge victorious, achieve your goals with monetary might in the Earth Industries Corporation or wield cunning and grace to defeat your enemies in the Venus Resources Unlimited. No matter your decision, your mission remains the same: compile valuable resources and turn the tide of the galactic struggle to claim victory in this shooter full of fulminant space action.
 
-            <h3>Command the Ship of your Choice<h3>
+                <h3>Command the Ship of your Choice<h3>
 Faction affiliations notwithstanding, Bigpoint’s smash space browser game gives you a plethora of unique options of putting your own personal touch on your individual struggle throughout space. DarkOrbit puts you in command – find your spacecraft from a host of specialized ships: from ships specialized in laying quick waste to enemy hordes and swift space ships fleet of foot designed to gather invaluable intel to bulky contraptions of high-tech brawn that lay down vital cover to your allies, while meting out heavy damage to targets.
 
-            <h3>Join the Epitome of an Online Community<h3>
+                <h3>Join the Epitome of an Online Community<h3>
 What truly makes DarkOrbit unique, setting it apart from the competition is one thing: You! While other browser games claim to be multiplayer, they simply cannot hold a flame to DarkOrbit’s massive community: over 80 million active players blast off each and every day. Thanks to You and yours, DarkOrbit is the premiere cult online space games. Join the skirmish today alongside millions of space pilots or stand against floes of imposing enemies determined to see out your destruction. Arm your weapons and remain ready – with danger lurking at every turn, a moment’s hesitation can be the difference between success or failure.
 
-            <h3>Fight with Friends, or Against<h3>
+                <h3>Fight with Friends, or Against<h3>
 Roam the myriad of galaxies of one of the all-time favorite space shooters. Fraught with danger at seemingly every turn, players must be on their guard and remain alert while scouring for resources, discovering new maps or completing a host of new missions. Form a clan with your friends and respected fellow pilots to boost your chances of victory and survival against hordes of imposing intergalactic beasts, or take on the most intimidating missions as you and your crew attempt to level up at the speed of light.")}
         </div>
 
@@ -304,7 +304,7 @@ Roam the myriad of galaxies of one of the all-time favorite space shooters. Frau
                 <span id="gl_footer_element_imprint" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_imprint" href="{$URL}imprint/{$locale->code}" target="_blank">{t("Legal information")}</a></span>
 
                 <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
-                <span id="gl_footer_element_support" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_support" href="{$ULR}Support" target="_blank">{t("Support")}</a></span>
+                <span id="gl_footer_element_support" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_support" href="{$URL}Support" target="_blank">{t("Support")}</a></span>
 
                 <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
                 <span id="gl_footer_element_forum" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_forum" href="{$URL}Forum" target="_blank">{t("Forum")}</a></span>

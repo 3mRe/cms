@@ -141,6 +141,13 @@ class Translator
     private $_translations = [];
 
     /**
+     * Context wrapper.
+     *
+     * @var string|array
+     */
+    private $_contextWrapper = "%";
+
+    /**
      * Default locale.
      *
      * @var Locale
@@ -157,13 +164,15 @@ class Translator
     /**
      * Constructor.
      *
-     * @param array  $translations Translations array.
-     * @param Locale $locale       Default locale where the texts will be translated (default = `Locale::en()`).
+     * @param array  $translations    Translations array.
+     * @param Locale $locale          Default locale where the texts will be translated (default = `Locale::en()`).
+     * @param array  $contextWrapper  Default wrapper for context variables.
      */
-    public function __construct(array $translations = [], Locale $locale = null)
+    public function __construct(array $translations = [], Locale $locale = null, $contextWrapper = "%")
     {
-        $this->_translations = $translations;
-        $this->locale        = $locale;
+        $this->_translations   = $translations;
+        $this->locale          = $locale;
+        $this->_contextWrapper = $contextWrapper;
 
         if($this->locale == null) {
             $this->locale = Locale::en();
@@ -253,7 +262,7 @@ class Translator
             }
         }
 
-        return $text;
+        return $this->_parseContext($text, $context);
     }
 
     /**
@@ -285,6 +294,7 @@ class Translator
 
         return [$t, $c, $l];
     }
+
     /**
      * Replaces all placeholders in `message` with the placeholders of `context`
      *
@@ -303,7 +313,13 @@ class Translator
                 !is_array($val) &&
                 (!is_object($val) || method_exists($val, '__toString'))
             ) {
-                $replace['{'.$key.'}'] = $val;
+                if(is_array($this->_contextWrapper)) {
+                    $key = ($this->_contextWrapper[0] ?? ""). $key .($this->_contextWrapper[1] ?? "");
+                } else {
+                    $key = $this->_contextWrapper.$key.$this->_contextWrapper;
+                }
+
+                $replace[$key] = $val;
             }
         }
 

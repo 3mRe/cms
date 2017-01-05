@@ -8,4 +8,23 @@
  */
 
 return [
+    /**
+     * Server URL.
+     */
+    "url" => "http://blackeye/",
+
+    /**
+     * Server information.
+     */
+    "server" => [
+        "title"           => "BlackEye Private Server",
+        "tags"            => ["game", "darkorbit", "private server", "blackeye", "spaceshooter"],
+        "author"          => "BlackEye DevTeam",
+        "reply_to"        => "",
+        "company"         => "BlackEye DevTeam",
+        "name"            => "BlackEye",
+        "description"     => "The best DarkOrbit Private Server",
+        "locales"         => [],
+        "registeredUsers" => 0
+    ]
 ];

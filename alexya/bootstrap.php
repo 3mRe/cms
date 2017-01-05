@@ -148,6 +148,7 @@ if(class_exists("\Alexya\Localization\Translator")) {
     \Alexya\Container::registerSingleton("Translator", function() {
         $translations = [];
         $directory    = \Alexya\FileSystem\Directory::make(TRANSLATIONS_DIR, \Alexya\FileSystem\Directory::MAKE_DIRECTORY_EXISTS_OPEN);
+        $loc          = \Alexya\Container::Settings()->get("alexya.locale");
 
         // All files from the `translations` directory are suposed to be PHP scripts
         // that returns an array with the translations, the name of each file is
@@ -156,7 +157,7 @@ if(class_exists("\Alexya\Localization\Translator")) {
             $translations[$file->getName()] = require($file->getPath());
         }
 
-        return new \Alexya\Localization\Translator($translations, \Alexya\Container::Settings()->get("alexya.locale"));
+        return new \Alexya\Localization\Translator($translations, \Alexya\Localization\Locale::{$loc}());
     });
 
     ////////////////////////

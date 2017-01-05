@@ -47,12 +47,13 @@ if(!require_once("vendor/autoload.php")) {
      *
      * @var \Alexya\Settings $Settings
      */
-    $Settigns = \Alexya\Container::Settings();
+    $Settings = \Alexya\Container::Settings();
 
     return new \Alexya\Tools\Collection($Settings->get("application.server"));
 });
 
 \Alexya\Foundation\View::global("server", \Alexya\Container::Server());
 \Alexya\Foundation\View::global("locale", \Alexya\Container::Translator()->locale);
+\Alexya\Foundation\View::global("URL", \Alexya\Container::Settings()->get("application.url"));
 
 \Alexya\Container::Router()->route();

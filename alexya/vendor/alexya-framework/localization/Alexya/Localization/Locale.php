@@ -563,7 +563,7 @@ class Locale
             throw new InvalidArgumentException("Locale `{$name}` does not exist!");
         }
 
-        return new static(... static::$_locales[$name]);;
+        return new static(... array_values(static::$_locales[$name]));;
     }
 
     ///////////////////////////////////////
