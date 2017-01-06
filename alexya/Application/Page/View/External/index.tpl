@@ -153,8 +153,8 @@
                     <!-- contains login -->
                     <div class="bgcdw_login_container bgc">
                         <div class="bgcdw_login_container_form">
-                            <form name="bgcdw_login_form" method="post" class="bgcdw_login_form" action="/External">
-                                <input type="hidden" name="action" value="login" / />
+                            <form name="bgcdw_login_form" method="post" class="bgcdw_login_form" action="{$URL}External">
+                                <input type="hidden" name="action" value="login" />
                                 <div class="bgc_error_translations" style="display:none">
                                     <div data-error-key="gl.error.username_1">{t("This username is too short. Please choose a new username which has between 4 and 20 characters.")}</div>
                                     <div data-error-key="gl.error.username_2">{t("This username is too long. Please choose a new username which has between 4 and 20 characters.")}</div>
