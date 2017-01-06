@@ -479,5 +479,50 @@
             "rest",
             "restful"
         ]
+    },
+    {
+        "name": "alexya-framework/validator",
+        "version": "3.0.4",
+        "version_normalized": "3.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/AlexyaFramework/Validator.git",
+            "reference": "3149db46ea83e6da2a74500eaf1ddb3897869446"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/AlexyaFramework/Validator/zipball/3149db46ea83e6da2a74500eaf1ddb3897869446",
+            "reference": "3149db46ea83e6da2a74500eaf1ddb3897869446",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0"
+        },
+        "time": "2016-10-03 06:50:09",
+        "type": "framework",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Alexya\\": "Alexya"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GNU"
+        ],
+        "authors": [
+            {
+                "name": "Manulaiko",
+                "email": "manulaiko@gmail.com"
+            }
+        ],
+        "description": "Alexya's Validator utilities",
+        "keywords": [
+            "PHP7",
+            "alexya",
+            "framework",
+            "php",
+            "validator"
+        ]
     }
 ]

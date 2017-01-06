@@ -42,6 +42,7 @@ class ComposerStaticInitffdc0b05ef61a045e34994b70e8a23b0
             5 => __DIR__ . '/..' . '/alexya-framework/logger/Alexya',
             6 => __DIR__ . '/..' . '/alexya-framework/router/Alexya',
             7 => __DIR__ . '/..' . '/alexya-framework/localization/Alexya',
+            8 => __DIR__ . '/..' . '/alexya-framework/validator/Alexya',
         ),
     );
 
