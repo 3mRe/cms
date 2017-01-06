@@ -36,9 +36,9 @@
     <link rel="SHORTCUT ICON" href="{$URL}favicon.ico" type="image/x-icon">
 
     <link href="{$URL}bgc/css/bgc-0.10.10.min.css?0001" rel="stylesheet" type="text/css" media="screen" />
-    <script type="text/javascript" src="{$URL}ajax/libs/jquery/1.8.3/jquery.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" charset="UTF-8"></script>
     <script type="text/javascript" src="{$URL}bgc/js/bgc-0.10.10.min.js?0001" charset="UTF-8"></script>
-    <script type="text/javascript" src="{$URL}api/js/recaptcha_ajax.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js" charset="UTF-8"></script>
 
     <link rel="stylesheet" media="all" href="{$URL}css/cdn/bgc.css" />
     <link rel="stylesheet" media="all" href="{$URL}css/cdn/externalHomeNew.css" />
@@ -115,6 +115,19 @@
     <input type="hidden" id="tucReplacementTxt" value="{t("The game is subject to the following:")}" />
 
     <div id="eh_main_wrapper">
+        {$results = \Alexya\Tools\Session\Results::get("externalPage_results")}
+        {if !empty($results)}
+        <div class="bgcdw_errors_all_wrapper">
+            <div class="bgcdw_errors_all bgc">
+                <ul>
+                    {foreach from=$results item=$result}
+                    <li>{t($result)}</li>
+                    {/foreach}
+                </ul>
+                <div class="bgcdw_errors_all_close"></div>
+            </div>
+        </div>
+        {/if}
         <div id="eh_head_wrapper">
             <div id="eh_head_info">
                 <div id="eh_lang_selection_wrapper" class="fontStyle">
