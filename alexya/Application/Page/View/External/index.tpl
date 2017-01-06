@@ -194,7 +194,7 @@
 
                     <div id="bgc_signup_short_container" class="bgc_signup_container bgc">
                         <div class="bgc_signup_container_form">
-                            <form method="post" name="bgc_signup_form" class="bgc_signup_form" autocomplete="off" action="/External">
+                            <form method="post" name="bgc_signup_form" class="bgc_signup_form" autocomplete="off" action="{$URL}External">
                                 <div class="bgc_error_translations" style="display:none">
                                     <div data-error-key="gl.error.username_1">{t("This username is too short. Please choose a new username which has between 4 and 20 characters.")}</div>
                                     <div data-error-key="gl.error.username_2">{t("This username is too long. Please choose a new username which has between 4 and 20 characters.")}</div>
