@@ -28,14 +28,14 @@ class Results
     /**
      * Session object.
      *
-     * @var \Alexya\Session\Session
+     * @var Session
      */
     private static $_session;
 
     /**
      * Sets session object.
      *
-     * @param \Alexya\Session\Session $session Session where results will be saved.
+     * @param  Session $session Session where results will be saved.
      */
     public static function initialize(Session $session)
     {
@@ -56,9 +56,8 @@ class Results
     {
         $results = static::$_session->get("_RESULTS");
 
-        $results[] = [
+        $results[$name] = [
             "type"   => "permanent",
-            "name"   => $name,
             "result" => $result
         ];
 
@@ -75,9 +74,8 @@ class Results
     {
         $results = static::$_session->get("_RESULTS");
 
-        $results[] = [
+        $results[$name] = [
             "type"   => "flash",
-            "name"   => $name,
             "result" => $result
         ];
 
