@@ -1,7 +1,9 @@
 <?php
 namespace Application;
 
+use Alexya\Container;
 use Alexya\Tools\Str;
+
 use Httpful\Request;
 
 /**
@@ -57,7 +59,7 @@ class API
      */
     public function get(string $command, array $params)
     {
-        $request = Request::get($this->_getUrl($command));
+        $request = Request::get($this->_getUrl($command) ."?". http_build_query($params));
 
         return $this->_finishAndSendRequest($request, $params);
     }
@@ -77,6 +79,10 @@ class API
             $url = substr($url, -1);
         }
 
+        if(!Str::startsWith($this->_host, "http://")) {
+            $url = "http://". $url;
+        }
+
         return $url;
     }
 
@@ -90,7 +96,13 @@ class API
      */
     private function _finishAndSendRequest(Request $request, array $params)
     {
-        return $request->body(http_build_query($request))
-                       ->send();
+        $response = $request->body(http_build_query($request))
+                            ->send();
+
+        Container::Logger()->debug("Request executed!");
+        Container::Logger()->debug("Request: ". $request->uri);
+        Container::Logger()->debug("Response: ". $response->raw_body);
+
+        return $response->body;
     }
 }

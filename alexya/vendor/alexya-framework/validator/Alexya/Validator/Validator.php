@@ -86,14 +86,16 @@ class Validator
     public function __construct(array $rulers = [])
     {
         $this->_rulers = array_map(function($ruler) {
-            return ($ruler instanceof Ruler); // Assure the array contains Ruler objects
+            if($ruler instanceof Ruler) {
+                return $ruler;
+            }
         }, $rulers);
     }
 
     /**
      * Adds a ruler to the array.
      *
-     * @param \Alexya\Validator\Ruler $ruler Ruler to add.
+     * @param Ruler $ruler Ruler to add.
      */
     public function addRuler(Ruler $ruler)
     {
@@ -157,7 +159,7 @@ class Validator
     /**
      * Performs the actual validation.
      *
-     * @param \Alexya\Validator\Field $field Field to validate.
+     * @param Field $field Field to validate.
      *
      * @return bool `true` if the field was successfully validated, `false` if not.
      */

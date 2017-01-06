@@ -44,7 +44,7 @@ class External extends Controller
     public function register(string $name, string $password, string $email) : Response
     {
         return $this->_performAction("register", [
-            "name"     => $name,
+            "username" => $name,
             "password" => $password,
             "email"    => $email
         ], "/Internal/CompanyChoose");
@@ -91,9 +91,9 @@ class External extends Controller
          */
         $Session = Container::Session();
 
-        $this->validate($name, $password, $email);
+        $this->validate(... array_values($params));
 
-        $result = $API->post($name, $params);
+        $result = $API->get($action, $params);
 
         if($result->result) {
             $Session->id = $result->session_id;
@@ -101,7 +101,7 @@ class External extends Controller
             Response::redirect($redirect);
         }
 
-        Results::flash("externalPage_results", $result->errors);
+        Results::flash("externalPage_results", [$result->error]);
 
         return $this->index();
     }
@@ -158,6 +158,7 @@ class External extends Controller
         $validator->add("email", $email)
                   ->addRule("String::not_empty", t("Please enter your password."))
                   ->addRule("String::is_email", t("Your e-mail address doesn't seem to be correct. Please enter a valid e-mail address."));
+
         return $validator;
     }
 }

@@ -46,7 +46,7 @@ return [
             !is_callable([$triad->Controller, $action]) ||
             empty($page)
         ) {
-			die("Couldn't execute request!");
+            die("Couldn't execute request!");
         }
 
         if(!empty($_POST)) {
@@ -54,7 +54,7 @@ return [
             $params = $_POST;
         }
 
-        $response = $triad->Controller->$action(... $params);
+        $response = $triad->Controller->$action(... array_values($params));
 
         if(!$response instanceof \Alexya\Http\Response) {
             // Allow user to return the content of the response instead of the

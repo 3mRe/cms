@@ -14,6 +14,11 @@ return [
     "url" => "http://blackeye/",
 
     /**
+     * API server URL.
+     */
+    "api_host" => "localhost",
+
+    /**
      * Server information.
      */
     "server" => [
