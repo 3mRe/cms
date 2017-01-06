@@ -121,7 +121,10 @@ class Results
         ) {
             $ret = $results[$length];
 
-            unset($results[$length]);
+            if($results[$length]["type"] == "flash") {
+                unset($results[$length]);
+            }
+
             static::$_session->set("_RESULTS", $results);
 
             return $ret;
