@@ -119,7 +119,7 @@ class Results
             !is_numeric($length)     &&
             isset($results[$length])
         ) {
-            $ret = $results[$length];
+            $ret = $results[$length]["result"];
 
             if($results[$length]["type"] == "flash") {
                 unset($results[$length]);
