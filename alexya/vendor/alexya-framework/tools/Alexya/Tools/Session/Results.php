@@ -105,15 +105,27 @@ class Results
     /**
      * Returns the results.
      *
-     * @param int $length Length of the array to return.
-     * @param int $offset Array offset.
+     * @param int|string $length Length of the array to return, if string, the name of the result.
+     * @param int        $offset Array offset.
      *
      * @return array Array with `$length` results.
      */
-    public static function get(int $length = -1, int $offset = 0) : array
+    public static function get($length = -1, int $offset = 0) : array
     {
         $ret     = [];
         $results = static::$_session->get("_RESULTS");
+
+        if(
+            !is_numeric($length)     &&
+            isset($results[$length])
+        ) {
+            $ret = $results[$length];
+
+            unset($results[$length]);
+            static::$_session->set("_RESULTS", $results);
+
+            return $ret;
+        }
 
         for($i = 0; $i < count($results); $i++) {
             if(!isset($results[$i])) {
