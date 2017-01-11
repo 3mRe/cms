@@ -97,30 +97,18 @@
     <script type="text/javascript">
         var textResourcesTitle = {
             "seo_title_client": "{$server->name}",
-            "seo_title_client_blinking": "{$server->title} | {t("
-            Game Client ")}",
-            "seo_title_no_aid": "{$server->name} | {t("
-            MMO & space shooter ")}",
-            "seo_tittle_clans": "{$server->name} | {t("
-            Clans ")}",
-            "seo_tittle_pet": "{$server->name} | {t("
-            PET ")}",
-            "seo_tittle_ships": "{$server->name} | {t("
-            Ships ")}",
-            "seo_tittle_uridium": "{$server->name} | {t("
-            Uridium ")}",
-            "seo_tittle_techfactory": "{$server->name} | {t("
-            Tech Factory ")}",
-            "seo_tittle_hangar": "{$server->name} | {t("
-            Hangar ")}",
-            "seo_title_standard": "{$server->name}| {t("
-            MMO & space shooter ")}",
-            "seo_title_achievements": "{$server->name} | {t("
-            Achievements ")}",
-            "seo_title_shop": "{$server->name} | {t("
-            Shop ")}",
-            "seo_title_skylab": "{$server->name} | {t("
-            Skylab ")}"
+            "seo_title_client_blinking": "{$server->title} | {t("Game Client")}",
+            "seo_title_no_aid": "{$server->name} | {t("MMO & space shooter")}",
+            "seo_tittle_clans": "{$server->name} | {t("Clans")}",
+            "seo_tittle_pet": "{$server->name} | {t("PET")}",
+            "seo_tittle_ships": "{$server->name} | {t("Ships")}",
+            "seo_tittle_uridium": "{$server->name} | {t("Uridium")}",
+            "seo_tittle_techfactory": "{$server->name} | {t("Tech Factory")}",
+            "seo_tittle_hangar": "{$server->name} | {t("Hangar")}",
+            "seo_title_standard": "{$server->name}| {t("MMO & space shooter")}",
+            "seo_title_achievements": "{$server->name} | {t("Achievements")}",
+            "seo_title_shop": "{$server->name} | {t("Shop")}",
+            "seo_title_skylab": "{$server->name} | {t("Skylab")}"
         };
 
         jQuery.each(textResourcesTitle, function(i, n) {
