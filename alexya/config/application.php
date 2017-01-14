@@ -59,7 +59,7 @@ return [
          * Account ORM debug info.
          */
         "account" => [
-            "id"          => 1,
+            "id"          => 1, // 0 to flag the account as not logged ina
             "session_id"  => "0000000000000000",
             "factions_id" => 0,
             "name"        => "manulaiko",
