@@ -31,7 +31,13 @@ return [
          * Mocked respones in case API is in debug.
          */
         "mocks" => [
-
+            /**
+             * Login response.
+             */
+            "login" => [
+                "result"     => true,
+                "session_id" => "0000000000000000"
+            ]
         ]
     ],
 
@@ -53,7 +59,15 @@ return [
          * Account ORM debug info.
          */
         "account" => [
-            
+            "id"          => 1,
+            "session_id"  => "0000000000000000",
+            "factions_id" => 0,
+            "name"        => "manulaiko",
+            "credits"     => 0,
+            "uridium"     => 1,
+            "experience"  => 2,
+            "honor"       => 3,
+            "jackpot"     => 4
         ]
     ],
 
