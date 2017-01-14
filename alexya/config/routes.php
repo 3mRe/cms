@@ -65,5 +65,52 @@ return [
         }
         $response->send();
         die();
+    },
+
+    /**
+     * Page permissions.
+     *
+     * User can access to the followin pages if is logged:
+     *
+     * * Internal
+     * * Support
+     * * Payment
+     *
+     * User can access to the followin pages if is not logged:
+     *
+     * * External
+     */
+    "/(External|Internal|Support|Payment)(.*)" => function($page, $ignore) {
+        /**
+         * Account object.
+         *
+         * @var \Application\ORM\Account $Account
+         */
+        $Account = \Alexya\Container::Account();
+
+        if(
+            $page == "External" &&
+            !$Account->isLogged()
+        ) {
+            return;
+        }
+
+        if(
+            $page == "External" &&
+            $Account->isLogged()
+        ) {
+            \Alexya\Http\Response::redirect("/Internal");
+        }
+
+        if(!$Account->isLogged()) {
+            \Alexya\Http\Response::redirect("/External");
+        }
+    },
+
+    /**
+     * Empty request, redirect to /External
+     */
+    "(/?)" => function() {
+        \Alexya\Http\Response::redirect("/External");
     }
 ];
