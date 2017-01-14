@@ -41,7 +41,7 @@ class Account extends Model
         $relations = [];
 
         foreach($settings as $key => $value) {
-            $firstChar        = substr(0, 1, $value);
+            $firstChar        = substr($value, 0, 1);
             $firstCharIsUpper = (strtoupper($firstChar) == $firstChar);
 
             if(is_array($value) && $firstCharIsUpper) {
@@ -96,6 +96,6 @@ class Account extends Model
      */
     public function isLogged() : bool
     {
-        return !empty($this->id);
+        return !empty($this->_id);
     }
 }
