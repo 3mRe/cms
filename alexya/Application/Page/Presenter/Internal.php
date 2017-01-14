@@ -17,7 +17,13 @@ class Internal extends Presenter
      */
     public function render() : string
     {
-        $this->_triad->View->set("name", ($this->_request->uri()[2] ?? ""));
+        $name = ($this->_request->uri()[2] ?? "");
+
+        if($name == "CompanyChoose") {
+            return $this->_triad->children->module->Controller->render();
+        }
+
+        $this->_triad->View->set("name", $name);
 
         foreach($this->_triad->Model->all() as $key => $value) {
             $this->_triad->children->module->Model->set($key, $value);
