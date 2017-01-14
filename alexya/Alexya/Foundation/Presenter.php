@@ -42,6 +42,10 @@ class Presenter extends Component
      */
     private function _setModelVariables()
     {
+        if(!$this->_triad->hasModel()) {
+            return;
+        }
+
         foreach($this->_triad->Model->all() as $key => $value) {
             $this->_triad->View->set($key, $value);
         }
