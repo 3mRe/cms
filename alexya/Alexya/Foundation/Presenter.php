@@ -32,7 +32,19 @@ class Presenter extends Component
      */
     protected function _init()
     {
+        $this->_setModelVariables();
+
         $this->onInstance();
+    }
+
+    /**
+     * Sets Model variables as View variables.
+     */
+    private function _setModelVariables()
+    {
+        foreach($this->_triad->Model->all() as $key => $value) {
+            $this->_triad->View->set($key, $value);
+        }
     }
 
     /**
