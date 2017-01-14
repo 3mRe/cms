@@ -283,7 +283,7 @@ class Triad
             return $presenter["component"];
         }
 
-        $class = $this->_preffix ."Presenter\\". $this->_name;
+        $class = $this->_preffix . $presenter["name"];
 
         if(
             !empty($presenter["name"]) &&
@@ -297,5 +297,57 @@ class Triad
         $this->_components["presenter"]["component"] = $presenter;
 
         return $presenter;
+    }
+
+    /**
+     * Checks that the triad has a valid model.
+     *
+     * @return bool `true` if the model for this triad exists, `false` if not.
+     */
+    public function hasModel() : bool
+    {
+        return (
+            class_exists($this->_preffix . $this->_components["model"]["name"]) ||
+            $this->_components["model"]["component"] instanceof Model
+        );
+    }
+
+    /**
+     * Checks that the triad has a valid controller.
+     *
+     * @return bool `true` if the controller for this triad exists, `false` if not.
+     */
+    public function hasController() : bool
+    {
+        return (
+            class_exists($this->_preffix . $this->_components["controller"]["name"]) ||
+            $this->_components["controller"]["component"] instanceof Controller
+        );
+    }
+
+    /**
+     * Checks that the triad has a valid presenter.
+     *
+     * @return bool `true` if the presenter for this triad exists, `false` if not.
+     */
+    public function hasPresenter() : bool
+    {
+        return (
+            class_exists($this->_preffix . $this->_components["presenter"]["name"]) ||
+            $this->_components["presenter"]["component"] instanceof Presenter
+        );
+    }
+
+    /**
+     * Checks that the triad has a valid view.
+     *
+     * @return bool `true` if the view for this triad exists, `false` if not.
+     */
+    public function hasView() : bool
+    {
+        return (
+            class_exists($this->_preffix . $this->_components["view"]["name"]) ||
+            $this->_components["view"]["component"] instanceof View
+        );
     }
 }
