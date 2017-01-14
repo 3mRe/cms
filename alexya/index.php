@@ -38,7 +38,7 @@ if(!require_once("vendor/autoload.php")) {
                                 ->expects(\Httpful\Mime::JSON)
                                 ->sendsType(\Httpful\Mime::FORM);
 
-    return new \Application\API($Settings->get("application.api_host"), $template);
+    return new \Application\API($Settings->get("application.api.host"), $template);
 });
 
 \Alexya\Container::registerSingleton("Server", function() {
@@ -52,8 +52,48 @@ if(!require_once("vendor/autoload.php")) {
     return new \Alexya\Tools\Collection($Settings->get("application.server"));
 });
 
+\Alexya\Container::registerSingleton("Account", function() {
+    /**
+     * Settings object.
+     *
+     * @var \Alexya\Settings $Settings
+     */
+    $Settings = \Alexya\Container::Settings();
+
+    /**
+     * Session object.
+     *
+     * @var \Alexya\Tools\Session\Session $Session
+     */
+    $Session = \Alexya\Container::Session();
+    $sid     = $Session->id;
+
+    if(empty($sid)) {
+        return \Application\ORM\Account::empty();
+    }
+
+    if($Settings->get("application.orm.load_from") == "database") {
+        return \Application\ORM\Account::find([
+            "session_id" => $sid
+        ]);
+    }
+
+    if($Settings->get("application.orm.load_from") == "debug") {
+        return \Application\ORM\Account::debug($Settings->get("application.orm.account"));
+    }
+
+    /**
+     * API Object.
+     *
+     * @var \Application\API $API
+     */
+    $API = \Alexya\Container::API();
+
+    return \Application\ORM\Account::api($API->get("accounts/{$sid}"));
+});
+
 \Alexya\Foundation\View::global("server", \Alexya\Container::Server());
 \Alexya\Foundation\View::global("locale", \Alexya\Container::Translator()->locale);
 \Alexya\Foundation\View::global("URL", \Alexya\Container::Settings()->get("application.url"));
 
-\Alexya\Container::Router()->route();
+\Alexya\Container::Router()->route(true);
