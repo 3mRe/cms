@@ -3,6 +3,7 @@ namespace Application;
 
 use Alexya\Container;
 use Alexya\Tools\Str;
+use Alexya\Tools\Collection;
 
 use Httpful\Request;
 
@@ -42,8 +43,12 @@ class API
      *
      * @return mixed Parsed response.
      */
-    public function post(string $command, array $params)
+    public function post(string $command, array $params = [])
     {
+        if(Container::Settings()->get("application.api.debug")) {
+            return $this->_debug($command, $params);
+        }
+
         $request = Request::post($this->_getUrl($command));
 
         return $this->_finishAndSendRequest($request, $params);
@@ -57,8 +62,12 @@ class API
      *
      * @return mixed Parsed response.
      */
-    public function get(string $command, array $params)
+    public function get(string $command, array $params = [])
     {
+        if(Container::Settings()->get("application.api.debug")) {
+            return $this->_debug($command, $params);
+        }
+
         $request = Request::get($this->_getUrl($command) ."?". http_build_query($params));
 
         return $this->_finishAndSendRequest($request, $params);
@@ -104,5 +113,45 @@ class API
         Container::Logger()->debug("Response: ". $response->raw_body);
 
         return $response->body;
+    }
+
+    /**
+     * Mocks the API response.
+     *
+     * @param string $command API command.
+     * @param array  $params  Request params.
+     *
+     * @return Collection Mocked response.
+     */
+    private function _debug(string $command, array $params) : Collection
+    {
+        $mocks = Container::Settings()->get("application.api.mocks");
+
+        $ret = null;
+        foreach($mocks as $key => $value) {
+            if(!$key == $command) {
+                continue;
+            }
+
+            if(!is_callable($value)) {
+                $ret = $value;
+
+                continue;
+            }
+
+            $ret = $value(... array_values($params));
+        }
+
+        if($ret == null) {
+            Container::Logger()->debug("Couldn't mock API response for `{$command}`!");
+
+            return new Collection();
+        }
+
+        if(!is_array($ret)) {
+            $ret = json_decode($ret, true);
+        }
+
+        return new Collection($ret);
     }
 }
