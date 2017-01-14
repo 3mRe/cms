@@ -36,6 +36,28 @@ return [
     ],
 
     /**
+     * ORM information.
+     */
+    "orm" => [
+        /**
+         * From where are going to be loaded ORM classes.
+         *
+         * Possible values:
+         *  * `database` To load them from the database.
+         *  * `debug` To load them from this configuration.
+         *  * `default` To load them from API server.
+         */
+        "load_from" => "debug",
+
+        /**
+         * Account ORM debug info.
+         */
+        "account" => [
+            
+        ]
+    ],
+
+    /**
      * Server information.
      */
     "server" => [
