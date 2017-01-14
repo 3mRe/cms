@@ -60,6 +60,10 @@ class Account extends Model
                 $class = "\\Application\\ORM\\{$class}";
             }
 
+            if(!class_exists($class)) {
+                $class = "\\Alexya\\Database\\ORM\\Model";
+            }
+
             $exploded = explode("\\", $class);
             $name     = $exploded[count($exploded) - 1];
 
