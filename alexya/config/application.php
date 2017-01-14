@@ -14,9 +14,26 @@ return [
     "url" => "http://blackeye/",
 
     /**
-     * API server URL.
+     * API server information.
      */
-    "api_host" => "localhost",
+    "api" => [
+        /**
+         * Whether the API is in debug or not.
+         */
+        "debug" => true,
+
+        /**
+         * Server host.
+         */
+        "host" => "localhost",
+
+        /**
+         * Mocked respones in case API is in debug.
+         */
+        "mocks" => [
+
+        ]
+    ],
 
     /**
      * Server information.
