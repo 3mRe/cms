@@ -99,11 +99,41 @@ return [
             $page == "External" &&
             $Account->isLogged()
         ) {
-            \Alexya\Http\Response::redirect("/Internal");
+            \Alexya\Http\Response::redirect("/Internal/Start");
         }
 
         if(!$Account->isLogged()) {
             \Alexya\Http\Response::redirect("/External");
+        }
+    },
+
+    /**
+     * Require the account to have choosen a company before accessing Internal.
+     */
+    "/Internal/(.*)" => function($page) {
+        /**
+         * Account object.
+         *
+         * @var \Application\ORM\Account $Account
+         */
+        $Account = \Alexya\Container::Account();
+
+        $page = (explode("/", $page)[0] ?? "");
+
+        // In case user hasn't choose a company yet
+        if(
+            $page != "CompanyChoose" &&
+            $Account->factions_id == 0
+        ) {
+            \Alexya\Http\Response::redirect("/Internal/CompanyChoose");
+        }
+
+        // In case user has choosen a company and tries to access /Internal/CompanyChoose
+        if(
+            $page == "CompanyChoose" &&
+            $Account->factions_id != 0
+        ) {
+            \Alexya\Http\Response::redirect("/Internal/Start");
         }
     },
 
