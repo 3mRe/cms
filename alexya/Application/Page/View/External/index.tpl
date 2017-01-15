@@ -279,7 +279,7 @@
             <div id="eh_description_txt">
                 {$vars = []}
                 {$vars["SERVER_NAME"] = $server->name}
-                <h1>{t("%SERVER_NAME% – Join the intergalactic struggle for control of the galaxy"), $vars}<h1>
+                <h1>{t("%SERVER_NAME% – Join the intergalactic struggle for control of the galaxy", $vars)}<h1>
                 <h2>{t("Engage the thrusters and prepare for battle in the free space MMO. Team up with millions of space pilots for a bitter fight to the end")}<h2>
 
                 {t("Listen up space pilot! The vast expanse of %SERVER_NAME% awaits! Choose your spacecraft and make for your battle station poste-haste to lend a fighting hand to the efforts of mankind and vanquish the alien vermin threatening the existence of man. Take up the fight as you range the galaxy at the helm of your very own space ship. Sign up today in %SERVER_NAME%, become a space pilot, place your allegiances in one of three factions, while joining forces with fellow pilots or forming clans in an effort to round up valuable resources and lead your faction to victory, while dispatching scores of galactic garbage in the free-to-play space game for your computer’s browser!", $vars)}

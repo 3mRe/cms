@@ -129,7 +129,7 @@ class API
 
         $ret = null;
         foreach($mocks as $key => $value) {
-            if(!$key == $command) {
+            if($key != $command) {
                 continue;
             }
 
