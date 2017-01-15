@@ -26,7 +26,6 @@
     <meta property="og:url" content="{$URL}" />
     <meta property="og:image" content="{$URL}do_img/global/fb_icon.jpg" />
     <meta property="og:site_name" content="{$server->name}" />
-    <meta property="fb:app_id" content="364160817714" />
     <meta property="og:description" content="{t($server->description)}" />
     <meta property="og:locale" content="{$locale->code}" />
     {foreach from=$server->locales item=$l}
@@ -58,12 +57,15 @@
         }
     </style>
 </head>
-
 <body>
-    <script>
+    <noscript>
+        <div id="noScript">{t("Please activate Java Script for your browser.")}</div>
+    </noscript>
+
+    <script type="text/javascript">
         function checkMyCookies()
         {
-            var cookieLeMess = '{t("Please activate cookies for your browser.")}';
+            var cookieLeMess  = '{t("Please activate cookies for your browser.")}';
             var cookieEnabled = (navigator.cookieEnabled) ? '' : cookieLeMess;
 
             //if not IE4+ nor NS6+
@@ -73,17 +75,10 @@
 
             return cookieEnabled;
         }
-    </script>
-    <noscript><div id="noScript">{t("Please activate Java Script for your browser.")}</div></noscript>
-    <script type="text/javascript">
         var cookieMessage = checkMyCookies();
         if("" != cookieMessage) {
             document.write('<div id="noCookie">' + cookieMessage + '</div>');
         }
-    </script>
-    <div id="busy_layer"></div>
-
-    <script type="text/javascript">
         /* open ID */
         function showOpenId()
         {
@@ -95,6 +90,8 @@
             jQuery('#loginForm_openId_container').hide();
         }
     </script>
+    <div id="busy_layer"></div>
+
     <style>
         /* smarty fix for lang placeholder */
         .signup_submit
@@ -280,50 +277,55 @@
 
         <div id="footerContainer">
             <div id="eh_description_txt">
-                {t("<h1>DarkOrbit – Join the intergalactic struggle for control of the galaxy<h1>
-                <h2>Engage the thrusters and prepare for battle in the free space MMO. Team up with millions of space pilots for a bitter fight to the end<h2>Listen up space pilot! The vast expanse of DarkOrbit awaits! Choose your spacecraft and make for your battle station poste-haste to lend a fighting hand to the efforts of mankind and vanquish the alien vermin threatening the existence of man. Take up the fight as you range the galaxy at the helm of your very own space ship. Sign up today in DarkOrbit, become a space pilot, place your allegiances in one of three factions, while joining forces with fellow pilots or forming clans in an effort to round up valuable resources and lead your faction to victory, while dispatching scores of galactic garbage in the free-to-play space game for your computer’s browser!
+                {$vars = []}
+                {$vars["SERVER_NAME"] = $server->name}
+                <h1>{t("%SERVER_NAME% – Join the intergalactic struggle for control of the galaxy"), $vars}<h1>
+                <h2>{t("Engage the thrusters and prepare for battle in the free space MMO. Team up with millions of space pilots for a bitter fight to the end")}<h2>
 
-                <h3>Whatever the Company you keep, it’s yours in the Galaxy<h3>
-However, evil aliens are not the only danger lurking about in Bigpoint’s action-packed space MMO! Begin your journey through space in DarkOrbit by selecting one of three rival factions - each replete with their own philosophy of achieving victory in this interstellar fight. Use force, might and aggression in the Mars Mining Organization to emerge victorious, achieve your goals with monetary might in the Earth Industries Corporation or wield cunning and grace to defeat your enemies in the Venus Resources Unlimited. No matter your decision, your mission remains the same: compile valuable resources and turn the tide of the galactic struggle to claim victory in this shooter full of fulminant space action.
+                {t("Listen up space pilot! The vast expanse of %SERVER_NAME% awaits! Choose your spacecraft and make for your battle station poste-haste to lend a fighting hand to the efforts of mankind and vanquish the alien vermin threatening the existence of man. Take up the fight as you range the galaxy at the helm of your very own space ship. Sign up today in %SERVER_NAME%, become a space pilot, place your allegiances in one of three factions, while joining forces with fellow pilots or forming clans in an effort to round up valuable resources and lead your faction to victory, while dispatching scores of galactic garbage in the free-to-play space game for your computer’s browser!", $vars)}
 
-                <h3>Command the Ship of your Choice<h3>
-Faction affiliations notwithstanding, Bigpoint’s smash space browser game gives you a plethora of unique options of putting your own personal touch on your individual struggle throughout space. DarkOrbit puts you in command – find your spacecraft from a host of specialized ships: from ships specialized in laying quick waste to enemy hordes and swift space ships fleet of foot designed to gather invaluable intel to bulky contraptions of high-tech brawn that lay down vital cover to your allies, while meting out heavy damage to targets.
+                <h3>{t("Whatever the Company you keep, it’s yours in the Galaxy")}<h3>
 
-                <h3>Join the Epitome of an Online Community<h3>
-What truly makes DarkOrbit unique, setting it apart from the competition is one thing: You! While other browser games claim to be multiplayer, they simply cannot hold a flame to DarkOrbit’s massive community: over 80 million active players blast off each and every day. Thanks to You and yours, DarkOrbit is the premiere cult online space games. Join the skirmish today alongside millions of space pilots or stand against floes of imposing enemies determined to see out your destruction. Arm your weapons and remain ready – with danger lurking at every turn, a moment’s hesitation can be the difference between success or failure.
+                {t("However, evil aliens are not the only danger lurking about in Bigpoint’s action-packed space MMO! Begin your journey through space in %SERVER_NAME% by selecting one of three rival factions - each replete with their own philosophy of achieving victory in this interstellar fight. Use force, might and aggression in the Mars Mining Organization to emerge victorious, achieve your goals with monetary might in the Earth Industries Corporation or wield cunning and grace to defeat your enemies in the Venus Resources Unlimited. No matter your decision, your mission remains the same: compile valuable resources and turn the tide of the galactic struggle to claim victory in this shooter full of fulminant space action.", $vars)}
 
-                <h3>Fight with Friends, or Against<h3>
-Roam the myriad of galaxies of one of the all-time favorite space shooters. Fraught with danger at seemingly every turn, players must be on their guard and remain alert while scouring for resources, discovering new maps or completing a host of new missions. Form a clan with your friends and respected fellow pilots to boost your chances of victory and survival against hordes of imposing intergalactic beasts, or take on the most intimidating missions as you and your crew attempt to level up at the speed of light.")}
-        </div>
+                <h3>{t("Command the Ship of your Choice")}<h3>
 
-        <div id="eh_footer">
-        <!--gl footer-->
-            <div id="gl_footer">
-                <span id="gl_footer_element_copyright" class="gl_footer_element">&copy; {$server->company}</span>
+                {t("Faction affiliations notwithstanding, Bigpoint’s smash space browser game gives you a plethora of unique options of putting your own personal touch on your individual struggle throughout space. %SERVER_NAME% puts you in command – find your spacecraft from a host of specialized ships: from ships specialized in laying quick waste to enemy hordes and swift space ships fleet of foot designed to gather invaluable intel to bulky contraptions of high-tech brawn that lay down vital cover to your allies, while meting out heavy damage to targets.", $vars)}
 
-                <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
-                <span id="gl_footer_element_allrights" class="gl_footer_element">{t("All rights reserved")}</span>
+                <h3>{t("Join the Epitome of an Online Community")}<h3>
 
-                <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
-                <span id="gl_footer_element_terms" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_terms" href="{$URL}terms-and-conditions/{$locale->code}" target="_blank">{t("Terms & Conditions")}</a></span>
+                {t("What truly makes %SERVER_NAME% unique, setting it apart from the competition is one thing: You! While other browser games claim to be multiplayer, they simply cannot hold a flame to %SERVER_NAME%’s massive community: over 80 million active players blast off each and every day. Thanks to You and yours, %SERVER_NAME% is the premiere cult online space games. Join the skirmish today alongside millions of space pilots or stand against floes of imposing enemies determined to see out your destruction. Arm your weapons and remain ready – with danger lurking at every turn, a moment’s hesitation can be the difference between success or failure.", $vars)}
 
-                <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
-                <span id="gl_footer_element_logo" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_logo" href="http://en.bigpoint.com/" target="_blank"><img class="gl_footer_element_image" id="gl_footer_element_image_logo" src="{$URL}shared/img/footer/bigpoint_logo_h_web_rgb_neg_com_full.MINI.png" alt=""/></a></span>
+                <h3>{t("Fight with Friends, or Against")}<h3>
 
-                <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
-                <span id="gl_footer_element_privacy" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_privacy" href="{$URL}privacy-policy/{$locale->code}" target="_blank">{t("Data Privacy Policy")}</a></span>
+                {t("Roam the myriad of galaxies of one of the all-time favorite space shooters. Fraught with danger at seemingly every turn, players must be on their guard and remain alert while scouring for resources, discovering new maps or completing a host of new missions. Form a clan with your friends and respected fellow pilots to boost your chances of victory and survival against hordes of imposing intergalactic beasts, or take on the most intimidating missions as you and your crew attempt to level up at the speed of light.")}
+            </div>
 
-                <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
-                <span id="gl_footer_element_imprint" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_imprint" href="{$URL}imprint/{$locale->code}" target="_blank">{t("Legal information")}</a></span>
+            <div id="eh_footer">
+            <!--gl footer-->
+                <div id="gl_footer">
+                    <span id="gl_footer_element_copyright" class="gl_footer_element">&copy; {$server->company}</span>
 
-                <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
-                <span id="gl_footer_element_support" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_support" href="{$URL}Support" target="_blank">{t("Support")}</a></span>
+                    <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+                    <span id="gl_footer_element_allrights" class="gl_footer_element">{t("All rights reserved")}</span>
 
-                <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
-                <span id="gl_footer_element_forum" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_forum" href="{$URL}Forum" target="_blank">{t("Forum")}</a></span>
+                    <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+                    <span id="gl_footer_element_terms" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_terms" href="{$URL}terms-and-conditions/{$locale->code}" target="_blank">{t("Terms & Conditions")}</a></span>
+
+                    <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+                    <span id="gl_footer_element_privacy" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_privacy" href="{$URL}privacy-policy/{$locale->code}" target="_blank">{t("Data Privacy Policy")}</a></span>
+
+                    <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+                    <span id="gl_footer_element_imprint" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_imprint" href="{$URL}imprint/{$locale->code}" target="_blank">{t("Legal information")}</a></span>
+
+                    <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+                    <span id="gl_footer_element_support" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_support" href="{$URL}Support" target="_blank">{t("Support")}</a></span>
+
+                    <span class="gl_footer_element_separator">&nbsp;·&nbsp;</span>
+                    <span id="gl_footer_element_forum" class="gl_footer_element"><a class="gl_footer_element_link" id="gl_footer_element_link_forum" href="{$URL}Forum" target="_blank">{t("Forum")}</a></span>
+                </div>
             </div>
         </div>
     </div>
-</div>
     </body>
 </html>
