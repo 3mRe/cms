@@ -195,8 +195,7 @@
                         <!--  -->
                     </div>
                     <div class="message">
-                        {t("I'm not going to blow smoke up your tush, so I'll just get straight to the point. We at Mars Mining Operations want you for two reasons: to mine ore and to eradicate all alien scum infecting our galactic sector. Do this successfully
-                        and you'll soon be popping rival pilots for thrills and honor!")}</div>
+                        {t("I'm not going to blow smoke up your tush, so I'll just get straight to the point. We at Mars Mining Operations want you for two reasons: to mine ore and to eradicate all alien scum infecting our galactic sector. Do this successfully and you'll soon be popping rival pilots for thrills and honor!")}</div>
                 </div>
 
                 <div class="eic">
@@ -207,8 +206,7 @@
                         <!--  -->
                     </div>
                     <div class="message">
-                        {t("Pilot, these are trying times during which only those made of the purest inner steel can prevail! How tough is your mettle? We reward loyalty and impeccable manners with the best lasers Uridium can buy. Join us in the fight to cleanse
-                        our sector of all those cretins that stand in our way. For glory and privilege!")}</div>
+                        {t("Pilot, these are trying times during which only those made of the purest inner steel can prevail! How tough is your mettle? We reward loyalty and impeccable manners with the best lasers Uridium can buy. Join us in the fight to cleanse our sector of all those cretins that stand in our way. For glory and privilege!")}</div>
                 </div>
 
                 <div class="vru">
@@ -219,8 +217,7 @@
                         <!--  -->
                     </div>
                     <div class="message">
-                        {t("We pride ourselves in our ability to push the envelope of technological advancement, while retaining a communal atmosphere. Some call us a cult desiring galactic domination, but they simply misunderstand our brilliant recruitment methods.
-                        We are always looking for talented pilots to help us destroy our enemies and shape humanity's future!")}</div>
+                        {t("We pride ourselves in our ability to push the envelope of technological advancement, while retaining a communal atmosphere. Some call us a cult desiring galactic domination, but they simply misunderstand our brilliant recruitment methods. We are always looking for talented pilots to help us destroy our enemies and shape humanity's future!")}</div>
                 </div>
             </div>
         </div>
@@ -448,7 +445,7 @@
                     async: false,
                     success: function(data) {
                         data = jQuery.parseJSON(data);
-                        if (data.status == 'OK') {
+                        if (data.result) {
                             //doOpenClient(href);
                             doOpenClient();
                             // timeout is needed because on using without the redirect is faster then the eventstream tracking
@@ -507,5 +504,4 @@
         }
     </script>
 </body>
-
 </html>
