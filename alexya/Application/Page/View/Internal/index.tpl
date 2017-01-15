@@ -27,7 +27,6 @@
     <meta property="og:url" content="{$URL}" />
     <meta property="og:image" content="{$URL}do_img/global/fb_icon.jpg" />
     <meta property="og:site_name" content="{$server->name}" />
-    <meta property="fb:app_id" content="364160817714" />
     <meta property="og:description" content="{t($server->description)}" />
     <meta property="og:locale" content="{$locale->code}" />
     {foreach from=$server->locales item=$l}
@@ -310,7 +309,7 @@
 
     <div id="helpLayer" style="position:absolute;width:480px;display:none;z-index:10;" class="fliess11px-grey">
         <div id="popup_standard_headcontainer">
-            <div id="popup_standard_headline"><img src="do_img/global/text.esg?l={$locale->code}&s=9&t=Help&f=eurostyle_clan"></div>
+            <div id="popup_standard_headline"><img src="{$URL}do_img/global/text.esg?l={$locale->code}&s=9&t=Help&f=eurostyle_clan"></div>
             <div id="popup_standard_close">
                 <a href="javascript:void(0);" onclick="closeLayer('helpLayer');" onfocus="this.blur();"><img src="{$URL}do_img/global/popups/popup_middle_close.jpg"></a>
             </div>
@@ -323,7 +322,7 @@
                     <br /> {t("Your %SERVER_NAME% journey will lead you to far-off galaxies fraught with danger and mystery. Your first rule of thumb is not to panic!", $translationVars)}<br />
                     <br /> {t("You can always get help here:")}
                     <ul style="margin:20px 0px;">
-                        <li style="margin-left:20px;list-style-type:disc;">{t("Visit our")} <a href="{$URL}GameAPI/portal.redirectToBoard" target="_blank" onfocus="this.blur()" style="text-decoration:underline">{t("Forum")}</a>.</li>
+                        <li style="margin-left:20px;list-style-type:disc;">{t("Visit our")} <a href="{$URL}Forum" target="_blank" onfocus="this.blur()" style="text-decoration:underline">{t("Forum")}</a>.</li>
                     </ul>
                     {t("If you can't find any answers to your questions contact")} <a href="{$URL}Internal/Support/Start" target="_blank" onfocus="this.blur()" style="text-decoration:underline">{t("Support")}</a>.<br />
                     <br /> {t("Godspeed, captain!")}
@@ -474,7 +473,7 @@
             <div class="outerContainer fliess11px-gelb">
                 <div class="header_standard" id="header_intern">
                     <div id="header_branding">
-                        <img id="PartnerCobrandLogo" src="http://pit-835.a.bpcdn.net/published/cobrands/0_22_3.png" />
+                        <img id="PartnerCobrandLogo" src="{$URL}published/cobrands/0_22_3.png" />
                     </div>
 
                     <div id="header_ship" style="background-image: url({$URL}do_img/global/header/ships/model{$account->Hangar->Ship->Ship->id}.png)"></div>
@@ -516,12 +515,19 @@
 
                     <div id="header_main">
                         <div id="header_hangar_slots">
-                            <a showHangarInfo="CgaG" class="header_hangar_slot" href="indexInternal.es?action=internalDock&subAction=changeHangar&hangarId=3023632&reloadToken=6aab819b19553b37e250339f55666776">
-                                1
+                            {foreach from=$account->Hangars->available() item=h name=hangars}
+                            {$activated = ""}
+                            {$href = "`$URL`Internal/Dock/changeHangar/`$h->id`"} <!-- tfw smarty can't concatenate strings the dot way -->
+
+                            {if $account->hangars_id == $h->id}
+                                {$activated = "current_slot"}
+                                {$href = "`$URL`Internal/Dock"}
+                            {/if}
+
+                            <a showHangarInfo="{$h->id}" class="header_hangar_slot {$activated}" href="{$href}">
+                                {$smarty.foreach.hangars.iteration}
                             </a>
-                            <a showHangarInfo="CjQy" class="header_hangar_slot current_slot" href="indexInternal.es?action=internalDock">
-                                2
-                            </a>
+                            {/foreach}
                             <div id="header_hangar_arrow"></div>
                         </div>
 
@@ -715,7 +721,9 @@
                     <div class="frameRight_top"></div>
                     <div class="contentFrame">
                         <div class="realContainer">
-                            {/if} {$module nofilter} {if $hasFrames}
+                    {/if}
+                    {$module nofilter}
+                    {if $hasFrames}
                         </div>
                     </div>
                     {/if}
@@ -806,7 +814,7 @@
                         <div id="imprint_ingame" class="fliesstext">
                             <a href="{$URL}Legal" target="_blank">{t("Legal information")}</a> |
                             <a href="javascript:void(0);" onclick="showFooterLayer('teamCreditsBox')">{t("Credits")}</a> |
-                            <a href="{$URL}GameAPI/portal.redirectToBoard" target="_blank">{t("Forum")}</a>
+                            <a href="{$URL}Forum" target="_blank">{t("Forum")}</a>
                         </div>
 
                         <div class="socialBar">
