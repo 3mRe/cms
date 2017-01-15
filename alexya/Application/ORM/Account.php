@@ -96,6 +96,6 @@ class Account extends Model
      */
     public function isLogged() : bool
     {
-        return !empty($this->_id);
+        return !empty(($this->id ?? ""));
     }
 }

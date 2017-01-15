@@ -2,7 +2,6 @@
 namespace Application\Module\Controller;
 
 use Alexya\Foundation\Controller;
-use Alexya\Http\Response;
 
 /**
  * CompanyChoose module controller.
@@ -14,14 +13,10 @@ class CompanyChoose extends Controller
     /**
      * Renders and returns the page.
      *
-     * @return Response Response object.
+     * @return string Page content.
      */
-    public function index() : Response
+    public function index() : string
     {
-        $response = new Response([
-            "Content-Type" => "text/html"
-        ], $this->_triad->Presenter->render());
-
-        return $response;
+        return $this->_triad->Presenter->render();
     }
 }

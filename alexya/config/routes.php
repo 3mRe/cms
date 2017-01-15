@@ -43,10 +43,14 @@ return [
 
         if(
             !$triad->exists()                           ||
-            !is_callable([$triad->Controller, $action]) ||
+            //!is_callable([$triad->Controller, $action]) ||
             empty($page)
         ) {
             die("Couldn't execute request!");
+        }
+
+        if(!is_callable([$triad->Controller, $action])) {
+            $action = "index";
         }
 
         if(!empty($_POST)) {

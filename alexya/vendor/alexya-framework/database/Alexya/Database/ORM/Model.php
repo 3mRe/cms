@@ -671,7 +671,7 @@ class Model
      */
     public function get(string $name)
     {
-        return $this->_data[$name];
+        return ($this->_data[$name] ?? "");
     }
 
     /**

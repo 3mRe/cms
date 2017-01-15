@@ -27,7 +27,6 @@ class Internal extends Presenter
 
         foreach($this->_triad->Model->all() as $key => $value) {
             $this->_triad->children->module->Model->set($key, $value);
-            $this->_triad->View->set($key, $value);
         }
 
         // Call the render method here so it redirects now instead of when the view is being rendered.
