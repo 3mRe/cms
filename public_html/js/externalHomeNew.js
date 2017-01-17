@@ -3,15 +3,13 @@ jQuery(document).ready(function() {
 });
 
 var externalHomeNew = {
-    init: function()
-    {
+    init: function() {
         this.showErrorMessage();
         this.enableScreenshots();
         this.setAutoFocus();
     },
 
-    showErrorMessage: function()
-    {
+    showErrorMessage: function() {
         var errorContent = jQuery('#loginErrorWrapper').html();
 
         if (!errorContent) {
@@ -25,15 +23,13 @@ var externalHomeNew = {
         });
     },
 
-    setAutoFocus: function()
-    {
+    setAutoFocus: function() {
         jQuery('#bgcdw_login_form_username').focus();
     },
 
-    enableScreenshots: function()
-    {
+    enableScreenshots: function() {
         jQuery('a.eh_screen_trigger').colorbox({
-            rel:'screenshots'
+            rel: 'screenshots'
         });
     }
 }

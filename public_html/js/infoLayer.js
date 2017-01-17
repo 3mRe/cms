@@ -24,7 +24,7 @@ function showInfoLayer(type, divToSend, text) {
     }
 
     jQuery("#infoLayer .question").html(text);
-    jQuery("#infoLayer").css('left', ((width_x/2) - (container_x/2))+"px");
+    jQuery("#infoLayer").css('left', ((width_x / 2) - (container_x / 2)) + "px");
     jQuery("#infoLayer").css('top', "200px");
     jQuery("#infoLayer").show();
 }
@@ -35,17 +35,18 @@ function closeInfoLayer() {
 }
 
 submitted = 0;
+
 function confirmInfoLayer(divToSend) {
-    if(submitted == 0) {
+    if (submitted == 0) {
         submitted = 1;
-        jQuery("#"+divToSend).submit();
+        jQuery("#" + divToSend).submit();
     }
 }
 
 var Layer = {
 
     handleEmailVerify: function() {
-        if(jQuery("#dontShowAgain").is(':checked')) {
+        if (jQuery("#dontShowAgain").is(':checked')) {
             this.dontShowAgain();
         }
         closeLayer('emailVerify')
@@ -53,14 +54,14 @@ var Layer = {
 
     dontShowAgain: function() {
         jQuery.ajax({
-            type        : 'POST',
-            url         : '/ajax/layer.php',
-            dataType    : 'json',
-            data        : {
-                action    : 'dontShowAgain',
-                layerId   : jQuery('#layerId').val()
+            type: 'POST',
+            url: '/ajax/layer.php',
+            dataType: 'json',
+            data: {
+                action: 'dontShowAgain',
+                layerId: jQuery('#layerId').val()
             },
-            success     : function (data, status, jqXHR) {
+            success: function(data, status, jqXHR) {
                 if (0 == data.isError) {
                     console.log('SUCCESS: ' + data.message);
                 } else {

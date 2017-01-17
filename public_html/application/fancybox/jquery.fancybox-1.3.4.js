@@ -114,6 +114,8 @@
                             i = !1;
                             a.BPFancybox.showActivity();
                             d.ajax.win = d.ajax.success;
+                            // Not trusting AJAX request, sorry BP, I'll enable it once I take a closer look ;)
+                            /*
                             B = a.ajax(a.extend({}, d.ajax, {
                                 url: f,
                                 data: d.ajax.data || {},
@@ -132,7 +134,7 @@
                                         A()
                                     }
                                 }
-                            }));
+                            }));*/
                             break;
                         case "iframe":
                             J()

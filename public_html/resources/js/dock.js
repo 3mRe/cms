@@ -4,22 +4,22 @@
  * @author  Wolfgang Timme <w.timme@bigpoint.net>
  */
 var Dock = {
-    Initialize : function () {
+    Initialize: function() {
         this.fetchElements();
         this.initializeEventListeners();
     },
 
-    fetchElements : function () {
+    fetchElements: function() {
         var btnActivateShip = jQuery('#buttonActivateShip'),
-            hangarSlotTabs  = jQuery('.hangarSlot');
+            hangarSlotTabs = jQuery('.hangarSlot');
 
-        Library.set('btnActivateShip',  btnActivateShip);
-        Library.set('hangarSlotTabs',   hangarSlotTabs);
+        Library.set('btnActivateShip', btnActivateShip);
+        Library.set('hangarSlotTabs', hangarSlotTabs);
     },
 
-    initializeEventListeners : function () {
+    initializeEventListeners: function() {
         var btnActivateShip = Library.get('btnActivateShip'),
-            hangarSlotTabs  = Library.get('hangarSlotTabs');
+            hangarSlotTabs = Library.get('hangarSlotTabs');
 
         // Only add event listeners to 'activate ship' button if it is present.
         if ('undefined' !== typeof btnActivateShip[0]) {
@@ -27,30 +27,30 @@ var Dock = {
             Tools.addDefaultMouseEventBehaviour(btnActivateShip);
         }
 
-        hangarSlotTabs.live('mouseover',    this.Events.onHangarTabMouseOver);
-        hangarSlotTabs.live('mouseout',     this.Events.onHangarTabMouseOut);
+        hangarSlotTabs.live('mouseover', this.Events.onHangarTabMouseOver);
+        hangarSlotTabs.live('mouseout', this.Events.onHangarTabMouseOut);
     },
 
-    showTooltipForSlotId : function (slotId) {
+    showTooltipForSlotId: function(slotId) {
         console.log('Show tooltip for slot #' + slotId);
     },
 
-    Events : {
+    Events: {
         /**
          * Is called when the user places the mouse over a hangar tab button.
          */
-        onHangarTabMouseOver : function (event) {
-            var container   = jQuery(this),
+        onHangarTabMouseOver: function(event) {
+            var container = jQuery(this),
                 containerId = container.attr('id'),
-                slotId      = parseInt(containerId.replace('slot_', ''));
-            
+                slotId = parseInt(containerId.replace('slot_', ''));
+
             jQuery("#hangarInfoLayer").show();
         },
 
         /**
          * Is called when the mouse leaves a hangar tab button.
          */
-        onHangarTabMouseOut : function (event) {
+        onHangarTabMouseOut: function(event) {
             jQuery("#hangarInfoLayer").hide();
         }
     }

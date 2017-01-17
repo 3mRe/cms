@@ -5,37 +5,37 @@
  * @author  Wolfgang Timme <w.timme@bigpoint.net>
  */
 var Tools = {
-    Initialize : function () {},
+    Initialize: function() {},
 
     /**
      * Adds 'hover' functionality to the given element.
      */
-    addDefaultMouseEventBehaviour : function (element) {
-        element.live('mouseover',    Tools.Events.General.onMouseOver);
-        element.live('mouseout',     Tools.Events.General.onMouseOut);
-        element.live('mousedown',    Tools.Events.General.onMouseDown);
-        element.live('mouseup',      Tools.Events.General.onMouseUp);
+    addDefaultMouseEventBehaviour: function(element) {
+        element.live('mouseover', Tools.Events.General.onMouseOver);
+        element.live('mouseout', Tools.Events.General.onMouseOut);
+        element.live('mousedown', Tools.Events.General.onMouseDown);
+        element.live('mouseup', Tools.Events.General.onMouseUp);
     },
-    
-    isNumeric : function (valueToCheck) {
+
+    isNumeric: function(valueToCheck) {
         return !isNaN(valueToCheck) || 'number' === typeof valueToCheck
     },
-    
-    Events : {
-        General : {
-            onMouseOver : function (event) {
+
+    Events: {
+        General: {
+            onMouseOver: function(event) {
                 jQuery(this).addClass('mouseOver');
             },
-            
-            onMouseOut : function (event) {
+
+            onMouseOut: function(event) {
                 jQuery(this).removeClass('mouseDown').removeClass('mouseOver');
             },
-            
-            onMouseDown : function (event) {
+
+            onMouseDown: function(event) {
                 jQuery(this).removeClass('mouseOver').addClass('mouseDown');
             },
-            
-            onMouseUp : function (event) {
+
+            onMouseUp: function(event) {
                 jQuery(this).removeClass('mouseDown').addClass('mouseOver');
             }
         }

@@ -4,28 +4,28 @@
  */
 Tools.Text = {
 
-    resources : {},
+    resources: {},
 
 
-    Initialize : function () {
-//        if ('undefined' === typeof Tools.Text.Parameters || 'undefined' === typeof Tools.Text.Parameters.resources) {
-//            Tools.ErrorHandler.Events.onTypeUndefined('Tools.Text.Parameters');
-//            Tools.Text.resources = {};
-//        } else {
-//            Tools.Text.resources = Tools.Text.Parameters.resources;
-//        }
+    Initialize: function() {
+        //        if ('undefined' === typeof Tools.Text.Parameters || 'undefined' === typeof Tools.Text.Parameters.resources) {
+        //            Tools.ErrorHandler.Events.onTypeUndefined('Tools.Text.Parameters');
+        //            Tools.Text.resources = {};
+        //        } else {
+        //            Tools.Text.resources = Tools.Text.Parameters.resources;
+        //        }
     },
 
-    setResource: function(key, text){
-       this.resources[key] = text;
+    setResource: function(key, text) {
+        this.resources[key] = text;
     },
 
-    getResources : function () {
+    getResources: function() {
         return Tools.Text.resources;
     },
 
-    get : function (textIdentifier) {
-        var resources   = Tools.Text.getResources(),
+    get: function(textIdentifier) {
+        var resources = Tools.Text.getResources(),
             text;
 
         if ('undefined' === typeof resources[textIdentifier]) {
@@ -37,26 +37,26 @@ Tools.Text = {
         return text;
     },
 
-    getWithReplacements : function (textIdentifier, replacementDictionary) {
+    getWithReplacements: function(textIdentifier, replacementDictionary) {
         var text = Tools.Text.get(textIdentifier);
 
-        jQuery.each(replacementDictionary, function (key, value) {
+        jQuery.each(replacementDictionary, function(key, value) {
             text = text.replace(key, value);
         });
 
         return text;
     },
 
-    getTextImageUrl : function (options) {
-        var options         = ('undefined' === typeof options) ? {} : options,
-            textIdentifier  = ('undefined' === typeof options.textIdentifier) ? 'title_error' : options.textIdentifier,
-            fontSize        = ('undefined' === typeof options.fontSize) ? 12 : options.fontSize,
-            font            = ('undefined' === typeof options.font) ? 'eurostyle_thea' : options.font,
-            color           = ('undefined' === typeof options.color) ? 'white' : options.color,
+    getTextImageUrl: function(options) {
+        var options = ('undefined' === typeof options) ? {} : options,
+            textIdentifier = ('undefined' === typeof options.textIdentifier) ? 'title_error' : options.textIdentifier,
+            fontSize = ('undefined' === typeof options.fontSize) ? 12 : options.fontSize,
+            font = ('undefined' === typeof options.font) ? 'eurostyle_thea' : options.font,
+            color = ('undefined' === typeof options.color) ? 'white' : options.color,
             backgroundColor = ('undefined' === typeof options.backgroundColor) ? 'grey' : options.backgroundColor,
-            userLanguage    = ('undefined' === typeof User) ? 'en' : User.getLanguage(),
-            language        = ('undefined' === typeof options.language) ? userLanguage : options.language,
-            url             = '/do_img/global/text_tf.esg?s=' + fontSize + '&t=' + textIdentifier + '&f=' + font + '&color=' + color + '&bgcolor=' + backgroundColor + '&l=' + language;
+            userLanguage = ('undefined' === typeof User) ? 'en' : User.getLanguage(),
+            language = ('undefined' === typeof options.language) ? userLanguage : options.language,
+            url = '/do_img/global/text_tf.esg?s=' + fontSize + '&t=' + textIdentifier + '&f=' + font + '&color=' + color + '&bgcolor=' + backgroundColor + '&l=' + language;
 
         return url;
     },
@@ -70,19 +70,19 @@ Tools.Text = {
      *
      * @source  http://phpjs.org/functions/number_format:481
      */
-    getFormattedNumber : function (numberToFormat) {
-        var number                  = Math.abs(numberToFormat),
-            roundValue              = Math.ceil(number),
-            numberAsString          = number + '',
-            numberOfDecimals        = roundValue === numberToFormat ? 0 : numberAsString.split('.')[1].length,
-            n                       = !isFinite(+number) ? 0 : +number,
-            prec                    = !isFinite(+numberOfDecimals) ? 0 : Math.abs(numberOfDecimals),
-            thousands_sep           = Tools.Text.get('thousands_separator'),
-            decimal_sep             = Tools.Text.get('decimal_separator'),
-            sep                     = ('undefined' === typeof thousands_sep) ? '.' : thousands_sep,
-            dec                     = ('undefined' === typeof decimal_sep) ? ',' : decimal_sep,
-            s                       = '',
-            toFixedFix              = function (n, prec) {
+    getFormattedNumber: function(numberToFormat) {
+        var number = Math.abs(numberToFormat),
+            roundValue = Math.ceil(number),
+            numberAsString = number + '',
+            numberOfDecimals = roundValue === numberToFormat ? 0 : numberAsString.split('.')[1].length,
+            n = !isFinite(+number) ? 0 : +number,
+            prec = !isFinite(+numberOfDecimals) ? 0 : Math.abs(numberOfDecimals),
+            thousands_sep = Tools.Text.get('thousands_separator'),
+            decimal_sep = Tools.Text.get('decimal_separator'),
+            sep = ('undefined' === typeof thousands_sep) ? '.' : thousands_sep,
+            dec = ('undefined' === typeof decimal_sep) ? ',' : decimal_sep,
+            s = '',
+            toFixedFix = function(n, prec) {
                 var k = Math.pow(10, prec);
                 return '' + Math.round(n * k) / k;
             };

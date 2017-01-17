@@ -1,12 +1,12 @@
 var Main = {
 
     sId: null,
-    clientTitleDefault:  Tools.Text.get("seo_title_client"),
+    clientTitleDefault: Tools.Text.get("seo_title_client"),
     mapRevolutionDisplayMode: null,
     intervalId: null,
     windowSpaceMap: null,
 
-    Initialize: function (mapRevolutionDisplayMode, sId) {
+    Initialize: function(mapRevolutionDisplayMode, sId) {
 
         this.sId = sId;
         this.mapRevolutionDisplayMode = mapRevolutionDisplayMode;
@@ -15,7 +15,7 @@ var Main = {
 
     },
 
-    fetchElements : function () {
+    fetchElements: function() {
 
     },
 
@@ -24,13 +24,13 @@ var Main = {
      * FF3+, C13+, IE10+
      *
      */
-    initializeEventListeners : function () {
+    initializeEventListeners: function() {
 
         // use the property name to generate the prefixed event name
         var visProp = this.getHiddenProp();
         if (visProp) {
-            var evtname = visProp.replace(/[H|h]idden/,'') + 'visibilitychange';
-        //    document.addEventListener(evtname, this.visChange);
+            var evtname = visProp.replace(/[H|h]idden/, '') + 'visibilitychange';
+            //    document.addEventListener(evtname, this.visChange);
         }
     },
 
@@ -38,25 +38,16 @@ var Main = {
      * used by web window
      * @param key
      */
-    openFlashClient:function () {
-        var map = 'internalMapRevolution';
+    openFlashClient: function() {
+        var map = 'Map';
         var popupModifiers = "";
 
         if (this.mapRevolutionDisplayMode == "0") {
-            var popupModifiers = 'width=' + screen.availWidth + ',' +
-                'height=' + screen.availHeight + ',' +
-                'top=0,' +
-                'left=0,' +
-                'menubar=no,' +
-                'location=no,' +
-                'titlebar=no,' +
-                'status=yes,' +
-                'toolbar=no,' +
-                'resizable=yes';
+            var popupModifiers = '';
         }
-        var url = 'indexInternal.es?action=' + map + '&' + this.sId;
-        if(this.windowSpaceMap == null || this.windowSpaceMap.closed) {
-            this.windowSpaceMap = window.open(url,'spaceMap', popupModifiers);
+        var url = 'Internal/' + map; // IDK Why someone would do this, but congratz BP
+        if (this.windowSpaceMap == null || this.windowSpaceMap.closed) {
+            this.windowSpaceMap = window.open(url, 'spaceMap', popupModifiers);
 
             //workaround special case.
             //if (this.windowSpaceMap.location.search.length == 0) {
@@ -73,21 +64,21 @@ var Main = {
         this.windowSpaceMap.focus();
 
         this.stopCurrentBlinking(this.intervalId);
-        this.intervalId =  this.blinkHtmlTitle(this.windowSpaceMap);
+        this.intervalId = this.blinkHtmlTitle(this.windowSpaceMap);
 
         //after 10 seconds we removed the current interval (fallback for IE<10)
-        setTimeout(function () {
+        setTimeout(function() {
             Main.clearCurrentInterval(Main.intervalId)
         }, 10000)
 
     },
 
-    stopCurrentBlinking: function(intervalId){
+    stopCurrentBlinking: function(intervalId) {
 
-        if(intervalId != null){
+        if (intervalId != null) {
             //console.log("removing... " + intervalId);
             clearInterval(intervalId);
-            this.windowSpaceMap.document.title =  Tools.Text.get("seo_title_client");
+            this.windowSpaceMap.document.title = Tools.Text.get("seo_title_client");
         }
 
     },
@@ -97,18 +88,18 @@ var Main = {
      * used by web  window
      * @param key
      */
-    visChange: function(){
+    visChange: function() {
 
-            if(Main.windowSpaceMap){
+        if (Main.windowSpaceMap) {
 
-                if (!Main.isHidden()){
+            if (!Main.isHidden()) {
                 Main.windowSpaceMap.InternalMapRevolution.clearCurrentInterval(Main.intervalId);
-                   setTimeout(function(){
-                     window.document.title = Tools.Text.get("seo_title_standard")
-                   },1000);
-                }
-
+                setTimeout(function() {
+                    window.document.title = Tools.Text.get("seo_title_standard")
+                }, 1000);
             }
+
+        }
 
     },
 
@@ -117,7 +108,7 @@ var Main = {
      * Enable in website a feedback form
      */
 
-    getHiddenProp: function () {
+    getHiddenProp: function() {
         var prefixes = ['webkit', 'moz', 'ms', 'o'];
 
         // if 'hidden' is natively supported just return it
@@ -138,7 +129,7 @@ var Main = {
      * Enable in website a feedback form
      */
 
-    isHidden: function () {
+    isHidden: function() {
         var prop = this.getHiddenProp();
         if (!prop) return false;
 
@@ -150,15 +141,15 @@ var Main = {
      * Returns default title
      *
      */
-    getDefaultTitle: function(){
+    getDefaultTitle: function() {
         return Main.clientTitleDefault;
     },
 
-    blinkHtmlTitle: function(winRef){
+    blinkHtmlTitle: function(winRef) {
 
         var isOldTitle = true;
-        var oldTitle  = Tools.Text.get("seo_title_client");
-        var newTitle  = Tools.Text.get("seo_title_client_blinking");
+        var oldTitle = Tools.Text.get("seo_title_client");
+        var newTitle = Tools.Text.get("seo_title_client_blinking");
 
         var interval = null;
 
@@ -180,14 +171,14 @@ var Main = {
      * @param intervalId
      * @param clientTitleDefault
      */
-    clearCurrentInterval: function(intervalId){
+    clearCurrentInterval: function(intervalId) {
 
         //clear interval
         clearInterval(intervalId);
         //console.log("Clearing..." + this.intervalId)
         //set document title by default if needed.
-        if (this.windowSpaceMap){
-            this.windowSpaceMap.document.title =  Tools.Text.get("seo_title_client");
+        if (this.windowSpaceMap) {
+            this.windowSpaceMap.document.title = Tools.Text.get("seo_title_client");
         }
 
     },
@@ -201,14 +192,26 @@ var Main = {
             type: 'POST',
             url: '/ajax/instances.php',
             dataType: 'json',
-            data: {command: "getInstanceList"},
+            data: {
+                command: "getInstanceList"
+            },
             success: function(response) {
                 if (response.result == 'OK') {
                     jQuery('#instanceList').html(response.code);
-                    jQuery('.scroll_pane').jScrollPane({autoReinitialise: true});
-                    jQuery('#instanceList').css({display: 'block'});
+                    jQuery('.scroll_pane').jScrollPane({
+                        autoReinitialise: true
+                    });
+                    jQuery('#instanceList').css({
+                        display: 'block'
+                    });
                 } else {
-                    jQuery('#userInfoButtonBlacklistUser').qtip({content: header_ttips.userInfo_blacklistUser,style: 'dohdr',position: {target: 'mouse'}});
+                    jQuery('#userInfoButtonBlacklistUser').qtip({
+                        content: header_ttips.userInfo_blacklistUser,
+                        style: 'dohdr',
+                        position: {
+                            target: 'mouse'
+                        }
+                    });
                     hideBusyLayer();
                 }
             }
@@ -225,18 +228,33 @@ var Main = {
             type: 'POST',
             url: '/ajax/messaging.php',
             dataType: 'json',
-            data: {command: "addToBlacklist", username: username},
+            data: {
+                command: "addToBlacklist",
+                username: username
+            },
             success: function(response) {
                 if (response.result == 'OK') {
                     Main.hideSpinner();
                     jQuery('#userInfoButtonBlacklistUser').addClass('userInfoBlacklistActive');
-                    jQuery('#userInfoButtonBlacklistUser').qtip({content: header_ttips.userInfo_blacklistUserListed,style: 'dohdr',position: {target: 'mouse'}});
+                    jQuery('#userInfoButtonBlacklistUser').qtip({
+                        content: header_ttips.userInfo_blacklistUserListed,
+                        style: 'dohdr',
+                        position: {
+                            target: 'mouse'
+                        }
+                    });
                     Tools.Popup.Presets.showSuccessDialog(
                         Tools.Text.get('message_contact_block_user')
                     );
                     hideBusyLayer();
                 } else {
-                    jQuery('#userInfoButtonBlacklistUser').qtip({content: header_ttips.userInfo_blacklistUser,style: 'dohdr',position: {target: 'mouse'}});
+                    jQuery('#userInfoButtonBlacklistUser').qtip({
+                        content: header_ttips.userInfo_blacklistUser,
+                        style: 'dohdr',
+                        position: {
+                            target: 'mouse'
+                        }
+                    });
                     hideBusyLayer();
                 }
             }
@@ -252,18 +270,33 @@ var Main = {
             type: 'POST',
             url: '/ajax/messaging.php',
             dataType: 'json',
-            data: {command: "blacklistRemove", username: username},
+            data: {
+                command: "blacklistRemove",
+                username: username
+            },
             success: function(response) {
                 if (response.result == 'OK') {
                     Main.hideSpinner();
                     jQuery('#userInfoButtonBlacklistUser').addClass('userInfoBlacklistActive');
-                    jQuery('#userInfoButtonBlacklistUser').qtip({content: header_ttips.userInfo_blacklistUserListed,style: 'dohdr',position: {target: 'mouse'}});
+                    jQuery('#userInfoButtonBlacklistUser').qtip({
+                        content: header_ttips.userInfo_blacklistUserListed,
+                        style: 'dohdr',
+                        position: {
+                            target: 'mouse'
+                        }
+                    });
                     Tools.Popup.Presets.showSuccessDialog(
                         Tools.Text.get('message_contact_unblock_user')
                     );
                     hideBusyLayer();
                 } else {
-                    jQuery('#userInfoButtonBlacklistUser').qtip({content: header_ttips.userInfo_blacklistUser,style: 'dohdr',position: {target: 'mouse'}});
+                    jQuery('#userInfoButtonBlacklistUser').qtip({
+                        content: header_ttips.userInfo_blacklistUser,
+                        style: 'dohdr',
+                        position: {
+                            target: 'mouse'
+                        }
+                    });
                     hideBusyLayer();
                 }
             }
@@ -278,7 +311,11 @@ var Main = {
             type: 'POST',
             url: '/ajax/messaging.php',
             dataType: 'json',
-            data: {command: "sendInvitation", userHash: userHash, inviterId: inviterId},
+            data: {
+                command: "sendInvitation",
+                userHash: userHash,
+                inviterId: inviterId
+            },
             success: function(response) {
                 Main.hideSpinner();
                 if (response.result == 'OK') {
@@ -302,7 +339,10 @@ var Main = {
             type: 'POST',
             url: '/ajax/user.php',
             dataType: 'json',
-            data: {command: "loadUserInfo", userId:userId },
+            data: {
+                command: "loadUserInfo",
+                userId: userId
+            },
             success: function(response) {
                 if (response.result == 'OK') {
                     jQuery('#userInfoLayer').html(response.code);
@@ -320,7 +360,10 @@ var Main = {
             type: 'POST',
             url: '/ajax/clan.php',
             dataType: 'json',
-            data: {command: "loadClanInfo", clanId: clanId},
+            data: {
+                command: "loadClanInfo",
+                clanId: clanId
+            },
             success: function(response) {
                 if (response.result == 'OK') {
                     jQuery('#clanInfoLayer').html(response.code);
@@ -336,14 +379,14 @@ var Main = {
     hideUserInfoBox: function() {
         jQuery('#userInfoBox').hide();
     },
-    showSpinner : function() {
+    showSpinner: function() {
         jQuery('#spinner').removeClass('hidden');
     },
-    hideSpinner : function() {
+    hideSpinner: function() {
         jQuery('#spinner').addClass('hidden');
     },
 
-    hideGeneralInfoLayer : function() {
+    hideGeneralInfoLayer: function() {
         Tools.Popup.hideModalLayer();
         jQuery('#generalInfoPopup').fadeOut(500);
     },
@@ -353,7 +396,9 @@ var Main = {
             type: 'POST',
             url: '/ajax/skillTree.php',
             dataType: 'json',
-            data: {command: "reset"},
+            data: {
+                command: "reset"
+            },
             success: function(response) {
                 if (response.result == 'OK') {
                     jQuery('#researchpoints').html(response.newResearchPoints);
@@ -369,7 +414,10 @@ var Main = {
                 } else {
                     Tools.Popup.Presets.showErrorDialog(response.message);
                 }
-                jQuery('#popup').css({'top': '0', 'left': '260px'});
+                jQuery('#popup').css({
+                    'top': '0',
+                    'left': '260px'
+                });
             }
 
         });
@@ -380,7 +428,10 @@ var Main = {
             type: 'POST',
             url: '/ajax/skillTree.php',
             dataType: 'json',
-            data: {command: "skillTreePurchaseLevelUp", skillId: skillId},
+            data: {
+                command: "skillTreePurchaseLevelUp",
+                skillId: skillId
+            },
             success: function(response) {
                 if (response.result == 'OK') {
                     jQuery('#researchpoints').html(response.newResearchPoints);
@@ -388,8 +439,8 @@ var Main = {
                     jQuery('#skillContainer').html(response.html_skills);
                     jQuery('#skillResetButtonContainer').html(response.skillResetButtonContainer);
                     jQuery('#skill_tooltip_container').html(response.html_tooltips);
-                    if (response.researchPoints_teaser_text == ""
-                        && researchPoints_teaser_image == "") {
+                    if (response.researchPoints_teaser_text == "" &&
+                        researchPoints_teaser_image == "") {
                         jQuery('#researchPoints_teaser_text').html();
                         jQuery('#researchPoints_teaser_image').html();
                     }
@@ -399,7 +450,10 @@ var Main = {
                 } else {
                     Tools.Popup.Presets.showErrorDialog(response.message);
                 }
-                jQuery('#popup').css({'top': '0', 'left': '260px'});
+                jQuery('#popup').css({
+                    'top': '0',
+                    'left': '260px'
+                });
             }
 
         });

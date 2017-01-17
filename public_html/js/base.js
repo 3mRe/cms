@@ -1,51 +1,52 @@
 function GE(id) {
- return document.getElementById(id);
+    return document.getElementById(id);
 }
 
 function setvis(id) {
-   if (GE(id)) GE(id).style.display='block';
+    if (GE(id)) GE(id).style.display = 'block';
 }
 
-function setHTML(id,what) {
-  if (GE(id)) GE(id).innerHTML=what;
+function setHTML(id, what) {
+    if (GE(id)) GE(id).innerHTML = what;
 }
 
-function setValue(id,what) {
-  if (GE(id)) GE(id).value=what;
+function setValue(id, what) {
+    if (GE(id)) GE(id).value = what;
 }
 
-function setBackgroundImage(id,what) {
+function setBackgroundImage(id, what) {
     if (GE(id)) {
-        GE(id).style.backgroundImage=what;
+        GE(id).style.backgroundImage = what;
     }
 }
 
-function setshow(pic,price,elite,myShip) {
-  var swf = pic.search(/swf.+/);
-  if (swf != -1) previewswf(pic,price,elite,myShip);
-  else previewpng(pic);
+function setshow(pic, price, elite, myShip) {
+    var swf = pic.search(/swf.+/);
+    if (swf != -1) previewswf(pic, price, elite, myShip);
+    else previewpng(pic);
 }
 
-function setshow_new(name,descr,price,dit_id,elite,eventItem,lang,myShip, item_prefix, inuse, in_use_plain, teaser_plain, callBackFunction) {
-  previewswf_new(name, descr, price, dit_id, elite,eventItem,lang,myShip, item_prefix, inuse, in_use_plain, teaser_plain, callBackFunction);
+function setshow_new(name, descr, price, dit_id, elite, eventItem, lang, myShip, item_prefix, inuse, in_use_plain, teaser_plain, callBackFunction) {
+    previewswf_new(name, descr, price, dit_id, elite, eventItem, lang, myShip, item_prefix, inuse, in_use_plain, teaser_plain, callBackFunction);
 }
 
 
 function sethide(id) {
-  if (GE(id)) GE(id).style.display='none';
+    if (GE(id)) GE(id).style.display = 'none';
 }
 
 function previewpng(filename) {
- GE('preview').innerHTML='<img src="'+CDN+''+filename+'" width="320" height="240">';
+    GE('preview').innerHTML = '<img src="' + CDN + '' + filename + '" width="320" height="240">';
 }
 
-var cvObj = {'background_cv': "",
-             'item_cv': "",
-             'elite_icon_cv' : "",
-             'booster_icon_cv' : "",
-             'limited_icon_cv' : "",
-             'limited_std_icon_cv' : "",
-             'shopdetails_cv' : ""
+var cvObj = {
+    'background_cv': "",
+    'item_cv': "",
+    'elite_icon_cv': "",
+    'booster_icon_cv': "",
+    'limited_icon_cv': "",
+    'limited_std_icon_cv': "",
+    'shopdetails_cv': ""
 }
 
 function setCV(key, val) {
@@ -57,37 +58,37 @@ function getCV(key) {
 }
 
 
-function previewswf_new(name, descr, price, dit_id, elite, eventItem, lang, myShip, item_prefix, inuse, in_use_plain, teaser_plain,callBackFunction) {
-/*
-  swfparam='<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="253" height="206">'+
-  '<param name="movie" value="' + CDN + 'swf_global/shopdetails.swf">'+
-  '<param name="quality" value="high">'+
-  '<param name="allowScriptAccess" value="always">'+
-  '<param name="allowNetworking" value="true">'+
-  '<param name="FlashVars" value="cdn=' + CDN + '&item_name='+name+'&item_caption='+descr+'&price_plain='+price+'&item_id='+dit_id+'&item_prefix=' + item_prefix + '&elite='+elite+'&lang='+lang+'&myShip='+myShip+'&inuse='+inuse+'&in_use_plain='+in_use_plain+'&teaser_plain='+teaser_plain+'&js_fn='+callBackFunction+'" />'+
-  '<embed src="' + CDN + 'swf_global/shopdetails.swf" wmode="transparent" FlashVars="cdn=' + CDN + '&item_name='+name+'&item_caption='+descr+'&price_plain='+price+'&item_id='+dit_id+'&item_prefix=' + item_prefix + '&elite='+elite+'&lang='+lang+'&myShip='+myShip+'&inuse='+inuse+'&in_use_plain='+in_use_plain+'&teaser_plain='+teaser_plain+'&js_fn='+callBackFunction+'" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="253" height="206"></embed>'+
-  '</object>';
+function previewswf_new(name, descr, price, dit_id, elite, eventItem, lang, myShip, item_prefix, inuse, in_use_plain, teaser_plain, callBackFunction) {
+    /*
+      swfparam='<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="253" height="206">'+
+      '<param name="movie" value="' + CDN + 'swf_global/shopdetails.swf">'+
+      '<param name="quality" value="high">'+
+      '<param name="allowScriptAccess" value="always">'+
+      '<param name="allowNetworking" value="true">'+
+      '<param name="FlashVars" value="cdn=' + CDN + '&item_name='+name+'&item_caption='+descr+'&price_plain='+price+'&item_id='+dit_id+'&item_prefix=' + item_prefix + '&elite='+elite+'&lang='+lang+'&myShip='+myShip+'&inuse='+inuse+'&in_use_plain='+in_use_plain+'&teaser_plain='+teaser_plain+'&js_fn='+callBackFunction+'" />'+
+      '<embed src="' + CDN + 'swf_global/shopdetails.swf" wmode="transparent" FlashVars="cdn=' + CDN + '&item_name='+name+'&item_caption='+descr+'&price_plain='+price+'&item_id='+dit_id+'&item_prefix=' + item_prefix + '&elite='+elite+'&lang='+lang+'&myShip='+myShip+'&inuse='+inuse+'&in_use_plain='+in_use_plain+'&teaser_plain='+teaser_plain+'&js_fn='+callBackFunction+'" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="253" height="206"></embed>'+
+      '</object>';
 
-  var agent = navigator.userAgent.toLowerCase();
-  if (agent.indexOf('msie 6'.toLowerCase())==-1) {
-    swfparam = '<embed src="' + CDN + 'swf_global/shopdetails.swf" wmode="transparent" FlashVars="allowScriptAccess=always&allowNetworking=true&cdn=' + CDN + '&item_name='+name+'&item_caption='+descr+'&price_plain='+price+'&item_id='+dit_id+'&item_prefix=' + item_prefix + '&elite='+elite+'&lang='+lang+'&myShip='+myShip+'&inuse='+inuse+'&in_use_plain='+in_use_plain+'&teaser_plain='+teaser_plain+'&js_fn='+callBackFunction+'" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="253" height="206"></embed>';
-  }
-  */
- swfparam = '<embed allowScriptAccess="always" allowNetworking="true" src="' + CDN + 'swf_global/shopdetails.swf?__cv='+getCV('shopdetails_cv')+'" name="shopdetails" wmode="transparent" FlashVars="allowScriptAccess=always&allowNetworking=true&cdn=' + CDN + '&item_name='+name+'&item_caption='+descr+'&price_plain='+price+'&item_id='+dit_id+'&item_prefix=' + item_prefix + '&item_cv='+getCV('item_cv')+'&elite_icon_cv='+getCV('elite_icon_cv')+'&background_cv='+getCV('background_cv')+'&booster_icon_cv='+getCV('booster_icon_cv')+'&limited_icon_cv='+getCV('limited_icon_cv')+'&limited_std_icon_cv='+getCV('limited_std_icon_cv')+'&elite='+elite+'&event_item_enabled='+eventItem+'&lang='+lang+'&myShip='+myShip+'&inuse='+inuse+'&in_use_plain='+in_use_plain+'&teaser_plain='+teaser_plain+'&js_fn='+callBackFunction+'" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="253" height="206"></embed>';
-    GE('previewMovie').innerHTML=swfparam;
-//preview.innerHTML=swfparam;
+      var agent = navigator.userAgent.toLowerCase();
+      if (agent.indexOf('msie 6'.toLowerCase())==-1) {
+        swfparam = '<embed src="' + CDN + 'swf_global/shopdetails.swf" wmode="transparent" FlashVars="allowScriptAccess=always&allowNetworking=true&cdn=' + CDN + '&item_name='+name+'&item_caption='+descr+'&price_plain='+price+'&item_id='+dit_id+'&item_prefix=' + item_prefix + '&elite='+elite+'&lang='+lang+'&myShip='+myShip+'&inuse='+inuse+'&in_use_plain='+in_use_plain+'&teaser_plain='+teaser_plain+'&js_fn='+callBackFunction+'" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="253" height="206"></embed>';
+      }
+      */
+    swfparam = '<embed allowScriptAccess="always" allowNetworking="true" src="' + CDN + 'swf_global/shopdetails.swf?__cv=' + getCV('shopdetails_cv') + '" name="shopdetails" wmode="transparent" FlashVars="allowScriptAccess=always&allowNetworking=true&cdn=' + CDN + '&item_name=' + name + '&item_caption=' + descr + '&price_plain=' + price + '&item_id=' + dit_id + '&item_prefix=' + item_prefix + '&item_cv=' + getCV('item_cv') + '&elite_icon_cv=' + getCV('elite_icon_cv') + '&background_cv=' + getCV('background_cv') + '&booster_icon_cv=' + getCV('booster_icon_cv') + '&limited_icon_cv=' + getCV('limited_icon_cv') + '&limited_std_icon_cv=' + getCV('limited_std_icon_cv') + '&elite=' + elite + '&event_item_enabled=' + eventItem + '&lang=' + lang + '&myShip=' + myShip + '&inuse=' + inuse + '&in_use_plain=' + in_use_plain + '&teaser_plain=' + teaser_plain + '&js_fn=' + callBackFunction + '" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="253" height="206"></embed>';
+    GE('previewMovie').innerHTML = swfparam;
+    //preview.innerHTML=swfparam;
 }
 
-function previewswf(filename,price,elite,myShip) {
-  swfparam='<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="253" height="206">'+
-  '<param name="movie" value="' + CDN + filename+'">'+
-  '<param name="quality" value="high">'+
-  '<param name="wmode" value="transparent">'+
-  '<param name="FlashVars" value="price='+price+'&elite='+elite+'&myShip='+myShip+'" />'+
-  '<embed src="'+filename+'" FlashVars="price='+price+'&elite='+elite+'&myShip='+myShip+'" wmode="transparent" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="253" height="206"></embed>'+
-  '</object>';
-  GE('previewMovie').innerHTML=swfparam;
-  //preview.innerHTML=swfparam;
+function previewswf(filename, price, elite, myShip) {
+    swfparam = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="253" height="206">' +
+        '<param name="movie" value="' + CDN + filename + '">' +
+        '<param name="quality" value="high">' +
+        '<param name="wmode" value="transparent">' +
+        '<param name="FlashVars" value="price=' + price + '&elite=' + elite + '&myShip=' + myShip + '" />' +
+        '<embed src="' + filename + '" FlashVars="price=' + price + '&elite=' + elite + '&myShip=' + myShip + '" wmode="transparent" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="253" height="206"></embed>' +
+        '</object>';
+    GE('previewMovie').innerHTML = swfparam;
+    //preview.innerHTML=swfparam;
 }
 
 /**
@@ -128,7 +129,7 @@ var HeaderFunc = {
         if (jQuery('#upsell_glow').length) {
             window.setInterval("HeaderFunc.upsellEvent()", 5000);
         }
-		if (jQuery('#emailHighlight').length) {
+        if (jQuery('#emailHighlight').length) {
             window.setInterval("HeaderFunc.mailGlow()", 3000);
         }
         if (jQuery('#activateShipHighlight').length) {
@@ -163,7 +164,7 @@ var HeaderFunc = {
     shipActivateGlow: function() {
         jQuery('#activateShipHighlight').fadeIn(400).delay(400).fadeOut(400);
     },
-	upsellEvent: function() {
+    upsellEvent: function() {
         jQuery('#upsell_glow').fadeIn(400).delay(400).fadeOut(400);
     },
 
@@ -175,10 +176,10 @@ var HeaderFunc = {
         var windowSize = jQuery(window).width();
         var newSize, wpPos;
         var wpSize = 1024;
-       var fixValue = 0;
+        var fixValue = 0;
 
         if (windowSize < wpSize) {
-           newSize = windowSize;
+            newSize = windowSize;
         } else {
             newSize = wpSize;
         }
@@ -230,8 +231,8 @@ var HeaderFunc = {
 
     startClient: function() {
         if (
-            jQuery('#header_start_btn').hasClass('start_btn_inactive')
-            || jQuery('#noActiveHangarShip').length > 0
+            jQuery('#header_start_btn').hasClass('start_btn_inactive') ||
+            jQuery('#noActiveHangarShip').length > 0
         ) {
             var errorText = jQuery('#noShipClientAccess').val();
             icon = 'error';
@@ -248,92 +249,138 @@ var HeaderFunc = {
         jQuery('#profile_btn').qtip({
             content: header_ttips.pilot,
             style: 'dohdr',
-            position: {target: 'mouse'}
+            position: {
+                target: 'mouse'
+            }
         });
         jQuery('#lab_btn').qtip({
             content: header_ttips.skylab,
             style: 'dohdr',
-            position: {target: 'mouse'}
+            position: {
+                target: 'mouse'
+            }
         });
         jQuery('#header_top_id').qtip({
             content: header_ttips.uid,
             style: 'dohdr',
-            position: {target: 'mouse'}
+            position: {
+                target: 'mouse'
+            }
         });
         jQuery('#header_top_level').qtip({
             content: header_ttips.lvl,
             style: 'dohdr',
-            position: {target: 'mouse'}
+            position: {
+                target: 'mouse'
+            }
         });
         jQuery('#header_top_exp').qtip({
             content: header_ttips.exp,
             style: 'dohdr',
-            position: {target: 'mouse'}
+            position: {
+                target: 'mouse'
+            }
         });
         jQuery('#header_top_hnr').qtip({
             content: header_ttips.hnr,
             style: 'dohdr',
-            position: {target: 'mouse'}
+            position: {
+                target: 'mouse'
+            }
         });
         jQuery('#header_my_jackpot').qtip({
             content: header_ttips.jpt,
             style: 'dohdr',
-            position: {target: 'mouse'}
+            position: {
+                target: 'mouse'
+            }
         });
         jQuery('#header_friends').qtip({
             content: header_ttips.fri,
             style: 'dohdr',
-            position: {target: 'mouse'}
+            position: {
+                target: 'mouse'
+            }
         });
         jQuery('#header_new_mail').qtip({
             content: header_ttips.nms,
             style: 'dohdr',
-            position: {target: 'mouse'}
+            position: {
+                target: 'mouse'
+            }
         });
         jQuery('#header_uri').qtip({
             content: header_ttips.uri,
             style: 'dohdr',
-            position: {target: 'mouse'}
+            position: {
+                target: 'mouse'
+            }
         });
         jQuery('#header_credits').qtip({
             content: header_ttips.cdt,
             style: 'dohdr',
-            position: {target: 'mouse'}
+            position: {
+                target: 'mouse'
+            }
         });
         jQuery('#header_main_multiplier').qtip({
-        	content: header_ttips.head_multiplier,
-        	position: {target: 'mouse'},
+            content: header_ttips.head_multiplier,
+            position: {
+                target: 'mouse'
+            },
             style: 'dohdr300'
         });
 
         jQuery('#header_button_home').qtip({
             content: header_ttips.header_home,
-            position: {target: 'mouse'},
+            position: {
+                target: 'mouse'
+            },
             style: 'dohdr'
         });
         jQuery('#header_button_server').qtip({
             content: header_ttips.header_server,
-            position: {target: 'mouse'},
+            position: {
+                target: 'mouse'
+            },
             style: 'dohdr'
         });
         jQuery('#header_button_help').qtip({
             content: header_ttips.header_help,
-            position: {target: 'mouse'},
+            position: {
+                target: 'mouse'
+            },
             style: 'dohdr'
         });
         jQuery('#header_button_logout').qtip({
             content: header_ttips.header_logout,
-            position: {target: 'mouse'},
+            position: {
+                target: 'mouse'
+            },
             style: 'dohdr'
         });
         jQuery('#header_button_account').qtip({
             content: header_ttips.header_account,
-            position: {target: 'mouse'},
+            position: {
+                target: 'mouse'
+            },
             style: 'dohdr'
         });
 
-        jQuery("#header_hangar_arrow").qtip({content: header_ttips.hangarSlot_arrow_tooltip_expand, style:'dohdr', position:{target:'mouse'}});
-        jQuery(".header_hangar_slot_getNext").qtip({content: header_ttips.tp_expand_hangar, style:'dohdr', position:{target:'mouse'}});
+        jQuery("#header_hangar_arrow").qtip({
+            content: header_ttips.hangarSlot_arrow_tooltip_expand,
+            style: 'dohdr',
+            position: {
+                target: 'mouse'
+            }
+        });
+        jQuery(".header_hangar_slot_getNext").qtip({
+            content: header_ttips.tp_expand_hangar,
+            style: 'dohdr',
+            position: {
+                target: 'mouse'
+            }
+        });
 
     },
 
@@ -347,7 +394,9 @@ var HeaderFunc = {
                 //bgPos = (btn == 1) ? '-38px' : '-44px';
                 bgPos = (btn == 1) ? '-19px' : '-22px';
                 break;
-            default: bgPos = 'top'; break;
+            default:
+                bgPos = 'top';
+                break;
         }
 
         var imgChild = jQuery(elm).children();
@@ -374,14 +423,26 @@ var HeaderFunc = {
                 jQuery(this).css('display', 'block');
                 jQuery('#header_hangar_arrow').addClass('active_arrow');
                 jQuery("#header_hangar_arrow").qtip('destroy');
-                jQuery("#header_hangar_arrow").qtip({content: header_ttips.hangarSlot_arrow_tooltip_collapse, style:'dohdr', position:{target:'mouse'}});
+                jQuery("#header_hangar_arrow").qtip({
+                    content: header_ttips.hangarSlot_arrow_tooltip_collapse,
+                    style: 'dohdr',
+                    position: {
+                        target: 'mouse'
+                    }
+                });
 
             } else {
                 jQuery(this).css('display', 'none');
                 jQuery('.header_hangar_slot.current_slot').css('display', 'block');
                 jQuery('#header_hangar_arrow').removeClass('active_arrow');
                 jQuery("#header_hangar_arrow").qtip('destroy');
-                jQuery("#header_hangar_arrow").qtip({content: header_ttips.hangarSlot_arrow_tooltip_expand, style:'dohdr', position:{target:'mouse'}});
+                jQuery("#header_hangar_arrow").qtip({
+                    content: header_ttips.hangarSlot_arrow_tooltip_expand,
+                    style: 'dohdr',
+                    position: {
+                        target: 'mouse'
+                    }
+                });
             }
         });
         jQuery('.header_hangar_slot_getNext').toggle();
@@ -412,8 +473,9 @@ var HeaderFunc = {
         var scrollMargin = this.scrollMargin;
         this.scrollMargin = 0;
 
-        this.scroller.animate(
-            {'margin-left': (scrollWidth * -1) + scrollMargin},
+        this.scroller.animate({
+                'margin-left': (scrollWidth * -1) + scrollMargin
+            },
             scrollWidth * 100 / HeaderFunc.scrollSpeed,
             'linear',
             ScrollerChangeFirst
@@ -426,7 +488,7 @@ var HeaderFunc = {
 
     showInfluenceFactionLayer: function(factionId) {
         showBusyLayer();
-        jQuery('#influenceBattle').addClass('influenceBattle_'+factionId);
+        jQuery('#influenceBattle').addClass('influenceBattle_' + factionId);
         jQuery('#influenceBattle').show()
     }
 };
@@ -437,8 +499,7 @@ var HeaderFunc = {
  * @param amount
  * @param operator (null | 'plus' | 'minus')
  */
-function updateMoneyDisplay(mType, amount, operator)
-{
+function updateMoneyDisplay(mType, amount, operator) {
     var mContainer, newAmount;
 
     if ('uridium' == mType) {
@@ -451,14 +512,14 @@ function updateMoneyDisplay(mType, amount, operator)
 
     var currentAmount = parseInt(mContainer.text());
 
-// TODO: add functionality to calculate with local formatted money
-//    if ('plus' == operator) {
-//        newAmount = currentAmount + parseInt(amount);
-//    } else if ('minus' == operator) {
-//        newAmount = currentAmount - amount;
-//    } else {
-//        newAmount = amount;
-//    }
+    // TODO: add functionality to calculate with local formatted money
+    //    if ('plus' == operator) {
+    //        newAmount = currentAmount + parseInt(amount);
+    //    } else if ('minus' == operator) {
+    //        newAmount = currentAmount - amount;
+    //    } else {
+    //        newAmount = amount;
+    //    }
     newAmount = amount;
 
     mContainer.text(newAmount);
