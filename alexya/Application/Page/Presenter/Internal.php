@@ -52,7 +52,8 @@ class Internal extends Presenter
             "Shop",
             "Clan",
             "Skylab",
-            "PilotSheet"
+            "PilotSheet",
+            "GalaxyGates"
         ];
 
         $this->_triad->View->set("hasFrames", false);
