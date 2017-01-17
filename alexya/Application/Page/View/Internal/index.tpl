@@ -207,12 +207,8 @@
 
         User.Parameters = {
             "balance": {
-                "uridium": {
-                    $account - > uridium
-                },
-                "credits": {
-                    $account - > credits
-                }
+                "uridium": {$account->uridium},
+                "credits": {$account->credits}
             },
             "language": "{$locale->code}",
             "isActiveHangarEmpty": false
@@ -473,7 +469,7 @@
             <div class="outerContainer fliess11px-gelb">
                 <div class="header_standard" id="header_intern">
                     <div id="header_branding">
-                        <img id="PartnerCobrandLogo" src="{$URL}published/cobrands/0_22_3.png" />
+                        <img id="PartnerCobrandLogo" src="{$URL}published/cobrands/0_22_2.png" />
                     </div>
 
                     <div id="header_ship" style="background-image: url({$URL}do_img/global/header/ships/model{$account->Ship->id}.png)"></div>
