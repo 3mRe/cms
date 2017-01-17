@@ -128,6 +128,7 @@ return [
         "name"            => "BlackEye",
         "description"     => "The best DarkOrbit Private Server",
         "locales"         => [],
-        "registeredUsers" => 0
+        "registeredUsers" => 0,
+        "host"            => "blackeye"
     ]
 ];
