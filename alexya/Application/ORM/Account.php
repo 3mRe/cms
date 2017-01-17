@@ -41,7 +41,7 @@ class Account extends Model
         $relations = [];
 
         foreach($settings as $key => $value) {
-            $firstChar        = substr($value, 0, 1);
+            $firstChar        = substr($key, 0, 1);
             $firstCharIsUpper = (strtoupper($firstChar) == $firstChar);
 
             if(is_array($value) && $firstCharIsUpper) {
@@ -56,6 +56,8 @@ class Account extends Model
         $account = new Account($rows);
 
         foreach($relations as $class => $rows) {
+            $name = $class;
+
             if(!Str::startsWith($class, "\\")) {
                 $class = "\\Application\\ORM\\{$class}";
             }
@@ -65,7 +67,10 @@ class Account extends Model
             }
 
             $exploded = explode("\\", $class);
-            $name     = $exploded[count($exploded) - 1];
+
+            if($class != "\\Alexya\\Database\\ORM\\Model") {
+                $name = $exploded[count($exploded) - 1];
+            }
 
             $account->{$name} = new $class($rows);
         }
