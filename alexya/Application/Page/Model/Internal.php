@@ -19,5 +19,12 @@ class Internal extends Model
     public function onInstance()
     {
         $this->account = Container::Account();
+        $this->news    = Container::API()->get("news/latest/10");
+        
+        $this->translationVars = [
+            "SERVER_NAME"           => Container::Server()->name,
+            "UNREAD_MESSAGES_COUNT" => 0,
+            "EXP_FOR_NEXT_LEVEL"    => 0
+        ];
     }
 }

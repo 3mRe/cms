@@ -426,7 +426,7 @@
                 </div>
                 <br/>
                 <br/>
-                <div class="bn_footer">{t("Your %SERVER_NAME Team", $translationVars}</div>
+                <div class="bn_footer">{t("Your %SERVER_NAME Team", $translationVars)}</div>
                 <br />
             </div>
 
@@ -476,7 +476,7 @@
                         <img id="PartnerCobrandLogo" src="{$URL}published/cobrands/0_22_3.png" />
                     </div>
 
-                    <div id="header_ship" style="background-image: url({$URL}do_img/global/header/ships/model{$account->Hangar->Ship->Ship->id}.png)"></div>
+                    <div id="header_ship" style="background-image: url({$URL}do_img/global/header/ships/model{$account->Ship->id}.png)"></div>
                     <a id="header_logo" href="{$URL}Internal/Start"></a>
                     <div id="header_top_bar">
                         <div id="header_top_id" class="header_top_item">
@@ -515,7 +515,7 @@
 
                     <div id="header_main">
                         <div id="header_hangar_slots">
-                            {foreach from=$account->Hangars->available() item=h name=hangars}
+                            {foreach from=[] item=h name=hangars}
                             {$activated = ""}
                             {$href = "`$URL`Internal/Dock/changeHangar/`$h->id`"} <!-- tfw smarty can't concatenate strings the dot way -->
 
@@ -536,22 +536,22 @@
 
                         <div id="header_main_left">
                             <a class="header_std_btn header_lft_std" id="hangar_btn" href="{$URL}Internal/Dock">
-                                <img src="{$URL}do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_hangar&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" alt="" />
+                                <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_hangar&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" alt="" />
                             </a>
 
                             <a class="header_std_btn header_lft_std" id="clan_btn" href="{$URL}Internal/NewClan">
-                                <img src="{$URL}do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_clan&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" alt="" />
+                                <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_clan&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" alt="" />
                             </a>
                             <a class="header_std_btn header_lft_std" id="upgrades_btn" href="{$URL}Internal/ItemUpgradeSystem">
-                                <img src="{$URL}do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_upgrades&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" alt="" />
+                                <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_upgrades&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" alt="" />
                             </a>
 
                             <a class="header_std_btn header_lft_email" id="mail_btn" href="{$URL}Internal/Evoucher">
-                                <img src="{$URL}do_img/global/text_tf.esg?l={$locale->code}&s=8&t=nav_sub1_evoucher_voucher_long&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" />
+                                <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/text_tf.esg?l={$locale->code}&s=8&t=nav_sub1_evoucher_voucher_long&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" />
                             </a>
 
                             <a class="header_big_btn header_lft_big" id="profile_btn" href="{$URL}Internal/PilotSheet">
-                                <img src="{$URL}do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_pilotsheet&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue&h=21" />
+                                <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_pilotsheet&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue&h=21" />
                             </a>
                         </div>
 
@@ -559,28 +559,28 @@
                             <div id="ip_placeholder"></div>
 
                             <div id="header_start_btn">
-                                <img src="{$URL}do_img/global/text_tf.esg?l={$locale->code}&s=16&t=header_start&f=eurostyle_tbla&color=white&bgcolor=green&h=18" />
+                                <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/text_tf.esg?l={$locale->code}&s=16&t=header_start&f=eurostyle_tbla&color=white&bgcolor=green&h=18" />
                             </div>
                         </div>
 
                         <div id="header_main_right">
                             <a class="header_std_btn header_rgt_std" id="shop_btn" href="{$URL}Internal/Shop/Ships" alt="">
-                                <img src="{$URL}do_img/global/header/buttons/event_icon.png" width="21" height="21" id="header_event_icon" />
-                                <img src="{$URL}do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_shop&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" alt="" />
+                                <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/header/buttons/event_icon.png" width="21" height="21" id="header_event_icon" />
+                                <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_shop&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" alt="" />
                             </a>
 
                             <a class="header_std_btn header_rgt_std" id="trade_btn" href="{$URL}Internal/Auction">
-                                <img src="{$URL}do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_auction&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" />
+                                <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_auction&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" />
                             </a>
                             <a class="header_std_btn header_rgt_std" id="uri_btn" href="{$URL}Internal/Payment">
-                                <img src="{$URL}do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_payment&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" />
+                                <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_payment&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" />
                             </a>
 
                             <a class="header_std_btn header_rgt_std" id="lab_btn" href="{$URL}Internal/Skylab">
-                                <img src="{$URL}do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_skylab&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" />
+                                <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_skylab&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue" />
                             </a>
                             <a class="header_big_btn header_rgt_big" id="gg_btn" href="{$URL}Internal/GalaxyGates">
-                                <img src="{$URL}do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_galaxygates&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue&h=21" />
+                                <img src="http://darkorbit-22.ah.bpcdn.net/do_img/global/text_tf.esg?l={$locale->code}&s=8&t=header_galaxygates&f=eurostyle_tbla&color=lightestBlue&bgcolor=blue&h=21" />
                             </a>
 
                             <div id="header_my_jackpot">

@@ -24,6 +24,7 @@ class Internal extends Presenter
         }
 
         $this->_triad->View->set("name", $name);
+        $this->_setFramesFlag($name);
 
         if($this->_triad->children->module->hasModel()) {
             foreach($this->_triad->Model->all() as $key => $value) {
@@ -35,5 +36,28 @@ class Internal extends Presenter
         $this->_triad->View->set("module", $this->_triad->children->module->Controller->render());
 
         // TODO $this->_triad->View->set("news", Model::latest(10, "id", "news"));
+
+        return $this->_triad->View->render();
+    }
+
+    /**
+     * Sets the `hasFrames` flag.
+     *
+     * @param string $name Page name.
+     */
+    private function _setFramesFlag(string $name)
+    {
+        $framedPages = [
+            "Dock",
+            "Shop",
+            "Clan",
+            "Skylab",
+            "PilotSheet"
+        ];
+
+        $this->_triad->View->set("hasFrames", false);
+        if(in_array($name, $framedPages)) {
+            $this->_triad->View->set("hasFrames", true);
+        }
     }
 }
