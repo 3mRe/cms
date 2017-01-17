@@ -44,6 +44,13 @@ return [
              */
             "accounts/1/chooseFaction" => [
                 "result" => true
+            ],
+
+            /**
+             * News response.
+             */
+            "news/latest/10" => [
+
             ]
         ]
     ],
@@ -74,7 +81,38 @@ return [
             "uridium"     => 1,
             "experience"  => 2,
             "honor"       => 3,
-            "jackpot"     => 4
+            "jackpot"     => 4,
+
+            "Faction" => [
+                "id"   => 1,
+                "name" => "Mars Mining Operations",
+                "tag"  => "mmo"
+            ],
+
+            "Ship" => [
+                "id" => 1
+            ],
+
+            "Level" => [
+                "id" => 1
+            ],
+
+            "Clan" => [
+                "name" => "foo",
+                "tag"  => "bar",
+
+                "Rank" => [
+                    "position" => 1,
+                    "points"   => 0
+                ]
+            ],
+
+            "Rank" => [
+                "id"       => 21,
+                "name"     => "yolo",
+                "position" => 1,
+                "points"   => "a lot of them"
+            ]
         ]
     ],
 
